@@ -115,3 +115,17 @@ class Entry(models.Model):
 
     def get_absolute_url(self):
         return '/blog/%s/%s/' % (self.pub_date.strftime('%Y/%m/%d').lower(), self.slug)
+
+
+# signals
+
+from django.db.models import signals
+from django.dispatch import dispatcher
+
+def entry_pre_save(sender, instance, signal, *args, **kwargs):
+    # update pub_date instance if entry was draft
+    e = Entry.objects.get(id=instance.id)
+    if e.is_draft:
+        instance.pub_date = datetime.now()
+
+dispatcher.connect(entry_pre_save, signal=signals.pre_save, sender=Entry)
