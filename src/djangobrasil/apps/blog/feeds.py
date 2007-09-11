@@ -25,7 +25,7 @@ from djangobrasil.apps.blog.models import Entry
 
 class RssLatestEntriesFeed(Feed):
     title = u"Django Brasil Weblog"
-    link = u"/blog/"
+    link = u"/weblog/"
     description = u"Blog da comunidade brasileira do framework Django."
 
     def items(self):

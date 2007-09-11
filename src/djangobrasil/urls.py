@@ -29,20 +29,21 @@ from djangobrasil.apps.aggregator.feeds import RssCommunityAggregatorFeed, AtomC
 
 
 databrowse.site.register(Entry)
+databrowse.site.register(FeedItem)
 
 
 sitemaps = {
     'flatpages': FlatPageSitemap,
-    'blog': GenericSitemap({'queryset': Entry.published.all(), 'date_field': 'pub_date'}, changefreq="never")
+    'weblog': GenericSitemap({'queryset': Entry.published.all(), 'date_field': 'pub_date'}, changefreq="never")
 }
 
 rss_feeds = {
-    'blog': RssLatestEntriesFeed,
+    'weblog': RssLatestEntriesFeed,
     'comunidade': RssCommunityAggregatorFeed,
 }
 
 atom_feeds = {
-    'blog': AtomLatestEntriesFeed,
+    'weblog': AtomLatestEntriesFeed,
     'comunidade': AtomCommunityAggregatorFeed,
 }
 
@@ -78,10 +79,10 @@ urlpatterns = patterns(
     (r'^admin/', include('django.contrib.admin.urls')),
 
     # home page
-    #(r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'homepage.html'}),
+    (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'flatfiles/homepage.html'}),
 
-    # blog
-    (r'^blog/', include('djangobrasil.apps.blog.urls')),
+    # weblog
+    (r'^weblog/', include('djangobrasil.apps.blog.urls')),
 
     # comunidade
     (r'^comunidade/$', 'django.views.generic.list_detail.object_list', aggregator_info_dict),

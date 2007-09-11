@@ -18,8 +18,8 @@
 #
 
 
-from django.db import models
 from datetime import datetime
+from django.db import models
 
 
 MARKUP_CHOICES = (
@@ -114,7 +114,7 @@ class Entry(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return '/blog/%s/%s/' % (self.pub_date.strftime('%Y/%m/%d').lower(), self.slug)
+        return '/weblog/%s/%s/' % (self.pub_date.strftime('%Y/%m/%d').lower(), self.slug)
 
 
 # signals
