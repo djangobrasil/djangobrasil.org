@@ -1,0 +1,191 @@
+{% extends "base_3col.html" %}
+
+{% block cssid %}homepage{% endblock %}
+
+{% block sectionid %}homepage{% endblock %}
+
+{% block content-main %}
+<div class="limite">
+    
+    <!-- Conheça o Django -->
+    <div id="destaque">
+	<div>
+	    <h2>Conheça o Django</h2>
+	    <h4>Django é um framework web de alto nível escrito em
+		Python que estimula o desenvolvimento rápido e
+		limpo</h4>
+	    
+	    <p>Developed and used over two years by a fast-moving
+	    online-news operation, Django was designed to handle two
+	    challenges: the intensive deadlines of a newsroom and the
+	    stringent requirements of the experienced <a href="#">Web
+	    developers who wrote it</a>. It lets you build
+	    high-performing, elegant Web applications quickly.</p>
+	    
+	    <p>Django focuses on automating as much as possible and
+	    adhering to the <a href="#" rel="external">DRY
+	    principle</a>.</p>
+	    
+	    <ul>
+		<li>Dive in by <a href="#">reading the
+			overview</a>.</li>
+		<li>When you're ready to code, read the 
+		    <a href="#">installation guide</a>
+		    and <a href="#">tutorial</a>.</li>
+	    </ul>
+	</div>
+    </div>
+    <!-- Fim: Conheça o Django -->
+	
+    <!-- O framework Django -->
+    <div id="framework">
+	<h2>O framework Django</h2>
+	
+	<ul>
+	    <li>
+		<h4>Mapeador objeto-relacional</h4>
+		<p>Define your <a href="#">data models</a> entirely in
+		Python. You get a rich, <a href="#">dynamic
+		database-access API</a> for free — but you can still
+		write SQL if needed.</p>
+	    </li>
+	    
+	    <li>
+		<h4>Interface de administração automática</h4>
+		<p>Save yourself the tedious work of creating
+		interfaces for people to add and update
+		content. <a href="#">Django does that
+		automatically</a>, and it's production-ready.</p>
+	    </li>
+	    
+	    <li>
+		<h4>URL's elegantes</h4>
+		<p>Design pretty, <a href="#">cruft-free URL’s</a>
+		with no framework-specific limitations. Be as flexible
+		as you like.</p>
+	    </li>
+	    
+	    <li>
+		<h4>Sistema de templates</h4>
+		<p>Use Django's powerful, extensible and
+		designer-friendly <a href="#">template language</a> to
+		separate design, content and Python code.</p>
+	    </li>
+	    
+	    <li>
+		<h4>Sistema de cache</h4>
+		<p>Hook into memcached or other cache frameworks
+		for <a href="#">super performance</a> — caching is as
+		granular as you need.</p>
+	    </li>
+	    
+	    <li>
+		<h4>Internacionalização</h4>
+		<p>Django has full support
+		for <a href="#">multi-language applications</a>,
+		letting you specify translation strings and providing
+		hooks for language-specific functionality.</p>
+	    </li>
+	</ul>
+    </div>
+    <!-- Fim: O framework Django -->
+</div>
+{% endblock %}
+
+
+{% block content-extra %}
+<div class="limite">
+    
+    <!-- Download -->
+    <div id="download">
+	<h3>Download</h3>
+	
+	<a id="latest" href="/donwload/"
+	   title="Baixar a versão mais recente do Django" hreflang="en"
+	   rel="external"><span>Versão atual: <strong>0.96</strong></span>
+	</a>
+	
+	<p>Código Livre, <a href="http://code.djangoproject.com/browser/django/trunk/LICENSE"
+			    hreflang="en" rel="external">licença BSD</a></p>
+    </div>
+    <!-- Fim: Download -->
+
+    <!-- Documentação -->
+    <div id="doc">
+	<h3>Documentação</h3>
+	
+	<ul>
+	    <li><a href="http://www.djangoproject.com/documentation/install/">Guia de instalação</a></li>
+	    <li><a href="#">Tutorial</a></li>
+	    <li><a href="#">Models</a></li>
+	    <li><a href="#">Templates</a></li>
+	    <li><a href="#">DjangoBook em Português</a></li>
+	    <li><a href="#">Tópicos da documentação...</a></li>
+	</ul>
+    </div>
+    <!-- Fim: Documentação -->
+    
+    <!-- Participe -->
+    <div id="participe">
+	<h3>Participe</h3>
+	
+	<p>O <strong>Django Brasil</strong> é um grupo de usuários e pesquisadores brasileiros de <strong>Django</strong>, uma framework para desenvolvimento ágil para a <strong>Web</strong>, baseada na linguagem <strong>Python</strong> e em padrões da programação orientada a objetos.</p>
+	
+	<a href="http://lista.djangobrasil.org/"
+	   title="Participar da lista de discussão"
+	   rel="external">Participe da lista de discussão</a>
+    </div>
+    <!-- Fim: Participe -->
+    
+    <!-- Django pelo Brasil -->
+    <div id="brasil">
+	<h3>Django pelo Brasil</h3>
+	
+	<dl>
+	    <dt><a href="http://www.garimpar.com/favoritos/">
+		    Garimpar Favoritos</a></dt>
+	    <dd>Favoritos social.</dd>
+
+	    <dt><a href="http://www.vericia.com/">Vericia</a></dt>
+	    <dd>O mais fascinante e inteligente site de busca de imóveis.</dd>
+	    
+	    <dt><a href="http://adorador.es/">adorador.es</a></dt>
+	    <dd>Rede social cristã.</dd>
+	</dl>
+	
+	<a class="mais" href="#">Veja mais sites</a>
+    </div>
+    <!-- Fim: Django pelo Brasil -->
+    
+</div>
+{% endblock %}
+
+{% block content-related %}
+<div class="limite">
+    <h3>Weblog</h3>
+    
+    <ul id="weblog">
+	<li>
+	    {% load blog_tags %}
+	    {% load humanize %}
+	    {% get_blog_entries 1 to 6 as latest_entries %}
+
+	    {% for entry in latest_entries %}
+	    <h5><a href="{{ entry.get_absolute_url }}">
+		    {{ entry.title }}</a></h5>
+	    <span>
+		Publicado {{ entry.pub_date|naturalday:"e\m d/m/Y" }}
+	    </span>
+	    
+	    <p>{{ entry.body|striptags|truncatewords:25 }}</p>
+	    
+	    <ul>
+		<!--li><a href="#">0 comentários</a></li-->
+		<li><a href="{{ entry.get_absolute_url }}">
+			Leia mais</a></li>
+	    </ul>
+	    {% endfor %}
+	</li>
+    </ul>
+</div>
+{% endblock %}

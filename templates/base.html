@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	  "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="pt-br">
+    <head>
+	<title>Django Brasil | {% block title  %} Website da comunidade brasileira{% endblock %}</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="DC.title" content="Django Brasil" />
+	<meta name="author" content="Jader Rubini" />
+	<meta name="copyright" 
+	      content="Copyright (c) 2007 Jader Rubini --
+		       This site's design and html code is licensed
+		       under the terms of the GPLv3 or (at your
+		       option) any later version." />
+	<meta name="description" content="Django é um framework web 
+					  de alto nível escrito em
+					  Python que estimula o
+					  desenvolvimento rápido e
+					  limpo. Django Brasil é a
+					  comunidade brasileira de
+					  usuários do framework
+					  Django." />
+	<meta name="keywords" content="django, framework, web, python,
+				       programação web, programação,
+				       python pra web" />
+	<meta name="language" content="pt-br" />
+	<meta name="resource-type" content="document" />
+	<meta name="rating" content="General" />
+	<meta name="robots" content="ALL" />
+	<meta name="revisit-after" content="1" />
+	
+	<link rel="shortcut icon" href="/media/images/favicon.ico" />
+
+	<link rel="stylesheet" type="text/css" media="screen"
+	      href="/media/css/{% block cssid %}base{% endblock %}.css" />
+	<link rel="stylesheet" type="text/css" media="print"
+	      href="/media/css/print.css" />
+
+	<script type="text/javascript"
+		src="/media/js/functions.js"></script>
+
+	<link rel="alternate" 
+	      title="Blog (Atom)" 
+	      href="/feeds/weblog/atom"
+	      type="application/atom+xml" />
+
+	<link rel="alternate"
+	      title="Blog (RSS)"
+	      href="/feeds/weblog/rss"
+	      type="application/rss+xml" />
+
+	{% block extrahead %}{% endblock %}
+    </head>
+    <body id="{% block sectionid %}generic{% endblock %}">
+	<ul class="hidden">
+	    <li><a href="#conteudo">Pular para o conteúdo</a></li>
+	    <li><a href="#info">Pular para o download e links da
+		    documentação</a></li>
+	    <li><a href="#weblog">Pular para a lista de entradas do
+		    weblog</a></li>
+	</ul>
+	
+	<!-- Cabeçalho -->
+	<div id="cabecalho">
+	    <h1><a href="/" title="Página principal">Django Brasil</a></h1>
+	    
+	    <ul>
+		<li id="nav-homepage"><a href="/" title="Página principal"><span>Home</span></a></li>
+		<li id="nav-download"><a href="/download/" title="Faça o download do Django"><span>Download</span></a></li>
+		<li id="nav-docs"><a href="/documentacao/" title="Documentação completa em português"><span>Documentação</span></a></li>
+		<li id="nav-weblog"><a href="/weblog/" title="As novidades em torno do Django e da comunidade"><span>Weblog</span></a></li>
+		<li id="nav-comunidade"><a href="/comunidade/" title="A comunidade brasileira de desenvolvedores Django"><span>Comunidade</span></a></li>
+		<li id="nav-links"><a href="/links/" title="Links relacionados ao Django"><span>Links</span></a></li>
+		<li id="nav-participe"><a href="/participe/" title="Participe da comunidade Django Brasil"><span>Participe</span></a></li>
+	    </ul>
+	</div>
+	<!-- Fim: Cabeçalho -->
+	
+	<hr />
+	
+	<!-- Chamada -->
+	<div id="chamada">
+	{% block billboard %}
+	    <h2>O framework web para perfeccionistas com prazos</h2>
+	    <p>Django facilita o desenvolvimento de aplicações web com
+		mais qualidade e menos código</p>
+	{% endblock %}
+	</div>
+	<!-- Fim: chamada -->
+	
+	<hr />
+
+	<!-- Wrapper para o conteudo do site -->
+	<div id="wrap">{% block wrap %}{% endblock %}</div>
+	<!-- Fim da #wrap-->
+
+	<hr />
+	
+	<!-- Rodape -->
+	<div id="rodape">
+	    <p>Django Brasil é a comunidade brasileira de usuários
+	    do <a href="http://www.djangoproject.com/" rel="external"
+	    hreflang="en" title="Site oficial do Django">framework web
+	    Django</a>. Django é uma marca registrada
+	    de <a href="http://ljworld.com" rel="external"
+	    hreflang="en">Lawrence Journal-World</a>.</p>
+	</div>
+	<!-- Fim do rodape -->
+	    
+    </body>
+</html>

@@ -1,0 +1,327 @@
+/*
+ *  Copyright (c) 2007 Jader Rubini
+ *
+ *  This file is part of Django Brasil Project Site.
+ *
+ *  Django Brasil Project is free software; you can redistribute it
+ *  and/or modify it under the terms of the GNU General Public License
+ *  as published by the Free Software Foundation; either version 3 of
+ *  the License, or (at your option) any later version.
+ *
+ *  Django Brasil Project is distributed in the hope that it will be
+ *  useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ *  of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+
+@charset "utf-8";
+
+/********************
+Estilizaçoes gerais
+********************/
+* {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #555;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+body {
+	min-width: 755px;
+	background: url(../images/rodape.png) repeat-x bottom;
+}
+
+/* Containers */
+#wrap {
+	overflow: hidden;
+	background: #E5E5E5 url(../images/lateral-bottom.png) repeat-x bottom;
+}
+#wrap:after, #conteudo:after {
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+.limite { padding: 10px; }
+#conteudo {
+	float: left;
+	width: 70%;
+	background: #FFF url(../images/info-bottom.png) repeat-x bottom;
+}
+#principal { background: #FFF url(../images/principal-bottom.png) repeat-x bottom; }
+#principal .limite {
+	padding: 0 30px 20px;
+	border-right:1px dashed #CCC;
+	background: url(../images/principal-top.png) repeat-x top;
+}
+#lateral {
+	float: right;
+	width: 30%;
+}
+#lateral .limite { background: url(../images/lateral-top.png) repeat-x top; }
+/* Fim: Containers */
+
+input[type=hidden] { display: none; }
+
+hr, .hidden { display: none; }
+
+option { padding: 0 5px; }
+/********************
+Fim das estilizaçoes gerais
+********************/
+
+
+/********************
+Cabeçalho
+********************/
+#cabecalho {
+	height: 62px;
+	padding: 22px 15px 0;
+	border-top: 4px solid #076944;
+	border-bottom: 1px solid #FFF;
+	background: #EBEBEB url(../images/cabecalho.png) repeat-x top;
+}
+
+#cabecalho h1 {
+	float: left;
+	width: 202px;
+	height: 44px;
+}
+
+#cabecalho h1 a {
+	text-indent: -9999px;
+	display: block;
+	height: 100%;
+	background: url(../images/djangobrasil.png) no-repeat;
+}
+
+#cabecalho ul {
+	float: right;
+	height: 30px;
+	padding: 5px 0 0;
+}
+
+#cabecalho li {
+	float: left;
+	padding: 0;
+	background: none;
+}
+
+#cabecalho li a {
+	display: block;
+	padding-left: 7px;
+}
+
+#cabecalho li a span {
+	color: #3B3B3B;
+	font-weight: bold;
+	display: block;
+	padding: 7px;
+	padding-left: 0;
+}
+
+#cabecalho li a:hover, #cabecalho li a.selected { 
+        background: #0B7D52 url(../images/item-menu-left.gif) no-repeat left; 
+}
+
+#cabecalho li a:hover span, #cabecalho li a.selected span {
+	color: #FFF;
+	background: url(../images/item-menu-right.gif) no-repeat right;
+}
+
+#homepage #nav-homepage a, #download #nav-download a, #docs #nav-docs a, #weblog #nav-weblog a,  #comunidade #nav-comunidade a, #links #nav-links a, #participe #nav-participe a { 
+        background: #0B7D52 url(../images/item-menu-left.gif) no-repeat left; 
+}
+
+#homepage #nav-homepage a span, #download #nav-download a span, #docs #nav-docs a span, #weblog #nav-weblog a span, #comunidade #nav-comunidade a span, #links #nav-links a span, #participe #nav-participe a span { 
+	color: #FFF;
+	background: url(../images/item-menu-right.gif) no-repeat right;        
+}
+/********************
+Fim: Cabeçalho
+********************/
+
+
+/********************
+Chamada
+********************/
+#chamada {
+	height: 71px;
+	margin-bottom: 1px;
+	padding: 0 15px;
+	border: 2px solid #098556;
+	border-width: 2px 0;
+	background: #076944 url(../images/chamada.png) repeat-x;
+}
+
+#chamada * { color: #FFF; }
+
+#chamada h2 {
+	/*text-indent: -9999px;*/
+        color: #eee;
+        font-size: 17px;
+        font-style: italic;
+        font-weight: bolder;
+	/*width: 390px;*/
+	height: 20px;
+	padding: 0;
+	margin: 17px 0 0;
+	border: none;
+	/*background: url(../images/slogan.png) no-repeat;*/
+}
+/********************
+Fim: Chamada
+********************/
+
+
+/********************
+Fim: Conteúdo
+********************/
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+	font-family: Trebuchet MS, Tahoma, Helvetica, sans-serif;
+	line-height: 1.2em;
+}
+h1, h2, h3 {
+	color: #000;
+	font-weight: normal;
+}
+h4, h5, h6 {
+	color: #0B7F53;
+	margin-bottom: 7px;
+}
+#lateral h4, #lateral h5, #lateral h6 { color: #333; }
+#wrap h1, h2 {
+	font-size: 2em;
+	margin-bottom: 15px;
+	padding: 15px 0 3px;
+	border-bottom: 1px solid;
+}
+h3 {
+	font-size: 1.4em;
+	margin-bottom: 7px;
+}
+h4 { font-size: 1.2em; }
+/* Fim: títulos */
+
+/* Links */
+#wrap a {
+	color: #076944;
+	text-decoration: underline;
+}
+#wrap a:link { font-weight: bold; }
+#wrap a:visited { font-weight: normal; }
+#wrap a:hover { text-decoration: none; }
+#wrap a[rel=external] {
+	padding-right: 10px;
+	background: url(../images/external.gif) no-repeat 100% 5px;
+}
+#wrap a[hreflang]:after { content: " [" attr(hreflang) "] "; }
+/* Fim: links */
+
+/* Listas */
+ul, ol, dl { margin-bottom: 15px; }
+#conteudo ul, #conteudo ol, #conteudo dl { padding: 0 10px; }
+li, dt { margin-bottom: 3px; }
+ul li {
+	padding-left: 10px;
+	background: url(../images/green-dot.gif) no-repeat 0 6px;
+}
+ol li { list-style: decimal inside; }
+/* Fim; listas */
+
+/* Códigos */
+pre, code {
+	font-family: Courier New, Courier, monospace;
+	background-color: #E6F0EC;
+	overflow: hidden;
+}
+pre {
+	display: block;
+	margin-bottom: 15px;
+	padding: 7px 10px;
+	border: solid #C5DCD3;
+	border-width: 1px 0;
+}
+p code { padding: 0 5px; }
+/* Fim: Códigos */
+
+/* Formulários */
+form { margin-bottom: 15px; }
+fieldset { border: none; }
+legend {
+	color: #000;
+	font: bold 1.2em Trebuchet MS, Tahoma, Helvetica, sans-serif;
+	margin-bottom: 5px;
+}
+* html legend, * + html legend { text-indent: -2px }
+input {
+	width: 60%;
+	margin-right: 7px;
+	padding: 2px 5px;
+	border: 1px solid #AAA;
+}
+input:focus { border-color: #076944; }
+button {
+	color: #000;
+	padding: 0 5px;
+}
+/* Fim: formulários */
+
+p, dd {
+	line-height: 1.4em;
+	text-align: justify;
+	margin-bottom: 12px;
+}
+/********************
+Fim: Conteúdo
+********************/
+
+
+/********************
+Rodape
+********************/
+#rodape {
+	border-top: 1px solid #FFF;
+	clear: both;
+	background: url(../images/rodape-right.png) no-repeat right;
+}
+
+#rodape p {
+	font-size: 0.85em;
+	color: #FFF;
+	text-align: center;
+	height: 41px;
+	margin: 0;
+	padding-top: 24px;
+	background: url(../images/rodape-left.png) no-repeat left;
+}
+
+#rodape a { color: #FFC757; }
+
+#rodape a:link {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#rodape a:visited {
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+#rodape a:hover { text-decoration: none; }
+/********************
+Fim: Rodape
+********************/

@@ -1,0 +1,231 @@
+/*
+ *  Copyright (c) 2007 Jader Rubini
+ *
+ *  This file is part of Django Brasil Project Site.
+ *
+ *  Django Brasil Project is free software; you can redistribute it
+ *  and/or modify it under the terms of the GNU General Public License
+ *  as published by the Free Software Foundation; either version 3 of
+ *  the License, or (at your option) any later version.
+ *
+ *  Django Brasil Project is distributed in the hope that it will be
+ *  useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ *  of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+
+@charset "utf-8";
+@import "base.css";
+
+/* Containers */
+#wrap {
+	overflow: hidden;
+	background: #E5E5E5 url(../images/lateral-bottom.png) repeat-x bottom;
+}
+#conteudo {
+	width: 78%;
+	background-color: #F2F2F2;
+}
+#principal {
+	float: left;
+	width: 66%;
+}
+#principal .limite { padding: 0 0 20px; }
+#info {
+	float: right;
+	width: 34%;
+}
+#info .limite { background: url(../images/info-top.png) repeat-x top; }
+#lateral { width: 22%; }
+/* Fim: Containers */
+
+ul, ol, dl { margin-bottom: 0; }
+
+
+/********************
+Conteudo principal
+********************/
+#principal h2 { padding-top: 0; }
+
+#destaque {
+	overflow: hidden;
+	border-style: solid;
+	border-width: 3px 1px;
+	border-color: #FFC757 #FFF;
+	background: url(../images/destaque-principal.png);
+}
+
+#destaque div {
+	padding: 7px 20px;
+	border: solid #076944;
+	border-width: 3px 0;
+}
+
+#destaque h2 { margin-bottom: 3px; }
+
+#framework h2 {
+	font-size: 1.6em;
+	margin: 7px 20px 3px;
+	border: none;
+}
+
+#framework ul, #framework li {
+	padding: 0;
+	background: none;
+}
+
+#framework li {
+	margin: 0;
+	padding: 10px 20px 15px;
+	border-bottom: 1px dashed #CCC;
+}
+
+#framework li.ultimo { border: none; }
+
+#framework li:hover { background-color: #FAFAFA; }
+
+#framework p { margin: 0; }
+/********************
+Fim: Conteudo principal
+********************/
+
+
+/********************
+Informações adicionais
+********************/
+#info .limite div {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px dashed #CCC;
+}
+
+#info ul, #info dl { padding: 0; }
+
+#info .limite div#brasil {
+	border: none;
+	margin-bottom: 0;
+}
+
+#info .mais { float: right; }
+
+/* Download */
+#download a#latest {
+	display: block;
+	margin-bottom: 5px;
+	padding-right: 8px;
+	text-decoration: none;
+	background: url(../images/download-right.png) no-repeat right;
+}
+
+#download a#latest:after { content: ""; }
+
+#download a#latest span {
+	color: #FFF;
+	font-weight: normal;
+	display: block;
+	line-height: 38px;
+	padding-left: 40px;
+	background: url(../images/download-left.png) no-repeat left;
+}
+
+#download a#latest strong {
+	color: #FFF;
+	font-size: 1.2em;
+}
+
+#download p {
+	font-size: 0.9em;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+#download p a { font-size: 1em; }
+/* Fim: Download */
+
+/* Documentação */
+#doc li {
+	padding: 0;
+	background: none;
+}
+
+#doc li a {
+	color: #555;
+	text-decoration: none;
+	display: block;
+	padding: 5px;
+	padding-left: 33px;
+	background: url(../images/ico-doc.gif) no-repeat 10px 50%;
+}
+
+#doc a:link { font-weight: normal; }
+
+#doc a:hover {
+	color: #076944;
+	background-color: #E7E7E7;
+}
+/* Fim: Documentação */
+/********************
+Fim: Informações adicionais
+********************/
+
+
+/********************
+Weblog
+********************/
+ul#weblog, #weblog li, #weblog ul {
+	overflow: hidden;
+	padding: 0;
+	background: none;
+}
+
+#weblog li {
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px dashed #D1D1D1;
+}
+
+#weblog * { font-family: Arial, Helvetica, sans-serif; }
+
+#weblog span, #weblog p, #weblog ul a { font-size: 0.85em; }
+
+#weblog h5 { margin-bottom: 2px; }
+
+#weblog span {
+	display: block;
+	margin-bottom: 4px;
+}
+
+#weblog span strong { font-size: 1em; }
+
+#weblog span, #weblog span strong { color: #222; }
+
+#weblog p { margin-bottom: 5px; }
+
+#weblog ul { text-align: right; }
+
+#weblog ul li {
+	display: inline;
+	margin: 0;
+	padding: 0 5px 0 3px;
+	border: none;
+	border-right: 1px solid #076944;
+}
+
+#weblog li.ultimo {
+	padding-right: 0;
+	border: none;
+}
+
+#weblog ul a { text-decoration: none; }
+
+#weblog ul a:link { font-weight: normal; }
+
+#weblog ul a:hover { text-decoration: underline; }
+/********************
+Fim: Weblog
+********************/

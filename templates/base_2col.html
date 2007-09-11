@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% block wrap %}
+<div id="conteudo">
+    {% block content %}
+    <div id="principal">
+	{% block content-main %}{% endblock %}
+    </div>
+    {% endblock %}
+</div>
+
+<hr />
+
+<div id="lateral">
+    {% block content-related %}{% endblock %}
+</div>
+{% endblock %}

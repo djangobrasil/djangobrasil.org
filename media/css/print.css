@@ -1,0 +1,28 @@
+@charset "utf-8";
+* { color: #111; }
+hr, .hidden, #cabecalho ul, form, #weblog ul { display: none; }
+#cabecalho h1 { margin-bottom: 0.1cm; }
+#cabecalho h1 a { text-decoration: none; }
+#chamada h2 { margin: 0; }
+#chamada p { margin: 0.1cm 0; }
+#wrap, #lateral, #info, #rodape {
+	margin-top: 0.5cm;
+	border-top: 2px solid #000;
+}
+h3, h4, h5, h6, a { color: #076944; }
+#wrap a:after, #rodape a:after { content: " ("attr(href)") "; }
+p {
+	text-align: justify;
+	line-height: 1.5em;
+}
+pre {
+	line-height: 1.5em;
+	display: block;
+	padding: 7px 10px;
+	border: solid #DDD;
+	border-width: 1px 0;
+	background-color: #EEE;
+}
+#lateral h3, #lateral h4, #lateral h5, #lateral h6 { color: #777; }
+#weblog h5 { font-size:1.1em; margin-bottom: 0.1cm; }
+#weblog span { font-size: 0.8em; }

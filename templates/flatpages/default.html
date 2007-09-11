@@ -1,0 +1,13 @@
+{% extends "base_2col.html" %}
+
+{% block billboard %}
+<h2>{{ flatpage.title }}</h2>
+{% endblock %}
+
+{% block content-main %}
+<div class="limite">
+    <h1>{{ flatpage.title }}</h1>
+    
+    {{ flatpage.content }}
+</div>
+{% endblock %}
