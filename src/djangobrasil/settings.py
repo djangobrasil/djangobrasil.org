@@ -69,7 +69,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'
+    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'djangobrasil.urls'
@@ -84,9 +85,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.databrowse',
+    'django.contrib.redirects',
     'django.contrib.admin',
     'django.contrib.sitemaps',
     'django.contrib.flatpages',
+    'django.contrib.humanize',
     'djangobrasil.apps.blog',
     'djangobrasil.apps.aggregator',
 )
