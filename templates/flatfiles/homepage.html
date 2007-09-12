@@ -2,6 +2,18 @@
 
 {% block cssid %}homepage{% endblock %}
 
+{% block extrahead %}
+<link rel="alternate" 
+      title="Blog (Atom)" 
+      href="/feeds/atom/weblog/"
+      type="application/atom+xml">
+
+<link rel="alternate"
+      title="Blog (RSS)"
+      href="/feeds/rss/weblog/"
+      type="application/rss+xml">
+{% endblock %}
+
 {% block sectionid %}homepage{% endblock %}
 
 {% block content-main %}
