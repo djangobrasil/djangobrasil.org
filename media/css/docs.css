@@ -1,0 +1,66 @@
+/*
+ *  Copyright (c) 2007 Jader Rubini
+ *
+ *  This file is part of Django Brasil Project Site.
+ *
+ *  Django Brasil Project is free software; you can redistribute it
+ *  and/or modify it under the terms of the GNU General Public License
+ *  as published by the Free Software Foundation; either version 3 of
+ *  the License, or (at your option) any later version.
+ *
+ *  Django Brasil Project is distributed in the hope that it will be
+ *  useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ *  of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+
+@charset "utf-8";
+@import "base.css";
+
+div.section { padding: 7px 0; }
+
+/* Conteúdo extra */
+#conteudo-extra {
+	margin: 0;
+	padding: 10px 20px 7px;
+	background-color: #076944;
+}
+#conteudo-extra h2 {
+	font-size: 1.5em;
+	margin-bottom: 10px;
+	padding: 0;
+	border: none;
+}
+#conteudo-extra * { color: #FFF; }
+#conteudo-extra a { color: #FFC757; }
+/* Fim: Conteúdo extra */
+
+/* Advertências */
+div.advertencia {
+	margin-bottom: 15px;
+	padding: 10px 15px 0;
+	border: 1px solid #76AC98;
+	background-color: #F7FAF9;
+}
+.advertencia h5 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000;
+}
+/* Fim: Advertências */
+
+/* Table of contents */
+#wrap .toc ul a:link {
+	font-weight: normal;
+	text-decoration: none;
+}
+#wrap .toc ul a:visited { color: #555; }
+#wrap .toc ul a:hover {
+	color: #076944;
+	text-decoration: underline;
+}
+/* Fim: Table of contents */
