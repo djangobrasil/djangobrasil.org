@@ -27,6 +27,7 @@
 	overflow: hidden;
 	background: #E5E5E5 url(../images/lateral-bottom.png) repeat-x bottom;
 }
+#wrap .limite { padding: 10px; }
 #conteudo {
 	width: 78%;
 	background-color: #F2F2F2;

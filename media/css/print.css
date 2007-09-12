@@ -1,6 +1,27 @@
+/*
+ *  Copyright (c) 2007 Jader Rubini
+ *
+ *  This file is part of Django Brasil Project Site.
+ *
+ *  Django Brasil Project is free software; you can redistribute it
+ *  and/or modify it under the terms of the GNU General Public License
+ *  as published by the Free Software Foundation; either version 3 of
+ *  the License, or (at your option) any later version.
+ *
+ *  Django Brasil Project is distributed in the hope that it will be
+ *  useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ *  of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+
 @charset "utf-8";
 * { color: #111; }
-hr, .hidden, #cabecalho ul, form, #weblog ul { display: none; }
+hr, .hidden, #cabecalho ul, form, #weblog ul, .toc { display: none; }
 #cabecalho h1 { margin-bottom: 0.1cm; }
 #cabecalho h1 a { text-decoration: none; }
 #chamada h2 { margin: 0; }
@@ -10,7 +31,8 @@ hr, .hidden, #cabecalho ul, form, #weblog ul { display: none; }
 	border-top: 2px solid #000;
 }
 h3, h4, h5, h6, a { color: #076944; }
-#wrap a:after, #rodape a:after { content: " ("attr(href)") "; }
+h5, h6 { font-size:1.1em; }
+#wrap a[href]:after, #rodape a[href]:after { content: " ("attr(href)")"; }
 p {
 	text-align: justify;
 	line-height: 1.5em;
@@ -23,6 +45,7 @@ pre {
 	border-width: 1px 0;
 	background-color: #EEE;
 }
+head:first-child + body pre { font-size: 0.9em; }
 #lateral h3, #lateral h4, #lateral h5, #lateral h6 { color: #777; }
-#weblog h5 { font-size:1.1em; margin-bottom: 0.1cm; }
+#weblog h5 { margin-bottom: 0.1cm; }
 #weblog span { font-size: 0.8em; }
