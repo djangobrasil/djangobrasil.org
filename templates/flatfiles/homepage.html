@@ -180,7 +180,7 @@
 	<li>
 	    {% load blog_tags %}
 	    {% load humanize %}
-	    {% get_blog_entries 1 to 6 as latest_entries %}
+	    {% get_blog_entries 1 to 5 as latest_entries %}
 
 	    {% for entry in latest_entries %}
 	    <h5><a href="{{ entry.get_absolute_url }}">
