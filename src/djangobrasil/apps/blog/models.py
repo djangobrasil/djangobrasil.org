@@ -106,12 +106,12 @@ class Entry(models.Model):
             ('Other options', ENTRY_OTHER_FIELDSET),
         )
 
+    def __unicode__(self):
+        return self.title
+
     def save(self):
         self.body = markuping(self.markup, self.body_source)
-        super(Entry, self).save()
-
-    def __str__(self):
-        return self.title
+        super(Entry, self).save()    
 
     def get_absolute_url(self):
         return '/weblog/%s/%s/' % (self.pub_date.strftime('%Y/%m/%d').lower(), self.slug)
