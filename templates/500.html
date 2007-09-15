@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Página não encontrada{% endblock %}
+
+{% block cssid %}error{% endblock %}
+
+{% block accesslink %}
+    <ul class="hidden">
+	<li><a href="#principal">Pular para o conteúdo</a></li>
+    </ul>
+{% endblock %}
+
+{% block billboard %}<h2>Erro 500</h2>{% endblock %}
+
+{% block wrap %}
+    <div id="principal">
+        <div class="limite">
+	    <h1>Erro interno no servidor</h1>
+
+	    <p>Oops, houve um problema interno. Caso o problema
+		persista nas próximas horas, por favor 
+		<a href="http://code.google.com/p/djangobrasil/issues/entry">
+		    conte pra gente</a>.</p>
+
+	    <p>Você pode <a href="javascript:history.go(-1)">retornar
+		    à pagina anterior</a> ou ir para
+		a <a href="/">página principal de nosso site</a>, se
+		preferir.</p>
+        </div>
+    </div>
+{% endblock %}
