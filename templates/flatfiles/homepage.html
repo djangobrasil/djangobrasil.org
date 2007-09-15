@@ -250,12 +250,12 @@
     <h3>Weblog</h3>
     
     <ul id="weblog">
+	{% load blog_tags %}
+	{% load humanize %}
+	{% get_blog_entries 1 to 5 as latest_entries %}
+	
+	{% for entry in latest_entries %}
 	<li>
-	    {% load blog_tags %}
-	    {% load humanize %}
-	    {% get_blog_entries 1 to 5 as latest_entries %}
-
-	    {% for entry in latest_entries %}
 	    <h5><a href="{{ entry.get_absolute_url }}">
 		    {{ entry.title }}</a></h5>
 	    <span>
@@ -265,12 +265,12 @@
 	    <p>{{ entry.body|striptags|truncatewords:25 }}</p>
 	    
 	    <ul>
-		<!--li><a href="#">0 comentários</a></li-->
+		<li><a href="#">0 comentários</a></li>
 		<li><a href="{{ entry.get_absolute_url }}">
 			Leia mais</a></li>
 	    </ul>
-	    {% endfor %}
 	</li>
+	{% endfor %}
     </ul>
 </div>
 {% endblock %}
