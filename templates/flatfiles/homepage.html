@@ -12,9 +12,19 @@
       title="Blog (RSS)"
       href="/feeds/rss/weblog/"
       type="application/rss+xml">
-{% endblock %}
+{% endblock %}nn
 
 {% block sectionid %}homepage{% endblock %}
+
+{% block accesslink %}
+<ul class="hidden">
+    <li><a href="#conteudo">Pular para o conteúdo</a></li>
+    <li><a href="#info">Pular para o download e links da
+	    documentação</a></li>
+    <li><a href="#weblog">Pular para a lista de entradas do
+	    weblog</a></li>
+</ul>
+{% endblock %}
 
 {% block content-main %}
 <div class="limite">

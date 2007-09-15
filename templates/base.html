@@ -42,13 +42,12 @@
 	{% block extrahead %}{% endblock %}
     </head>
     <body id="{% block sectionid %}generic{% endblock %}">
+
+	{% block accesslink %}
 	<ul class="hidden">
 	    <li><a href="#conteudo">Pular para o conteúdo</a></li>
-	    <li><a href="#info">Pular para o download e links da
-		    documentação</a></li>
-	    <li><a href="#weblog">Pular para a lista de entradas do
-		    weblog</a></li>
 	</ul>
+	{% endblock %}
 	
 	<!-- Cabeçalho -->
 	<div id="cabecalho">
