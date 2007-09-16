@@ -88,8 +88,9 @@ INSTALLED_APPS = (
     'django.contrib.redirects',
     'django.contrib.admin',
     'django.contrib.sitemaps',
-    'django.contrib.flatpages',
     'django.contrib.humanize',
+    'django.contrib.comments',    
+    'django.contrib.flatpages',
     'djangobrasil.apps.blog',
     'djangobrasil.apps.aggregator',
 )

@@ -1,0 +1,28 @@
+{% extends "base_weblog.html" %}
+
+{% block title %}Weblog | {{ day|date:"d \de F \de Y" }}{% endblock %}
+
+{% block content-main %}
+<div class="limite">
+    <h1>Arquivo de {{ day|date:"d \de F \de Y" }}</h1>
+    
+    {% load comments %}
+    {% load humanize %}
+    {% for object in object_list %}
+    {% get_free_comment_count for blog.entry object.id as comment_count %}
+    <div class="entry" {% if forloop.last %}style="border:none;"{% endif %}>
+	<h2><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2>
+	
+	<div class="meta">
+	    <h6>Publicado {{ object.pub_date|naturalday:"e\m d/m/Y" }}
+		às {{ object.pub_date|date:"G\hi" }}</h6>
+	    <a href="{{ object.get_absolute_url }}#comments">
+		{{ comment_count }} comentário{{ comment_count|pluralize }}
+	    </a>
+	</div>
+	
+	{{ object.body }}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

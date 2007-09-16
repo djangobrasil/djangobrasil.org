@@ -1,0 +1,54 @@
+{% extends "base_weblog.html" %}
+
+{% block title %}Weblog | {{ object.headline|escape }}{% endblock %}
+
+{% block content-main %}
+<div class="limite">
+    <div class="entry">
+	{% load comments %}
+	{% load humanize %}
+	<h1><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h1>
+	
+	<div class="meta">
+	    <h6>Publicado {{ object.pub_date|naturalday:"e\m d/m/Y" }}
+		às {{ object.pub_date|date:"G\hi" }}</h6>
+	    </a>
+	</div>
+	
+	{{ object.body }}
+    </div>
+
+    <hr>
+	
+    <div id="comments">
+	<h3>Comentários</h3>
+
+	{% load comments %}
+	{% get_free_comment_list for blog.entry object.id as comment_list %}
+	{% if comment_list %}
+	<ol>
+	    {% for comment in comment_list %}
+	    <li class="comment" id="c{{ comment.id }}">
+		<strong class="name">
+		    {{ comment.person_name|escape }} 
+		    <span>
+			({{ comment.submit_date|naturalday:"e\m d/m/Y" }} 
+			às {{ comment.submit_date|date:"G\hi" }})
+		    </span>
+		</strong>
+
+		{{ comment.comment|escape|urlizetrunc:"40"|linebreaks }}
+	    </li>
+	    {% endfor %}
+	</ol>
+	{% else %}
+	<p>Nenhum comentário.</p>
+	{% endif %}
+    </div>
+	
+    <h3>Deixar um comentário</h3>
+	
+    {% free_comment_form for blog.entry object.id %}
+</div>
+{% endblock %}
+    

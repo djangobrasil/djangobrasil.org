@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Comentário publicado{% endblock %}
+
+{% block cssid %}error{% endblock %}
+
+{% block accesslink %}
+    <ul class="hidden">
+	<li><a href="#principal">Pular para o conteúdo</a></li>
+    </ul>
+{% endblock %}
+
+{% block billboard %}<h2>Comentário</h2>{% endblock %}
+
+{% block wrap %}
+    <div id="principal">
+        <div class="limite">
+	    <h1>Comentário publicado com sucesso</h1>
+
+	    <p>Obrigado por contribuir!</p>
+
+	    {% if object %}
+	    <p>Você pode <a href="{{ object.get_absolute_url }}">
+		    visualizar seu comentário</a> ou ir para
+		a <a href="/">página principal de nosso site</a>, se
+		preferir.</p>
+	    {% endif %}
+	</div>
+    </div>
+{% endblock %}

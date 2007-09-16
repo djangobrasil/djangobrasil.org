@@ -1,0 +1,145 @@
+/*
+ *  Copyright (c) 2007 Jader Rubini
+ *
+ *  This file is part of Django Brasil Project Site.
+ *
+ *  Django Brasil Project is free software; you can redistribute it
+ *  and/or modify it under the terms of the GNU General Public License
+ *  as published by the Free Software Foundation; either version 3 of
+ *  the License, or (at your option) any later version.
+ *
+ *  Django Brasil Project is distributed in the hope that it will be
+ *  useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ *  of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+
+@charset "utf-8";
+@import "base.css";
+
+#principal h3 { color: #076944; }
+/********************
+Latest entries / post index
+********************/
+.entry, #comments {
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #CCC;
+}
+.entry h1 { margin-bottom: 0; }
+.entry h2 {
+    font-size: 1.5em;
+    margin-bottom: 0;
+    border: none;
+}
+.entry h2 a { font: 1em Arial, Helvetica, sans-serif;}
+.entry h1, .entry a { color: #076944 !important; }
+.entry h2 a:hover { text-decoration: underline !important; }
+
+.entry .meta { margin-bottom: 15px }
+.meta h6, .meta a { font: 0.85em Arial, Helvetica, sans-serif; }
+.meta h6 strong { font-size: 1em; }
+.entry .meta h6 {
+    color: #333;
+    display: inline;
+    margin-right: 4px;
+    padding-right: 7px;
+    border-right: 1px solid #333;
+}
+
+/* comments */
+#comments {
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+#comments ol {
+    padding: 10px 0;
+    margin: 0;
+}
+#comments ol li {
+    position: relative;
+    list-style: none;
+    margin-bottom: 1px;
+    padding: 10px 15px;
+}
+#comments li.odd { background-color: #F7F7F7; }
+#comments li:hover { background-color: #F2F2F2; }
+#comments strong.name {
+    font-size: 1.3em;
+}
+#comments strong.name span {
+    color: #076944;
+    font-size: 0.65em;
+    font-weight: normal;
+    padding-left: 7px;
+}
+#comments p { margin: 7px 0 0; }
+
+
+/* comment form */
+#principal form {
+    width: 60%;
+    padding-left: 7px;
+}
+#principal legend { display: none; }
+#principal label {
+    display: block;
+    margin-bottom: 3px;
+}
+#principal label kbd { border-bottom: 1px dotted; }
+#principal label span {
+    font-size: 0.85em;
+    color: #999;
+}
+#principal input, #principal textarea {
+    display: block;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: 1px solid #ECECEC;
+    background-color: #F7F7F7;
+}
+#principal input:focus, #principal textarea:focus {
+    border-color: #D7D7D7;
+    background-color: #EFEFEF;
+}
+#principal input, #principal textarea { width: 95%; }
+#principal textarea { margin-bottom: 5px; }
+#principal button {
+    float: right;
+    margin-right: 7px;
+    padding: 1px 8px;
+}
+/********************
+End: latest entries / post index
+********************/
+
+
+/********************
+Sidebar
+********************/
+#feeds li {
+    margin-bottom: 8px;
+    padding: 0;
+    background: none;
+}
+#feeds a {
+    color: #555;
+    padding-left: 20px;
+    background: url(../images/icon-feed.gif) no-repeat left;
+}
+#feeds a:link {
+    font-weight: normal;
+    text-decoration: none;
+}
+#feeds a:hover {
+    color: #076944;
+    text-decoration: underline;
+}
+/********************
+End: sidebar
+********************/

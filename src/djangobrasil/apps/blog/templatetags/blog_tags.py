@@ -61,7 +61,7 @@ def do_get_blog_month_list(parser, token):
     bits = token.contents.split()
     if len(bits) != 3:
         raise template.TemplateSyntaxError, "'%s' tag takes three arguments" % bits[0]
-    if bits[2] != 'as':
+    if bits[1] != 'as':
         raise template.TemplateSyntaxError, "First argument to '%s' tag must be 'as'" % bits[0]
     return MonthListNode(bits[2])
 

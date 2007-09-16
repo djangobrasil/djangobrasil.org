@@ -146,11 +146,11 @@ Cabeçalho
 	background: url(../images/item-menu-right.gif) no-repeat right;
 }
 
-#homepage #nav-homepage a, #download #nav-download a, #docs #nav-docs a, #weblog #nav-weblog a,  #comunidade #nav-comunidade a, #links #nav-links a, #participe #nav-participe a { 
+#homepage #nav-homepage a, #download #nav-download a, #docs #nav-docs a, #weblog #nav-weblog a,  #comunidade #nav-comunidade a, #links #nav-links a, #contato #nav-contato a { 
         background: #0B7D52 url(../images/item-menu-left.gif) no-repeat left; 
 }
 
-#homepage #nav-homepage a span, #download #nav-download a span, #docs #nav-docs a span, #weblog #nav-weblog a span, #comunidade #nav-comunidade a span, #links #nav-links a span, #participe #nav-participe a span { 
+#homepage #nav-homepage a span, #download #nav-download a span, #docs #nav-docs a span, #weblog #nav-weblog a span, #comunidade #nav-comunidade a span, #links #nav-links a span, #contato #nav-contato a span { 
 	color: #FFF;
 	background: url(../images/item-menu-right.gif) no-repeat right;        
 }
@@ -171,15 +171,15 @@ Chamada
 	background: #076944 url(../images/chamada.png) repeat-x;
 }
 
-#chamada * { color: #FFF; }
+#chamada * { color: #F5F5F5; }
 
 #chamada h2 {
-	color: #EEE;
-	font-size: 1.3em;
+	font-size: 1.7em;
 	font-style: italic;
 	font-weight: bolder;
+	line-height: 71px;
 	padding: 0;
-	margin: 17px 0 0;
+	margin: 0;
 	border: none;
 }
 /********************

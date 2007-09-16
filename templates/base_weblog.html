@@ -1,0 +1,48 @@
+{% extends "base_2col.html" %}
+
+{% block cssid %}weblog{% endblock %}
+
+{% block sectionid %}weblog{% endblock %}
+
+{% block title %}Weblog{% endblock %}
+
+{% block extrahead %}
+<link rel="alternate" 
+      title="Weblog (Atom)" 
+      href="/feeds/atom/weblog/"
+      type="application/atom+xml" />
+
+<link rel="alternate"
+      title="Weblog (RSS)"
+      href="/feeds/rss/weblog/"
+      type="application/rss+xml" />
+
+<link rel="alternate"
+      title="Comentários (RSS)" 
+      href="/feeds/rss/comments/"
+      type="application/rss+xml" />
+{% endblock %}
+
+{% block billboard %}<h2>Blog da Django Brasil</h2>{% endblock %}
+
+{% block content-related %}
+<div class="limite">
+    <h4>Feeds RSS</h4>
+    <ul id="feeds">
+	<li><a href="/feeds/rss/weblog/">Últimas entradas do
+		blog</a></li>
+	<li><a href="/feeds/rss/comments/">Últimos comentários</a></li>
+    </ul>
+    
+
+    <h4>Arquivo</h4>
+    <ul class="toc">
+	{% load blog_tags %}
+	{% get_blog_month_list as archive %}
+	{% for month in archive %}
+	<li><a href="/weblog/{{ month|date:"Y/m"|lower }}/">
+		{{ month|date:"F, Y" }}</a></li>
+	{% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base_comunidade.html" %}
+
+{% block extrahead %}
+<link rel="alternate" 
+      title="Comunidade (Atom)" 
+      href="/feeds/atom/comunidade/"
+      type="application/atom+xml" />
+
+<link rel="alternate"
+      title="Comunidade (RSS)"
+      href="/feeds/rss/comunidade/"
+      type="application/rss+xml" />
+{% endblock %}
+
+{% block content-main %}
+<div class="limite">
+    <h1>Comunidade</h1>
+    <h4>Esta página é atualizada a cada hora e agrega entradas dos blogs
+	de brasileiros que escrevem sobre o Django.</h4>
+    
+    {% load humanize %}
+    {% for item in object_list %}
+    <div class="entry">    
+	<h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
+	<div class="meta">
+	    <h6>Publicado {{ item.date_modified|naturalday:"e\m d/m/Y" }}
+		às {{ item.date_modified|date:"G\hi" }}</h6>
+	    <a href="{{ item.feed.public_url }}">{{ item.feed.title }}</a> 
+	    <a href="{{ feed.feed_url }}">
+		<img class="feed" src="/media/images/icon-feed.gif"
+		     alt="feed" /></a></p>
+	</div>
+	<p>
+	    {{ item.summary }}
+	</p>
+	<p><a href="{{ item.link }}">Leia essa entrada em seu contexto
+		original &raquo;</a></p>
+    </div>
+    {% endfor %}
+    
+    <div>{% if has_next %}
+	<p><a href="?page={{ next }}">Publicações anteriores</a>
+    {% endif %}</p></div>
+</div>
+{% endblock %}

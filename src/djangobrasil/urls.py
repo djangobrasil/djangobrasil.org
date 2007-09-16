@@ -19,6 +19,8 @@
 
 
 from django.conf.urls.defaults import *
+from django.contrib.comments.feeds import LatestFreeCommentsFeed
+from django.contrib.comments.models import FreeComment
 from django.contrib import databrowse
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 from djangobrasil import settings
@@ -31,6 +33,10 @@ from djangobrasil.apps.aggregator.feeds import RssCommunityAggregatorFeed, AtomC
 databrowse.site.register(Entry)
 databrowse.site.register(FeedItem)
 
+comments_info_dict = {
+    'queryset': FreeComment.objects.all(),
+    'paginate_by': 15,
+}
 
 sitemaps = {
     'flatpages': FlatPageSitemap,
@@ -39,6 +45,7 @@ sitemaps = {
 
 rss_feeds = {
     'weblog': RssLatestEntriesFeed,
+    'comments': LatestFreeCommentsFeed,    
     'comunidade': RssCommunityAggregatorFeed,
 }
 
@@ -71,6 +78,10 @@ urlpatterns = patterns(
     # feeds
     (r'^feeds/rss/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': rss_feeds}),
     (r'^feeds/atom/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': atom_feeds}),
+
+    # comments
+    (r'^comments/$', 'django.views.generic.list_detail.object_list', comments_info_dict),
+    (r'^comments/', include('django.contrib.comments.urls.comments')),
 
     # databrowse
     (r'^db/(.*)', 'djangobrasil.views.db'),

@@ -49,6 +49,19 @@ ul, ol, dl { margin-bottom: 0; }
 
 
 /********************
+Chamada
+********************/
+#chamada h2 {
+	font-size: 1.3em;
+	margin-top: 14px;
+	line-height: normal;
+}
+/********************
+Fim: Chamada
+********************/
+
+
+/********************
 Conteudo principal
 ********************/
 #principal h2 { padding-top: 0; }

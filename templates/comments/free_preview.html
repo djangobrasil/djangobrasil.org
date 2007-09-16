@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Pré-visualização do comentário{% endblock %}
+
+{% block cssid %}error{% endblock %}
+
+{% block accesslink %}
+    <ul class="hidden">
+	<li><a href="#principal">Pular para o conteúdo</a></li>
+    </ul>
+{% endblock %}
+
+{% block billboard %}<h2>Comentário</h2>{% endblock %}
+
+{% block wrap %}
+<div id="principal">
+    <div class="limite">
+
+
+	<h1>Veja seu comentário</h1>
+
+	<form action="../postfree/" method="post">
+
+	    {% if comment_form.has_errors %}
+	    <p><strong style="color: red;">Please correct the following errors.</strong></p>
+	    {% else %}
+	    <div class="comment">
+		{{ comment.comment|escape|urlizetrunc:"40"|linebreaks }}
+		<p>Publicado por <strong>{{ comment.person_name|escape }}</strong></p>
+	    </div>
+
+	    <button type="submit" name="post">Publicar comentário</button>
+
+	    <h1>Ou edite novamente</h1>
+	    {% endif %}
+
+	    {% if comment_form.person_name.errors %}
+	    {{ comment_form.person_name.html_error_list }}
+	    {% endif %}
+
+	    <p>
+		<label for="id_person_name">Seu nome:</label>
+		{{ comment_form.person_name }}
+           </p>
+
+	    {% if comment_form.comment.errors %}
+	    {{ comment_form.comment.html_error_list }}
+	    {% endif %}
+
+	    <p>
+		<label for="id_person_name">Comment:</label><br>
+		{{ comment_form.comment }}
+	    </p>
+	    <input type="hidden" name="options" value="{{ options }}">
+	    <input type="hidden" name="target" value="{{ target }}">
+	    <input type="hidden" name="gonzo" value="{{ hash }}">
+	    <p><button type="submit" name="preview">Visualizar comentário revisado</button></p>
+	</form>
+    </div>
+</div>
+{% endblock %}
