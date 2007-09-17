@@ -47,9 +47,11 @@ Latest entries / post index
 .entry .meta h6 {
     color: #333;
     display: inline;
-    margin-right: 4px;
-    padding-right: 7px;
-    border-right: 1px solid #333;
+}
+.entry .meta a {
+    margin-left: 4px;
+    padding-left: 7px;
+    border-left: 1px solid #333;
 }
 
 /* comments */
