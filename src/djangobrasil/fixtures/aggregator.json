@@ -1,0 +1,240 @@
+[
+    {
+        "pk": 1, 
+        "model": "aggregator.feed", 
+        "fields": {
+            "is_defunct": false, 
+            "public_url": "http:\/\/www.example.net\/", 
+            "feed_url": "http:\/\/www.example.net\/", 
+            "title": "Exemplo"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:15:19", 
+            "title": "Exemplo de conte\u00fado", 
+            "summary": "Este \u00e9 um conte\u00fado de exemplo para a aplica\u00e7\u00e3o \"aggregator\". Voc\u00ea pode adicionar um feed v\u00e1lido pela interface administrativa desse site: http:\/\/localhost\/admin\/. Para baixar os feeds, voc\u00ea dever\u00e1 utilizar os scripts dispon\u00edveis em src\/djangobrasil\/apps\/aggregator\/bin. N\u00e3o esque\u00e7a de deletar o feed de exemplo! ;-)", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:15:11", 
+            "title": "Lorem ipsum dolor", 
+            "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vestibulum imperdiet, neque a interdum imperdiet, tellus sapien suscipit odio, vitae venenatis lacus nisi vitae nisi. Duis nonummy, orci sit amet pharetra congue, ipsum dolor lacinia odio, non adipiscing turpis mauris ut tellus. Donec vitae diam. Praesent nonummy turpis. In sagittis congue ligula. Etiam mattis diam ac velit. Phasellus nec purus. Suspendisse scelerisque tincidunt quam. Donec venenatis blandit nibh. Aenean malesuada vulputate nibh. Sed lobortis tellus luctus ligula. Aenean elit justo, bibendum in, pellentesque ac, pulvinar ut, enim. In feugiat pede in nunc. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut sapien. Praesent tempus, nulla non eleifend consequat, ante nulla suscipit libero, non pulvinar felis felis nonummy metus. Donec rhoncus aliquet tortor. Praesent egestas porta purus.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-02"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:15:04", 
+            "title": "Quisque non eros", 
+            "summary": "Quisque non eros non ligula aliquet bibendum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam fringilla purus eu velit. Fusce ullamcorper pede in purus. Nullam suscipit odio sit amet quam. Vivamus vitae mi. Nullam ut augue. Suspendisse dapibus elit at lorem. Praesent purus leo, aliquet et, vestibulum nec, commodo id, arcu. Phasellus condimentum nisl eu lorem. Fusce enim enim, ultricies vitae, ultrices id, pretium a, massa. Etiam pellentesque rutrum lorem.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-10"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:14:57", 
+            "title": "Nam ligula dolor", 
+            "summary": "Nam ligula dolor, vulputate eget, scelerisque eu, feugiat a, nibh. Mauris eleifend tempor velit. Integer vitae quam ac ipsum pellentesque congue. Aenean sollicitudin lorem dapibus eros. Donec varius blandit tortor. Aenean diam metus, vehicula vitae, vestibulum sed, euismod vel, urna. Aliquam scelerisque volutpat elit. Pellentesque luctus ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam sed pede id diam rutrum fringilla. Curabitur fringilla tincidunt augue. Vivamus dui elit, dapibus et, feugiat at, dignissim ac, odio. Etiam gravida rhoncus tellus. Donec ut metus. Aliquam ultrices.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-20"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:14:43", 
+            "title": "Cum sociis natoque penatibus", 
+            "summary": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam fringilla purus eu velit. Fusce ullamcorper pede in purus. Nullam suscipit odio sit amet quam. Vivamus vitae mi. Nullam ut augue. Suspendisse dapibus elit at lorem. Praesent purus leo, aliquet et, vestibulum nec, commodo id, arcu. Phasellus condimentum nisl eu lorem. Fusce enim enim, ultricies vitae, ultrices id, pretium a, massa. Etiam pellentesque rutrum lorem.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-11"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:14:31", 
+            "title": "Lorem ipsum dolor", 
+            "summary": "Quisque non eros non ligula aliquet bibendum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam fringilla purus eu velit. Fusce ullamcorper pede in purus. Nullam suscipit odio sit amet quam. Vivamus vitae mi. Nullam ut augue. Suspendisse dapibus elit at lorem. Praesent purus leo, aliquet et, vestibulum nec, commodo id, arcu. Phasellus condimentum nisl eu lorem. Fusce enim enim, ultricies vitae, ultrices id, pretium a, massa. Etiam pellentesque rutrum lorem.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-12"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:14:10", 
+            "title": "Aliquam scelerisque volutpat elit", 
+            "summary": "Aenean sollicitudin lorem dapibus eros. Donec varius blandit tortor. Aenean diam metus, vehicula vitae, vestibulum sed, euismod vel, urna.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-07"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:14:03", 
+            "title": "Quisque non eros", 
+            "summary": "Quisque non eros non ligula aliquet bibendum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam fringilla purus eu velit. Fusce ullamcorper pede in purus. Nullam suscipit odio sit amet quam. Vivamus vitae mi. Nullam ut augue. Suspendisse dapibus elit at lorem. Praesent purus leo, aliquet et, vestibulum nec, commodo id, arcu. Phasellus condimentum nisl eu lorem. Fusce enim enim, ultricies vitae, ultrices id, pretium a, massa. Etiam pellentesque rutrum lorem.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-13"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:13:57", 
+            "title": "Nam ligula dolor", 
+            "summary": "Nam ligula dolor, vulputate eget, scelerisque eu, feugiat a, nibh. Mauris eleifend tempor velit. Integer vitae quam ac ipsum pellentesque congue. Aenean sollicitudin lorem dapibus eros. Donec varius blandit tortor. Aenean diam metus, vehicula vitae, vestibulum sed, euismod vel, urna. Aliquam scelerisque volutpat elit. Pellentesque luctus ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam sed pede id diam rutrum fringilla. Curabitur fringilla tincidunt augue. Vivamus dui elit, dapibus et, feugiat at, dignissim ac, odio. Etiam gravida rhoncus tellus. Donec ut metus. Aliquam ultrices.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-08"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:13:41", 
+            "title": "Quisque non eros", 
+            "summary": "Quisque non eros non ligula aliquet bibendum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam fringilla purus eu velit. Fusce ullamcorper pede in purus. Nullam suscipit odio sit amet quam. Vivamus vitae mi. Nullam ut augue. Suspendisse dapibus elit at lorem. Praesent purus leo, aliquet et, vestibulum nec, commodo id, arcu. Phasellus condimentum nisl eu lorem. Fusce enim enim, ultricies vitae, ultrices id, pretium a, massa. Etiam pellentesque rutrum lorem.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-14"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:13:20", 
+            "title": "Lorem ipsum dolor", 
+            "summary": "Nam ligula dolor, vulputate eget, scelerisque eu, feugiat a, nibh. Mauris eleifend tempor velit. Integer vitae quam ac ipsum pellentesque congue. Aenean sollicitudin lorem dapibus eros. Donec varius blandit tortor. Aenean diam metus, vehicula vitae, vestibulum sed, euismod vel, urna. Aliquam scelerisque volutpat elit. Pellentesque luctus ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam sed pede id diam rutrum fringilla. Curabitur fringilla tincidunt augue. Vivamus dui elit, dapibus et, feugiat at, dignissim ac, odio. Etiam gravida rhoncus tellus. Donec ut metus. Aliquam ultrices. Varius blandit tortor. Aenean diam metus, vehicula vitae, vestibulum sed, euismod vel, urna. Scelerisque volutpat elit. Pellentesque luctus ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-04"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:12:59", 
+            "title": "Quisque non eros", 
+            "summary": "Quisque non eros non ligula aliquet bibendum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam fringilla purus eu velit. Fusce ullamcorper pede in purus. Nullam suscipit odio sit amet quam. Vivamus vitae mi. Nullam ut augue. Suspendisse dapibus elit at lorem. Praesent purus leo, aliquet et, vestibulum nec, commodo id, arcu. Phasellus condimentum nisl eu lorem. Fusce enim enim, ultricies vitae, ultrices id, pretium a, massa. Etiam pellentesque rutrum lorem.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-03"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:12:46", 
+            "title": "Vulputate eget, scelerisque eu, feugiat a, nibh", 
+            "summary": "Vulputate eget, scelerisque eu, feugiat a, nibh. Mauris eleifend tempor velit. Integer vitae quam ac ipsum pellentesque congue. Aenean sollicitudin lorem dapibus eros. Donec varius blandit tortor. Aenean diam metus, vehicula vitae, vestibulum sed, euismod vel, urna. Aliquam scelerisque volutpat elit. Pellentesque luctus ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam sed pede id diam rutrum fringilla. Curabitur fringilla tincidunt augue. Vivamus dui elit, dapibus et, feugiat at, dignissim ac, odio. Etiam gravida rhoncus tellus. Donec ut metus. Aliquam ultrices. Curabitur fringilla tincidunt augue.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-05"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:12:24", 
+            "title": "Lorem ipsum dolor", 
+            "summary": "Nam ligula dolor, vulputate eget, scelerisque eu, feugiat a, nibh. Mauris eleifend tempor velit. Integer vitae quam ac ipsum pellentesque congue. Aenean sollicitudin lorem dapibus eros. Donec varius blandit tortor. Aenean diam metus, vehicula vitae, vestibulum sed, euismod vel, urna. Aliquam scelerisque volutpat elit. Pellentesque luctus ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam sed pede id diam rutrum fringilla. Curabitur fringilla tincidunt augue. Vivamus dui elit, dapibus et, feugiat at, dignissim ac, odio. Etiam gravida rhoncus tellus. Donec ut metus. Aliquam ultrices.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-09"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:12:10", 
+            "title": "Quisque non eros", 
+            "summary": "Quisque non eros non ligula aliquet bibendum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam fringilla purus eu velit. Fusce ullamcorper pede in purus. Nullam suscipit odio sit amet quam. Vivamus vitae mi. Nullam ut augue. Suspendisse dapibus elit at lorem. Praesent purus leo, aliquet et, vestibulum nec, commodo id, arcu. Phasellus condimentum nisl eu lorem. Fusce enim enim, ultricies vitae, ultrices id, pretium a, massa. Etiam pellentesque rutrum lorem.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-15"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:11:54", 
+            "title": "Nam ligula dolor", 
+            "summary": "Nam ligula dolor, vulputate eget, scelerisque eu, feugiat a, nibh. Mauris eleifend tempor velit. Integer vitae quam ac ipsum pellentesque congue. Aenean sollicitudin lorem dapibus eros. Donec varius blandit tortor. Aenean diam metus, vehicula vitae, vestibulum sed, euismod vel, urna. Aliquam scelerisque volutpat elit. Pellentesque luctus ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam sed pede id diam rutrum fringilla. Curabitur fringilla tincidunt augue. Vivamus dui elit, dapibus et, feugiat at, dignissim ac, odio. Etiam gravida rhoncus tellus. Donec ut metus. Aliquam ultrices.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-17"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:11:40", 
+            "title": "Etiam fringilla purus eu velit", 
+            "summary": "Ligula aliquet bibendum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam fringilla purus eu velit. Fusce ullamcorper pede in purus. Nullam suscipit odio sit amet quam. Vivamus vitae mi. Nullam ut augue. Suspendisse dapibus elit at lorem. Praesent purus leo, aliquet et, vestibulum nec, commodo id, arcu. Phasellus condimentum nisl eu lorem. Fusce enim enim, ultricies vitae, ultrices id, pretium a, massa. Etiam pellentesque rutrum lorem.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-16"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:04:06", 
+            "title": "Lorem ipsum dolor", 
+            "summary": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam fringilla purus eu velit. Fusce ullamcorper pede in purus. Nullam suscipit odio sit amet quam. Vivamus vitae mi.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-06"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "aggregator.feeditem", 
+        "fields": {
+            "feed": 1, 
+            "date_modified": "2007-09-16 21:03:47", 
+            "title": "Vivamus vitae mi", 
+            "summary": "Vivamus vitae mi. Nullam ut augue. Suspendisse dapibus elit at lorem. Praesent purus leo, aliquet et, vestibulum nec, commodo id, arcu. Phasellus condimentum nisl eu lorem. Fusce enim enim, ultricies vitae, ultrices id, pretium a, massa. Etiam pellentesque rutrum lorem. Quisque non eros non ligula aliquet bibendum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam fringilla purus eu velit. Fusce ullamcorper pede in purus. Nullam suscipit odio sit amet quam. Fusce condimentum nisl eu lorem... enim enim, ultricies vitae, ultrices id, pretium a. Condimentum nisl eu lorem. Fusce enim enim, ultricies vitae, ultrices id, pretium a, massa. Etiam pellentesque rutrum lorem. Quisque non eros non ligula aliquet bibendum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fringilla purus eu velit. Fusce ullamcorper pede in purus. Suscipit odio sit amet quam. Fusce condimentum nisl eu lorem... enim enim, ultricies vitae, ultrices id, pretium a.", 
+            "link": "http:\/\/www.example.net", 
+            "guid": "example-01"
+        }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "pk": 1, 
+        "model": "blog.entry", 
+        "fields": {
+            "body": "<p>Ol\u00e1 mundo, eu estou <strong>vivo<\/strong>!\n<\/p>\n<p>Este texto foi escrito utilizando a linguagem de marca\u00e7\u00e3o <em>Markdown<\/em>. Voc\u00ea tem tamb\u00e9m a op\u00e7\u00e3o de escolher outras linguagens de marca\u00e7\u00e3o ao editar esse texto utilizando a <a href=\"\/admin\/\">interface de administra\u00e7\u00e3o<\/a>.\n<\/p>", 
+            "body_source": "Ol\u00e1 mundo, eu estou **vivo**!\n\nEste texto foi escrito utilizando a linguagem de marca\u00e7\u00e3o *Markdown*. Voc\u00ea tem tamb\u00e9m a op\u00e7\u00e3o de escolher outras linguagens de marca\u00e7\u00e3o ao editar esse texto utilizando a [interface de administra\u00e7\u00e3o](\/admin\/).", 
+            "pub_date": "2007-09-16 19:35:09", 
+            "markup": "markdown", 
+            "title": "Ol\u00e1 mundo!", 
+            "is_draft": false, 
+            "slug": "ola-mundo"
+        }
+    }
+]

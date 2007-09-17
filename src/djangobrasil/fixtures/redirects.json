@@ -1,0 +1,20 @@
+[
+    {
+        "pk": 1, 
+        "model": "redirects.redirect", 
+        "fields": {
+            "new_path": "\/weblog\/", 
+            "site": 1, 
+            "old_path": "\/blog\/"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "redirects.redirect", 
+        "fields": {
+            "new_path": "\/documentacao\/", 
+            "site": 1, 
+            "old_path": "\/docs\/"
+        }
+    }
+]
