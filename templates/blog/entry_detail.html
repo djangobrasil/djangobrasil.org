@@ -5,7 +5,6 @@
 {% block content-main %}
 <div class="limite">
     <div class="entry">
-	{% load comments %}
 	{% load humanize %}
 	<h1><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h1>
 	
@@ -28,7 +27,7 @@
 	{% if comment_list %}
 	<ol>
 	    {% for comment in comment_list %}
-	    <li class="comment" id="c{{ comment.id }}">
+	    <li {% cycle 'class="odd"' '' %} id="c{{ comment.id }}">
 		<strong class="name">
 		    {{ comment.person_name|escape }} 
 		    <span>
