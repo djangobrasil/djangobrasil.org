@@ -112,4 +112,4 @@ except ImportError:
         warn(msg)
 
 import sys
-sys.path += SITE_PACKAGES_PATHS
+sys.path = SITE_PACKAGES_PATHS + sys.path
