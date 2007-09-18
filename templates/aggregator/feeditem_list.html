@@ -4,12 +4,12 @@
 <link rel="alternate" 
       title="Comunidade (Atom)" 
       href="/feeds/atom/comunidade/"
-      type="application/atom+xml" />
+      type="application/atom+xml">
 
 <link rel="alternate"
       title="Comunidade (RSS)"
       href="/feeds/rss/comunidade/"
-      type="application/rss+xml" />
+      type="application/rss+xml">
 {% endblock %}
 
 {% block content-main %}
@@ -27,8 +27,8 @@
 		às {{ item.date_modified|date:"G\hi" }}</h6>
 	    <a href="{{ item.feed.public_url }}">{{ item.feed.title }}</a> 
 	    <a href="{{ item.feed.feed_url }}">
-		<img class="feed" src="/media/images/icon-feed.gif"
-		     alt="feed" /></a></p>
+		<img class="feed" src="/media/images/icon-feed.gif" 
+		     alt="feed"></a>
 	</div>
 	<p>
 	    {{ item.summary }}

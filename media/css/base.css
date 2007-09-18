@@ -84,6 +84,8 @@ input[type=hidden] { display: none; }
 
 hr, .hidden { display: none; }
 
+input[type=hidden] { display: none !important; }
+
 option { padding: 0 5px; }
 /********************
 Fim das estilizaçoes gerais

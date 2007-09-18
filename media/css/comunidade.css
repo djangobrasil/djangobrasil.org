@@ -58,6 +58,8 @@ Latest entries / post index
 /********************
 Sidebar
 ********************/
+#lateral h4 { padding-top: 10px; }
+
 #feeds a:link {
     font-weight: normal;
     text-decoration: none;
@@ -73,6 +75,8 @@ Sidebar
 	color: #000;
 	padding: 0 5px;
 }
+
+#lateral legend { display: none; }
 /********************
 End: sidebar
 ********************/

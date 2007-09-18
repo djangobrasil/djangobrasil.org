@@ -5,46 +5,56 @@
 {% block billboard %}<h2>Comentários do site</h2>{% endblock %}
 
 {% block extrahead %}
-  <link rel="alternate" type="application/rss+xml" title="Comentários (RSS)" href="/feeds/rss/comments/" />
+  <link rel="alternate" type="application/rss+xml" title="Comentários (RSS)" href="/feeds/rss/comments/">
 {% endblock %}
 
 {% block content-main %}
 <div class="limite">
     <h1>Comentários recentes</h1>
     
-    <p>
+    <div class="pagination pag-top">
 	{% if has_previous %}
-	<a href="?page={{ previous }}">Previous</a> |
+	<a href="?page={{ previous }}" class="previous">Anterior</a> |
 	{% endif %}
-	Page {{ page }} of {{ pages }}
+	Página {{ page }} de {{ pages }}
 	{% if has_next %}
-	| <a href="?page={{ next }}">Next</a>
+	| <a href="?page={{ next }}" class="next">Próxima</a>
 	{% endif %}
-    </p>
+    </div>
 
     {% for comment in object_list %}
-    <div class="comment" id="c{{ comment.id }}">
+    <div class="freecomment" id="c{{ comment.id }}">
 	<h3>
 	    <a href="{{ comment.get_absolute_url }}">
 		{{ comment.person_name|escape }}
-		<span class="small quiet">
-		    {{ comment.submit_date|date:"F j, Y" }} at {{ comment.submit_date|date:"P" }}
+		<span>
+		    ({{ comment.submit_date|date:"F j, Y" }} às {{ comment.submit_date|date:"P" }})
 		</span>
 	    </a>
-	    {% if perms.comments.delete_freecomment %}
-	    <form style="display: inline" action="/admin/comments/freecomment/{{ comment.id }}/delete/" method="post">
-		<input type="hidden" name="post" value="yes" />
-		<input type="hidden" name="next" value="/comments/" />
-		<input type="submit" value="X" style="padding: 0; font-size: 9px; border-width: 1px;" />
-	    </form>
-	    {% endif %}
 	</h3>
 	{{ comment.comment|escape|urlizetrunc:"40"|linebreaks }}
+
+	{% if perms.comments.delete_freecomment %}
+	<form action="/admin/comments/freecomment/{{ comment.id }}/delete/" method="post">
+	<fieldset>
+	    <legend>Deletar comentário</legend>
+	    <input type="hidden" name="post" value="yes">
+	    <input type="hidden" name="next" value="/comments/">
+	    <button type="submit" value="Deletar">Deletar</button>
+	</fieldset>
+	</form>
+	{% endif %}
     </div>
     {% endfor %}
     
-    <p>{% if has_previous %}<a href="?page={{ previous }}">Previous</a> | {% endif %}
-	Page {{ page }} of {{ pages }}
-	{% if has_next %} | <a href="?page={{ next }}">Next</a>{% endif %}</p>
+    <div class="pagination">
+	{% if has_previous %}
+	<a href="?page={{ previous }}" class="previous">Anterior</a> |
+	{% endif %}
+	Página {{ page }} de {{ pages }}
+	{% if has_next %}
+	| <a href="?page={{ next }}" class="next">Próxima</a>
+	{% endif %}
+    </div>
 </div>
 {% endblock %}

@@ -10,7 +10,7 @@
 
 {% block content-related %}
 <div class="limite">
-    <h4>Involva-se</h4>
+    <h4>Envolva-se</h4>
 
     <p>O <strong>Django Brasil</strong> é um grupo de usuários e
 	pesquisadores brasileiros de <strong>Django</strong>, uma
@@ -47,21 +47,33 @@
     </ul>
 
     <h4>Listas de discussão</h4>
+    
+    <ul>
+	<li>
+	    <p><strong><a href="http://lista.djangobrasil.org/">Usuários do
+			Django no Brasil</a></strong>: Lista de
+		discussão de ajuda ao Django em português.</p>
 
-    <p><strong><a href="http://lista.djangobrasil.org/">Usuários do
-		Django no Brasil</a></strong>: Lista de
-	discussão de ajuda ao Django em português.</p>
+	    <form action="http://groups.google.com/group/django-brasil/boxsubscribe">
+	    <fieldset>
+		<legend>Iscreva-se na lista Django-Brasil</legend>
+		<input type="text" name="email" size="15"> <button type="submit">Inscrever</button>
+	    </fieldset>
+	    </form>
+	</li>
 
-    <form action="http://groups.google.com/group/django-brasil/boxsubscribe">
-	<p><input type="text" name="email" size="15"> <button type="submit">Inscrever</button></p>
-    </form>
+	<li>
+	    <p><strong><a href="http://groups.google.com/group/django-l10n-portuguese">django-l10n-portuguese</a></strong>:
+	    Equipe de localização e tradução do Django para o português.</p>
 
-    <p><strong><a href="http://groups.google.com/group/django-l10n-portuguese">django-l10n-portuguese</a></strong>:
-    Equipe de localização e tradução do Django para o português.</p>
-
-    <form action="http://groups.google.com/group/django-l10n-portuguese/boxsubscribe">
-	<p><input type="text" name="email" size="15"> <button type="submit">Inscrever</button></p>
-    </form>
+	    <form action="http://groups.google.com/group/django-l10n-portuguese/boxsubscribe">
+	    <fieldset>
+		<legend>Iscreva-se na lista de localização</legend>
+		<input type="text" name="email" size="15"> <button type="submit">Inscrever</button>
+	    </fieldset>
+	    </form>
+	</li>
+    </ul>
 
     <h4>Diga ao mundo</h4>
     <ul>
@@ -99,7 +111,7 @@
 	    <a href="{{ feed.public_url }}">{{ feed }}</a> 
 	    <a href="{{ feed.feed_url }}">
 		<img class="feed" src="/media/images/icon-feed.gif"
-		     alt="feed" />
+		     alt="feed">
 	    </a>
 	</li>
 	{% endfor %}
