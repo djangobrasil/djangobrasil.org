@@ -1,0 +1,5 @@
+{{ obj.comment|linebreaks }}
+
+<p><i>Publicado por {{ obj.person_name }} em 
+{{ obj.submit_date|date:"d/m/Y" }} às {{ obj.submit_date|date:"P" }}
+na página {{ obj.get_content_object }}</i></p>
