@@ -68,7 +68,7 @@ body {
 /* Fim: Containers */
 
 /* Clearfix */
-#wrap:after, #conteudo:after, #rodape ul:after {
+.clearfix:after {
 	content: ".";
 	display: block;
 	clear: both;
@@ -125,6 +125,7 @@ Cabeçalho
 #cabecalho li {
 	float: left;
 	padding: 0;
+	padding-left: 3px;
 	background: none;
 }
 
@@ -148,11 +149,11 @@ Cabeçalho
 	background: url(../images/item-menu-right.gif) no-repeat right;
 }
 
-#homepage #nav-homepage a, #download #nav-download a, #docs #nav-docs a, #weblog #nav-weblog a,  #comunidade #nav-comunidade a, #links #nav-links a, #contato #nav-contato a { 
+#homepage #nav-homepage a, #download #nav-download a, #docs #nav-docs a, #weblog #nav-weblog a,  #comunidade #nav-comunidade a, #contato #nav-contato a { 
         background: #0B7D52 url(../images/item-menu-left.gif) no-repeat left; 
 }
 
-#homepage #nav-homepage a span, #download #nav-download a span, #docs #nav-docs a span, #weblog #nav-weblog a span, #comunidade #nav-comunidade a span, #links #nav-links a span, #contato #nav-contato a span { 
+#homepage #nav-homepage a span, #download #nav-download a span, #docs #nav-docs a span, #weblog #nav-weblog a span, #comunidade #nav-comunidade a span, #contato #nav-contato a span { 
 	color: #FFF;
 	background: url(../images/item-menu-right.gif) no-repeat right;        
 }

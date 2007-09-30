@@ -23,7 +23,7 @@
     </div>
 
     {% for comment in object_list %}
-    <div class="freecomment" id="c{{ comment.id }}">
+    <div class="freecomment clearfix" id="c{{ comment.id }}">
 	<h3>
 	    <a href="{{ comment.get_absolute_url }}">
 		{{ comment.person_name|escape }}

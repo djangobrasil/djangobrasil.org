@@ -1,0 +1,80 @@
+/*
+ *  Copyright (c) 2007 Jader Rubini
+ *
+ *  This file is part of Django Brasil Project Site.
+ *
+ *  Django Brasil Project is free software; you can redistribute it
+ *  and/or modify it under the terms of the GNU General Public License
+ *  as published by the Free Software Foundation; either version 3 of
+ *  the License, or (at your option) any later version.
+ *
+ *  Django Brasil Project is distributed in the hope that it will be
+ *  useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ *  of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+
+@charset "utf-8";
+
+/* Mensagens de erro */
+#principal h3.error {
+    line-height: 1em;
+    margin: 0 5px 15px;
+    padding: 0;
+    border: 1px solid #D56464;
+    background-color: #D56464;
+}
+
+.error strong {
+    color: #FFF;
+    line-height: 30px;
+    padding: 0 8px;
+}
+
+/* Formulário */
+#principal form {
+    width: 60%;
+    padding-left: 7px;
+}
+
+#principal legend { display: none; }
+
+#principal label {
+    display: block;
+    margin-bottom: 3px;
+}
+
+#principal label kbd { border-bottom: 1px dotted; }
+
+#principal label span {
+    font-size: 0.85em;
+    color: #999;
+}
+
+#principal input, #principal textarea {
+    display: block;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: 1px solid #ECECEC;
+    background-color: #F7F7F7;
+}
+
+#principal input:focus, #principal textarea:focus {
+    border-color: #D7D7D7;
+    background-color: #EFEFEF;
+}
+
+#principal input, #principal textarea { width: 95%; }
+
+#principal textarea { margin-bottom: 5px; }
+
+#principal button {
+    float: right;
+    margin-right: 7px;
+    padding: 1px 8px;
+}

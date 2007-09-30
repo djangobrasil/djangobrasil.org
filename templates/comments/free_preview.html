@@ -34,21 +34,23 @@
 	    <h1>Ou edite novamente</h1>
 	    {% endif %}
 
-	    {% if comment_form.person_name.errors %}
-	    {{ comment_form.person_name.html_error_list }}
-	    {% endif %}
-
 	    <p>
 		<label for="id_person_name">Seu nome:</label>
+
+		{% if comment_form.person_name.errors %}
+		{{ comment_form.person_name.html_error_list }}
+		{% endif %}
+
 		{{ comment_form.person_name }}
            </p>
 
-	    {% if comment_form.comment.errors %}
-	    {{ comment_form.comment.html_error_list }}
-	    {% endif %}
-
 	    <p>
-		<label for="id_person_name">Comment:</label><br>
+		<label for="id_person_name">Comentário:</label>
+
+		{% if comment_form.comment.errors %}
+		{{ comment_form.comment.html_error_list }}
+		{% endif %}
+
 		{{ comment_form.comment }}
 	    </p>
 	    <input type="hidden" name="options" value="{{ options }}">

@@ -20,7 +20,32 @@
 
 from django.contrib import databrowse
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render_to_response
+from djangobrasil.forms import ContactForm
+from djangobrasil.settings import MANAGERS
 
 def db(*args, **kwargs):
     return databrowse.site.root(*args, **kwargs)
 db = login_required(db)
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = request.POST.get('subject', '')
+            message = request.POST.get('message', '')
+            from_email = '%s <%s>' % (request.POST.get('name', ''),
+                                      request.POST.get('from_email', ''))
+            try:
+                send_mail(subject, message, from_email, MANAGERS,
+                          fail_silently=False)
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return HttpResponseRedirect('/contato/?enviado=ok')
+    else:
+        form = ContactForm()
+    enviado = bool(request.GET.get('enviado', ''))
+    return render_to_response('flatfiles/contato.html',
+                              {'form': form, 'enviado': enviado})

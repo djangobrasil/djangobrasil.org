@@ -8,17 +8,86 @@
 
 {% block billboard %}<h2>Entre em contato</h2>{% endblock %}
 
-{% block accesslink %}
-<ul class="hidden">
-    <li><a href="#conteudo">Pular para o conteúdo</a></li>
-    <li><a href="#info">Pular para o download e links da
-	    documentação</a></li>
-    <li><a href="#weblog">Pular para a lista de entradas do
-	    weblog</a></li>
-</ul>
-{% endblock %}
-
 {% block content-main %}
 <div class="limite">
+    <h2>Contato</h2>
+
+    {% if form.errors %}
+    <h3 class="error"><strong>Por favor, preencha todos os campos
+	    corretamente.</strong></h3>
+    {% endif %}
+
+    {% if enviado %}
+    <h3 class="enviado"><strong>Mensagem enviada com sucesso.</strong></h3>
+    {% endif %}
+
+    <form method="post" action="">
+    <fieldset>
+	<legend>Preencha os campos abaixo para entrar contato conosco</legend>
+
+	<ul class="clearfix">
+	    <li>
+		<label for="name"><kbd title="Shift+Alt+N">N</kbd>ome: <span>(obrigatório)</span></label>
+		<input type="text" name="name" id="name" accesskey="n"
+		       value="{%firstof form.name.data %}">
+	    </li>
+	
+	    <li>
+		<label for="from_email"><kbd title="Shift+Alt+E">E</kbd>-mail: <span>(obrigatório)</span></label>
+		<input type="text" name="from_email" id="from_email"
+		       accesskey="e" value="{% firstof form.from_email.data %}">
+	    </li>
+	
+	    <li class="wide">
+		<label for="subject"><kbd title="Shift+Alt+A">A</kbd>ssunto: <span>(obrigatório)</span></label>
+		<input type="text" name="subject" id="subject"
+		       accesskey="a" value="{% firstof form.subject.data %}">
+	    </li>
+	
+	    <li class="wide">
+		<label for="message"><kbd title="Shift+Alt+M">M</kbd>ensagem: <span>(obrigatório)</span></label>
+		<textarea name="message" id="message" accesskey="m"
+		rows="5" cols="50" title="Digite sua mensagem">{% firstof form.message.data %}</textarea>
+	    </li>
+	</ul>
+
+	<button type="submit" title="Enviar mensagem">Enviar</button>
+    </fieldset>
+    </form>
+</div>
+{% endblock %}
+
+{% block content-related %}
+<div class="limite">
+    <h4>Procurando por ajuda?</h4>
+    <ul>
+	<li><strong><a href="/documentacao/faq/">Verifique nosso FAQ</a> primeiro</strong>.
+	    Se você tem uma questão básica que não foi respondida pelo
+	    FAQ, tire sua dúvida em nossa 
+	    <a href="http://lista.djangobrasil.org/">lista de
+	    discussão</a>.</li>
+	<li><strong>Converse com outros usuários brasileiros do
+		Django</strong> em nossa sala de bate-papo no canal
+	    <a href="pt.wikipedia.org/wiki/IRC">IRC</a>
+	    <a href="irc://irc.freenode.net/django">#django-br</a> da
+	    rede FreeNode (irc.freenode.net).</li>
+    </ul>
+
+    <h4>Lista de discussão</h4>
+    
+    <ul>
+	<li>
+	    <p><strong><a href="http://lista.djangobrasil.org/">Usuários do
+			Django no Brasil</a></strong>: Lista de
+		discussão de ajuda ao Django em português.</p>
+
+	    <form action="http://groups.google.com/group/django-brasil/boxsubscribe">
+	    <fieldset>
+		<legend>Inscreva-se na lista Django-Brasil</legend>
+		<input type="text" name="email" size="15"> <button type="submit">Inscrever</button>
+	    </fieldset>
+	    </form>
+	</li>
+    </ul>
 </div>
 {% endblock %}

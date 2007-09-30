@@ -21,6 +21,7 @@
 
 @charset "utf-8";
 @import "base.css";
+@import "formulario.css";
 
 #principal h3 { color: #076944; }
 /********************
@@ -83,40 +84,6 @@ Latest entries / post index
 #comments p { margin: 7px 0 0; }
 
 
-/* comment form */
-#principal form {
-    width: 60%;
-    padding-left: 7px;
-}
-#principal legend { display: none; }
-#principal label {
-    display: block;
-    margin-bottom: 3px;
-}
-#principal label kbd { border-bottom: 1px dotted; }
-#principal label span {
-    font-size: 0.85em;
-    color: #999;
-}
-#principal input, #principal textarea {
-    display: block;
-    margin-bottom: 20px;
-    padding: 5px;
-    border: 1px solid #ECECEC;
-    background-color: #F7F7F7;
-}
-#principal input:focus, #principal textarea:focus {
-    border-color: #D7D7D7;
-    background-color: #EFEFEF;
-}
-#principal input, #principal textarea { width: 95%; }
-#principal textarea { margin-bottom: 5px; }
-#principal button {
-    float: right;
-    margin-right: 7px;
-    padding: 1px 8px;
-}
-
 /* freecomment list */
 .pagination {
    text-align: center;
@@ -144,17 +111,6 @@ Latest entries / post index
    padding: 10px;
    padding-bottom: 0;
    border-bottom: 1px dashed #CCC;
-}
-
-.freecomment:after {
-   content: ".";
-   display: block;
-   clear: both;
-   height: 0;
-   padding: 0;
-   margin: 0;
-   overflow: hidden;
-   visibility: hidden;
 }
 
 .freecomment h3 span {

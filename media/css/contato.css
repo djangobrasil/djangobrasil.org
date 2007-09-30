@@ -23,20 +23,36 @@
 @import "base.css";
 @import "formulario.css";
 
-html {
-    padding-bottom: 146px;
-    background: url(../images/principal-top.png) repeat-x bottom;
+#principal form {
+    width: 100%;
+    padding: 0;
+}
+form ul, form li {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+form li {
+    width: 50%;
+}
+form li.wide { width: 100%; }
+#principal input { width: 98%; }
+#principal textarea { width: 98%; }
+
+#lateral legend { display: none; }
+
+
+#principal h3.enviado {
+    line-height: 1em;
+    margin: 0 5px 15px;
+    padding: 0;
+    border: 1px solid #7DAE59;
+    background-color: #7DAE59;
 }
 
-#principal { width: 100%; }
-
-#principal .limite {
-    min-height: 155px;
-    border: none;
+.enviado strong {
+    color: #FFF;
+    line-height: 30px;
+    padding: 0 8px;
 }
 
-* html #principal .limite { height: 155px; }
-
-#rodape { padding-top: 0; }
-
-#rodape ul { display: none; }

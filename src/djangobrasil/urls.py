@@ -32,6 +32,7 @@ from djangobrasil.apps.aggregator.feeds import RssCommunityAggregatorFeed, AtomC
 
 databrowse.site.register(Entry)
 databrowse.site.register(FeedItem)
+databrowse.site.register(FreeComment)
 
 comments_info_dict = {
     'queryset': FreeComment.objects.all(),
@@ -97,5 +98,9 @@ urlpatterns = patterns(
 
     # comunidade
     (r'^comunidade/$', 'django.views.generic.list_detail.object_list', aggregator_info_dict),
+
+    # contato
+    (r'^contato/$', 'djangobrasil.views.contact'),
+    #(r'^contato/$', 'django.views.generic.simple.direct_to_template', {'template': 'flatfiles/contato.html'}),
 
 )
