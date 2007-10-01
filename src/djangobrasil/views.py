@@ -18,17 +18,12 @@
 #
 
 
-from django.contrib import databrowse
-from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from djangobrasil.forms import ContactForm
 from djangobrasil.settings import MANAGERS
 
-def db(*args, **kwargs):
-    return databrowse.site.root(*args, **kwargs)
-db = login_required(db)
 
 def contact(request):
     if request.method == 'POST':

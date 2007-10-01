@@ -19,6 +19,7 @@
 
 
 from django.conf.urls.defaults import *
+from django.contrib.auth.decorators import login_required
 from django.contrib.comments.feeds import LatestFreeCommentsFeed
 from django.contrib.comments.models import FreeComment
 from django.contrib import databrowse
@@ -85,7 +86,7 @@ urlpatterns = patterns(
     (r'^comments/', include('django.contrib.comments.urls.comments')),
 
     # databrowse
-    (r'^db/(.*)', 'djangobrasil.views.db'),
+    (r'^db/(.*)', login_required(databrowse.site.root)),
 
     # admin
     (r'^admin/', include('django.contrib.admin.urls')),
@@ -101,6 +102,5 @@ urlpatterns = patterns(
 
     # contato
     (r'^contato/$', 'djangobrasil.views.contact'),
-    #(r'^contato/$', 'django.views.generic.simple.direct_to_template', {'template': 'flatfiles/contato.html'}),
 
 )
