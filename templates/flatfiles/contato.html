@@ -6,6 +6,13 @@
 
 {% block title %}Contato{% endblock %}
 
+{% block accesslink %}
+<ul class="hidden">
+    <li><a href="#conteudo">Pular para o conteúdo</a></li>
+    <li><a href="#lateral">Pular para informações adicionais de contato</a></li>
+</ul>
+{% endblock %}
+
 {% block billboard %}<h2>Entre em contato</h2>{% endblock %}
 
 {% block content-main %}
@@ -27,27 +34,34 @@
 
 	<ul class="clearfix">
 	    <li>
-		<label for="name"><kbd title="Shift+Alt+N">N</kbd>ome: <span>(obrigatório)</span></label>
+		<label for="name">
+		    <kbd title="Shift+Alt+N">N</kbd>ome: <span>(obrigatório)</span>
+		</label>
 		<input type="text" name="name" id="name" accesskey="n"
-		       value="{%firstof form.name.data %}">
+		       value="{%firstof form.name.data %}" />
 	    </li>
 	
 	    <li>
-		<label for="from_email"><kbd title="Shift+Alt+E">E</kbd>-mail: <span>(obrigatório)</span></label>
+		<label for="from_email">
+		    <kbd title="Shift+Alt+E">E</kbd>-mail: <span>(obrigatório)</span>
+		</label>
 		<input type="text" name="from_email" id="from_email"
-		       accesskey="e" value="{% firstof form.from_email.data %}">
+		       accesskey="e" value="{% firstof form.from_email.data %}" />
 	    </li>
 	
-	    <li class="wide">
-		<label for="subject"><kbd title="Shift+Alt+A">A</kbd>ssunto: <span>(obrigatório)</span></label>
+	    <li>
+		<label for="subject">
+		    <kbd title="Shift+Alt+A">A</kbd>ssunto: <span>(obrigatório)</span>
+		</label>
 		<input type="text" name="subject" id="subject"
-		       accesskey="a" value="{% firstof form.subject.data %}">
+		       accesskey="a" value="{% firstof form.subject.data %}" />
 	    </li>
 	
 	    <li class="wide">
-		<label for="message"><kbd title="Shift+Alt+M">M</kbd>ensagem: <span>(obrigatório)</span></label>
-		<textarea name="message" id="message" accesskey="m"
-		rows="5" cols="50" title="Digite sua mensagem">{% firstof form.message.data %}</textarea>
+		<label for="message">
+		    <kbd title="Shift+Alt+M">M</kbd>ensagem: <span>(obrigatório)</span>
+		</label>
+		<textarea name="message" id="message" accesskey="m" rows="5" cols="50" title="Digite sua mensagem">{% firstof form.message.data %}</textarea>
 	    </li>
 	</ul>
 
@@ -84,7 +98,8 @@
 	    <form action="http://groups.google.com/group/django-brasil/boxsubscribe">
 	    <fieldset>
 		<legend>Inscreva-se na lista Django-Brasil</legend>
-		<input type="text" name="email" size="15"> <button type="submit">Inscrever</button>
+		<input type="text" name="email" size="15" />
+		<button type="submit">Inscrever</button>
 	    </fieldset>
 	    </form>
 	</li>

@@ -33,6 +33,7 @@
 .error strong {
     color: #FFF;
     line-height: 30px;
+    display: block;
     padding: 0 8px;
 }
 

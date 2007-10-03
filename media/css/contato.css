@@ -34,9 +34,10 @@ form ul, form li {
 }
 form li {
     width: 50%;
+    float: left;
 }
 form li.wide { width: 100%; }
-#principal input { width: 98%; }
+#principal input { width: 93%; }
 #principal textarea { width: 98%; }
 
 #lateral legend { display: none; }
@@ -53,6 +54,7 @@ form li.wide { width: 100%; }
 .enviado strong {
     color: #FFF;
     line-height: 30px;
+    display: block;
     padding: 0 8px;
 }
 

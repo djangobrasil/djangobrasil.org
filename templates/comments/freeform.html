@@ -5,16 +5,16 @@
 
     <label for="id_person_name">Seu <kbd>n</kbd>ome: <span>(obrigatório)</span></label>
     <input type="text" id="id_person_name" name="person_name"
-	   accesskey="n" title="Insira seu nome">
+	   accesskey="n" title="Insira seu nome" />
 
     <label for="id_comment"><kbd>M</kbd>ensagem: <span>(obrigatório)</span></label>
     <textarea name="comment" id="id_comment" accesskey="m" rows="5"
 	      cols="50" title="Digite sua mensagem"></textarea>
 
-    <input type="hidden" name="options" value="{{ options }}">
-    <input type="hidden" name="target" value="{{ target }}">
-    <input type="hidden" name="gonzo" value="{{ hash }}">
-    <!--input type="submit" name="preview" value="Visualizar comentário" /-->
+    <input type="hidden" name="options" value="{{ options }}" />
+    <input type="hidden" name="target" value="{{ target }}" />
+    <input type="hidden" name="gonzo" value="{{ hash }}" />
+
     <button type="submit" name="preview">Visualizar Comentário</button>
 </fieldset>
 </form>
