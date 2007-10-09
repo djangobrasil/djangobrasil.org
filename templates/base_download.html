@@ -5,3 +5,38 @@
 {% block title %}Download{% endblock %}
 
 {% block billboard %}<h2>Baixe o Django!</h2>{% endblock %}
+
+{% block content-related %}
+<div class="limite">
+    <h4>Para os apressados:</h4>
+    <ul>
+	<li>Baixe o último lançamento: <a href="http://www.djangoproject.com/download/0.96/tarball/">Django-0.96.tar.gz</a>.</li>
+    </ul>
+    
+    <h4>Qual versão é melhor?</h4>
+    <p>O Django é melhorado quase todos os dias e seus desenvolvedores
+	utilizam da boa prática de manter o código estável. Dessa
+	forma, é seguro utilizar o último código de desenvolvimento e
+	você ainda poderá se beneficiar das últimas funcionalidades
+	implementadas. Apenas tenha em mente que ocasionalmente poderá
+	acontecer mudanças que torne o código de seu projeto
+	incompatível com o novo código do Django, sendo assim
+	necessária algumas adaptações. Para acompanhar as mudanças, dê
+	uma atenção especial à
+	<a href="http://code.djangoproject.com/timeline?changeset=on">linha
+	do tempo de desenvolvimento.</a></p>
+    <p>If you're just looking for a stable deployment target and don't
+	mind waiting for the next release, you'll want to stick with
+	the latest official release (which will always include
+	detailed notes on any changes you'll need to make while
+	upgrading).</p>
+    
+    <h4>Versões anteriores</h4>
+    <ul>
+	<li>Django 0.95.1: <a href="http://www.djangoproject.com/download/0.95.1/tarball/">tarball</a></li>
+	<li>Django 0.95: <a href="http://www.djangoproject.com/download/0.95/tarball/">tarball</a></li>
+	<li>Django 0.91: <a href="http://www.djangoproject.com/download/0.91/tarball/">tarball</a></li>
+	<li>Django 0.90: <a href="http://www.djangoproject.com/download/0.90/tarball/">tarball</a> | <a href="http://www.djangoproject.com/download/0.90/egg/">egg</a></li>
+    </ul>
+</div>
+{% endblock %}

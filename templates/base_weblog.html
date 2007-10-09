@@ -40,7 +40,7 @@
 	{% load blog_tags %}
 	{% get_blog_month_list as archive %}
 	{% for month in archive %}
-	<li><a href="/weblog/{{ month|date:"Y/m"|lower }}/">
+	<li><a href="/weblog/{{ month|date:"Y/m" }}/">
 		{{ month|date:"F, Y" }}</a></li>
 	{% endfor %}
     </ul>
