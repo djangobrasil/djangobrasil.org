@@ -75,7 +75,6 @@ urlpatterns = patterns(
 
     # auth
     (r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'admin/login.html'}),
-    (r'^accounts/logout/', 'django.views.auth.login.logout'),
 
     # feeds
     (r'^feeds/rss/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': rss_feeds}),

@@ -21,6 +21,7 @@
 
 @charset "utf-8";
 @import "base.css";
+@import "formulario.css";
 
 div.section { padding: 7px 0; }
 
