@@ -27,6 +27,8 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
+import os
+BASEDIR = os.path.abspath(os.path.dirname(__file__) + '../../..')
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -36,7 +38,7 @@ ADMINS = ()
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'sqlite3'
-DATABASE_NAME = '../../db/devel.db'
+DATABASE_NAME = BASEDIR + '/db/devel.db'
 
 TIME_ZONE = 'America/Sao_Paulo'
 LANGUAGE_CODE = 'pt-br'
@@ -44,13 +46,13 @@ SITE_ID = 1
 
 USE_I18N = True
 
-MEDIA_ROOT = '../../media/'
+MEDIA_ROOT = BASEDIR + '/media/'
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/admin_media/'
 
 # Paths for third party apps, helpers and other tools for extending project
 SITE_PACKAGES_PATHS = [
-    '../../src',
+    BASEDIR + '/src',
 ]
 
 # Used to provide a seed in secret-key hashing algorithms. Set this to
@@ -76,11 +78,11 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'djangobrasil.urls'
 
 TEMPLATE_DIRS = (
-    '../../templates',
+    BASEDIR + '/templates',
 )
 
 FIXTURE_DIRS = (
-    './fixtures',
+    BASEDIR + '/src/djangobrasil/fixtures',
 )
 
 INSTALLED_APPS = (
