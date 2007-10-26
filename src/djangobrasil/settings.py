@@ -114,5 +114,3 @@ except ImportError:
     except NameError:
         warn(msg)
 
-import sys
-sys.path = SITE_PACKAGES_PATHS + sys.path
