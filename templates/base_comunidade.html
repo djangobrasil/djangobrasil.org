@@ -10,6 +10,11 @@
 
 {% block content-related %}
 <div class="limite">
+    <h4>Feeds RSS</h4>
+    <ul id="feeds">
+	<li><a href="/feeds/rss/comunidade/">Feeds da comunidade</a></li>
+    </ul>
+
     <h4>Envolva-se</h4>
 
     <p>O <strong>Django Brasil</strong> é um grupo de usuários e
@@ -105,7 +110,7 @@
     </ul>
 
     <h4>Autores</h4>
-    <ul id="feeds">
+    <ul id="authors">
 	{% load aggregator %}
 	{% get_feed_list as feed_list %}
 	{% for feed in feed_list %}

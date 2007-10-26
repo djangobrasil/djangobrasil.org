@@ -60,7 +60,26 @@ Sidebar
 ********************/
 #lateral h4 { padding-top: 10px; }
 
+#feeds li {
+    margin-bottom: 8px;
+    padding: 0;
+    background: none;
+}
+#feeds a {
+    color: #555;
+    padding-left: 20px;
+    background: url(../images/icon-feed.gif) no-repeat left;
+}
 #feeds a:link {
+    font-weight: normal;
+    text-decoration: none;
+}
+#feeds a:hover {
+    color: #076944;
+    text-decoration: underline;
+}
+
+#authors a:link {
     font-weight: normal;
     text-decoration: none;
 }
