@@ -33,16 +33,10 @@
 #TEMPLATE_DEBUG = DEBUG
 
 ## don't want emails while developing
-#ADMINS = ()
+#ADMINS = []
 #MANAGERS = ADMINS
 
 #SECRET_KEY = 'i-dont-care'
-
-# Paths for third party apps, helpers and other tools for extending project
-#SITE_PACKAGES_PATHS += [ 
-#    '/home/user/www/semente/otherapps', 
-#    '/home/user/lib/django/django-tagging',
-#]
 
 
 
@@ -50,31 +44,31 @@
 ## TEMPLATE FOR USE IN PRODUCTION ##
 ####################################
 
+#DEBUG = False
+#TEMPLATE_DEBUG = DEBUG
+
+## don't want emails while developing
+#ADMINS = ['root@localhost',]
+#MANAGERS = ADMINS
+
 #SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 #DATABASE_ENGINE = 'mysql'          # 'postgresql_psycopg2', 'postgresql', 
                                     # 'mysql', 'sqlite3' or 'ado_mssql'.
-
 #DATABASE_NAME = 'mydbname'         # not used with SQLite
 #DATABASE_USER = 'mydbuser'         # not used with SQLite
 #DATABASE_PASSWORD = 'mydbpassword' # not used with SQLite
-
 #DATABASE_HOST = 'localhost'        # not used with SQLite
 #DATABASE_PORT = ''                 # Empty for default. Not used with SQLite.
 
+#EMAIL_HOST = 'smtp.otherhost.net'
+
+#CACHE_BACKEND = 'file:///var/tmp/djangobrasil_cache'
 
 #TIME_ZONE = 'America/Sao_Paulo'
 #LANGUAGE_CODE = 'pt-br'
 
-
 # Used to provide a seed in secret-key hashing algorithms. Set this to
 # a random string - the longer, the better.
 #SECRET_KEY = 'random-ascii-string'
-
-
-# Paths for third party apps, helpers and other tools for extending project
-#SITE_PACKAGES_PATHS += [ 
-#    '/home/user/www/semente/otherapps', 
-#    '/home/user/lib/django/django-tagging',
-#]
 

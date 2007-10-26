@@ -50,10 +50,10 @@ MEDIA_ROOT = BASEDIR + '/media/'
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/admin_media/'
 
-# Paths for third party apps, helpers and other tools for extending project
-SITE_PACKAGES_PATHS = [
-    BASEDIR + '/src',
-]
+CACHE_BACKEND = 'dummy:///'
+CACHE_MIDDLEWARE_SECONDS = 60 * 5       # 5 minutes
+CACHE_MIDDLEWARE_KEY_PREFIX = 'djangobrasil'
+CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True
 
 # Used to provide a seed in secret-key hashing algorithms. Set this to
 # a random string in your settings_local.py - the longer, the better.
@@ -70,6 +70,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.middleware.cache.CacheMiddleware',        
     'django.middleware.doc.XViewMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
