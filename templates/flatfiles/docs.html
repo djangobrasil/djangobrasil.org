@@ -1,9 +1,10 @@
 {% extends "base_docs.html" %}
+{% load markup %}
 
 {% block content-main %}
 <div class="limite">
     <h1>{{ flatpage.title }}</h1>
-    {{ flatpage.content }}
+    {{ flatpage.content|restructuredtext }}
 </div>
 {% endblock %}
 
