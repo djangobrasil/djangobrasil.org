@@ -31,7 +31,7 @@
 		     alt="feed" /></a>
 	</div>
 	<p>
-	    {{ item.summary|body }}
+	    {{ item.summary|safe }}
 	</p>
 	<p><a href="{{ item.link }}">Leia essa entrada em seu contexto
 		original &raquo;</a></p>
