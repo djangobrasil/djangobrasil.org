@@ -13,7 +13,7 @@
 		às {{ object.pub_date|date:"G\hi" }}</h6>
 	</div>
 	
-	{{ object.body }}
+	{{ object.body|safe }}
     </div>
 
     <hr />
