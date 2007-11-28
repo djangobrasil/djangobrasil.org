@@ -23,7 +23,7 @@ from djangobrasil.apps.blog.models import Entry
 
 
 info_dict = {
-    'queryset': Entry.published.all(),
+    'queryset': Entry.published,
     'date_field': 'pub_date',
 }
 
