@@ -19,7 +19,6 @@
  */
 
 
-@charset "utf-8";
 * { color: #111; }
 hr, .hidden, #cabecalho ul, form, #weblog ul, .toc { display: none; }
 #cabecalho h1 { margin-bottom: 0.1cm; }

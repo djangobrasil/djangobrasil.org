@@ -19,7 +19,6 @@
  */
 
 
-@charset "utf-8";
 @import "base.css";
 
 img.feed { border: none; vertical-align: bottom; }
