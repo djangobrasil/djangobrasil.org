@@ -61,7 +61,7 @@ class PublishedEntriesManager(models.Manager):
         return queryset.filter(is_draft=False, pub_date__lte=datetime.now())
 
 class Entry(models.Model):
-    title = models.CharField(maxlength=100)
+    title = models.CharField(max_length=100)
     slug = models.SlugField(
         unique_for_date='pub_date',
         prepopulate_from=('title',),
@@ -77,7 +77,7 @@ class Entry(models.Model):
     markup = models.CharField(
         'Markup language',
         default='markdown',
-        maxlength=8, 
+        max_length=8, 
         choices=MARKUP_CHOICES,
     )
     is_draft = models.BooleanField(
