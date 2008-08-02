@@ -24,12 +24,14 @@ from django.contrib.comments.feeds import LatestFreeCommentsFeed
 from django.contrib.comments.models import FreeComment
 from django.contrib import databrowse
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
+from django.contrib import admin
 from djangobrasil import settings
 from djangobrasil.apps.blog.models import Entry
 from djangobrasil.apps.blog.feeds import AtomLatestEntriesFeed, RssLatestEntriesFeed
 from djangobrasil.apps.aggregator.models import FeedItem
 from djangobrasil.apps.aggregator.feeds import RssCommunityAggregatorFeed, AtomCommunityAggregatorFeed
 
+admin.autodiscover()
 
 databrowse.site.register(Entry)
 databrowse.site.register(FeedItem)
@@ -88,7 +90,7 @@ urlpatterns = patterns(
     (r'^db/(.*)', login_required(databrowse.site.root)),
 
     # admin
-    (r'^admin/', include('django.contrib.admin.urls')),
+    (r'^admin/(.*)', admin.site.root),
 
     # home page
     (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'flatfiles/homepage.html'}),

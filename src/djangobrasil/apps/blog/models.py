@@ -64,7 +64,6 @@ class Entry(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(
         unique_for_date='pub_date',
-        prepopulate_from=('title',),
         help_text='Automatically built from the title.',
     )
     body_source = models.TextField('Body')
@@ -95,16 +94,6 @@ class Entry(models.Model):
         ordering = ('-pub_date',)
         get_latest_by = 'pub_date'
         verbose_name_plural = 'entries'
-
-    class Admin:
-        list_display = ('title', 'pub_date', 'is_draft')
-        list_filter = ('is_draft', 'markup')
-        search_fields = ['title', 'slug', 'body']
-        date_hierarchy = 'pub_date'
-        fields = (
-            (None, ENTRY_DEFAULT_FIELDSET),
-            ('Other options', ENTRY_OTHER_FIELDSET),
-        )
 
     def __unicode__(self):
         return self.title
