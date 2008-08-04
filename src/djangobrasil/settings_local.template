@@ -1,31 +1,12 @@
 #  LOCAL SETTINGS        -*- Mode: Python; -*-
 # ---------------------------------------------------------------------
 #
-# Template for local user Django settings for your project. Copy to 
+# Template for local user Django settings for your project. Copy to
 # settings_local.py and make your necessary changes.
 #
-# ---------------------------------------------------------------------
-#
-#  Copyright (c) 2007 Guilherme Mesquita Gondim
-#
-#  This file is part of Django Brasil Project Site.
-#
-#  Django Brasil Project is free software; you can redistribute it
-#  and/or modify it under the terms of the GNU General Public License
-#  as published by the Free Software Foundation; either version 3 of
-#  the License, or (at your option) any later version.
-#
-#  Django Brasil Project is distributed in the hope that it will be
-#  useful, but WITHOUT ANY WARRANTY; without even the implied warranty
-#  of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-#  GNU General Public License for more details.
-#
-#  You should have received a copy of the GNU General Public License
-#  along with this program. If not, see <http://www.gnu.org/licenses/>.
-#
 
 
-################################## 
+##################################
 ## TEMPLATE FOR DEVELOPMENT USE ##
 ##################################
 
@@ -47,13 +28,16 @@
 #DEBUG = False
 #TEMPLATE_DEBUG = DEBUG
 
-## don't want emails while developing
-#ADMINS = ['root@localhost',]
+#ADMINS = (('root', 'root@localhost',))
 #MANAGERS = ADMINS
+#SERVER_EMAIL = 'root@localhost'
+#DEFAULT_FROM_EMAIL = 'noreply@localhost'
+#SEND_BROKEN_LINK_EMAILS = True
 
-#SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+#EMAIL_HOST = 'smtp.otherhost.net'
+#INTERNAL_IPS = ('127.0.0.1',)
 
-#DATABASE_ENGINE = 'mysql'          # 'postgresql_psycopg2', 'postgresql', 
+#DATABASE_ENGINE = 'mysql'          # 'postgresql_psycopg2', 'postgresql',
                                     # 'mysql', 'sqlite3' or 'ado_mssql'.
 #DATABASE_NAME = 'mydbname'         # not used with SQLite
 #DATABASE_USER = 'mydbuser'         # not used with SQLite
@@ -61,7 +45,7 @@
 #DATABASE_HOST = 'localhost'        # not used with SQLite
 #DATABASE_PORT = ''                 # Empty for default. Not used with SQLite.
 
-#EMAIL_HOST = 'smtp.otherhost.net'
+#SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 #CACHE_BACKEND = 'file:///var/tmp/djangobrasil_cache'
 
@@ -72,3 +56,5 @@
 # a random string - the longer, the better.
 #SECRET_KEY = 'random-ascii-string'
 
+#AKISMET_API_KEY = ''
+#GOOGLE_WEBTOOLS_CODE = ''
