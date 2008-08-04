@@ -12,14 +12,19 @@ Universal Feed Parser (http://feedparser.org)
 """
 
 import os
+import sys
 import time
+import socket
 import optparse
 import datetime
 import feedparser
 
-def update_feeds():
+LOCKFILE = "/tmp/update_feeds.lock"
+def update_feeds(verbose=False):
     from djangobrasil.apps.aggregator.models import Feed, FeedItem
     for feed in Feed.objects.filter(is_defunct=False):
+        if verbose:
+            print feed
         parsed_feed = feedparser.parse(feed.feed_url)
         for entry in parsed_feed.entries:
             title = entry.title.encode(parsed_feed.encoding, "xmlcharrefreplace")
@@ -56,10 +61,23 @@ def update_feeds():
             except FeedItem.DoesNotExist:
                 feed.feeditem_set.create(title=title, link=link, summary=content, guid=guid, date_modified=date_modified)
 
-if __name__ == '__main__':
+def main(argv):
+    socket.setdefaulttimeout(15)
     parser = optparse.OptionParser()
     parser.add_option('--settings')
-    options, args = parser.parse_args()
+    parser.add_option('-v', '--verbose', action="store_true")
+    options, args = parser.parse_args(argv)
     if options.settings:
         os.environ["DJANGO_SETTINGS_MODULE"] = options.settings
-    update_feeds()
+    update_feeds(options.verbose)
+
+if __name__ == '__main__':
+    try:
+        lockfile = os.open(LOCKFILE, os.O_CREAT | os.O_EXCL)
+    except OSError:
+        sys.exit(0)
+    try:
+        sys.exit(main(sys.argv))
+    finally:
+        os.close(lockfile)
+        os.unlink(LOCKFILE)
