@@ -8,17 +8,19 @@
 {% endblock %}
 
 {% block wrap %}
-<div id="conteudo" class="clearfix">
+<div class="wrap2">
+  <div id="lateral">
+    {% block content-related %}{% endblock %}
+  </div>
+
+  <div id="conteudo" class="clearfix">
     {% block content %}
     <div id="principal">
 	{% block content-main %}{% endblock %}
     </div>
     {% endblock %}
-</div>
+  </div>
 
-<hr />
-
-<div id="lateral">
-    {% block content-related %}{% endblock %}
+  <!--<hr />-->
 </div>
 {% endblock %}

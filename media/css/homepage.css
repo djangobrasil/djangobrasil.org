@@ -18,31 +18,39 @@
  *
  */
 
-
 @import "base.css";
 
-/* Containers */
-#wrap {
-	overflow: hidden;
-	background: #E5E5E5 url(../images/lateral-bottom.png) repeat-x bottom;
-}
-#wrap .limite { padding: 10px; }
 #conteudo {
-	width: 78%;
-	background-color: #F2F2F2;
+    width: 78%;
+    right: 22%;
 }
+
+#lateral {
+    width: 22%;
+    left: 78%;
+}
+
 #principal {
-	float: left;
-	width: 66%;
+    width: 66%;
+    right: 34%;
+    background: white url(../images/principal-bottom.png) repeat-x bottom;
 }
-#principal .limite { padding: 0 0 20px; }
+
+#principal .limite {
+	padding: 0; /* 30px 20px;*/
+	border-right:1px dashed #CCC;
+	background: url(../images/principal-top.png) repeat-x top;
+}
+
 #info {
-	float: right;
-	width: 34%;
+    width: 34%;
+    left: 66%;
 }
-#info .limite { background: url(../images/info-top.png) repeat-x top; }
-#lateral { width: 22%; }
-/* Fim: Containers */
+
+#info .limite {
+    background: url(../images/info-top.png) repeat-x top;
+    padding: 10px;
+}
 
 ul, ol, dl { margin-bottom: 0; }
 

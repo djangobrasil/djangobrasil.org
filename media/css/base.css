@@ -18,7 +18,6 @@
  *
  */
 
-
 /********************
 Estilizaçoes gerais
 ********************/
@@ -37,46 +36,57 @@ body {
 	background: url(../images/rodape.png) repeat-x bottom;
 }
 
-/* Containers */
 #wrap {
-	overflow: hidden;
+    position: relative;
+    clear: both;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    background: #e5e5e5;
 	background: #E5E5E5 url(../images/lateral-bottom.png) repeat-x bottom;
 }
+
+#wrap2 {
+/*    right: 25%;*/
+    background: white;
+}
+
+#conteudo, #lateral, #principal, #info {
+    float: left;
+    position: relative;
+    padding: 0; /* 0 1em 0*/
+    overflow: hidden;
+}
+
 #conteudo {
-	float: left;
-	width: 70%;
-	background: #FFF url(../images/info-bottom.png) repeat-x bottom;
+    width: 70%;
+    right: 30%;
+    background: #f2f2f2 url(../images/info-bottom.png) repeat-x bottom;
 }
-#principal { background: #FFF url(../images/principal-bottom.png) repeat-x bottom; }
-#principal .limite {
-	padding: 0 30px 20px;
-	border-right:1px dashed #CCC;
-	background: url(../images/principal-top.png) repeat-x top;
-}
+
 #lateral {
-	float: right;
-	width: 30%;
+    width: 30%;
+    left: 70%;
 }
+
 #lateral .limite {
 	min-height: 120px;
 	padding: 10px 15px;
 	background: url(../images/lateral-top.png) repeat-x top;
 }
+
+#principal {
+    background: white url(../images/principal-bottom.png) repeat-x bottom;
+}
+
+#principal .limite {
+	padding: 0 30px 20px;*/
+	border-right:1px dashed #CCC;
+	background: url(../images/principal-top.png) repeat-x top;
+}
+
 * html #lateral .limite { height: 120px; }
 /* Fim: Containers */
-
-/* Clearfix */
-.clearfix:after {
-	content: ".";
-	display: block;
-	clear: both;
-	height: 0;
-	padding: 0;
-	margin: 0;
-	overflow: hidden;
-	visibility: hidden;
-}
-/* Fim: Clearfix */
 
 input[type=hidden] { display: none; }
 
