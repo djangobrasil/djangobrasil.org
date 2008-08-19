@@ -109,7 +109,6 @@ class Entry(models.Model):
 # signals
 
 from django.db.models import signals
-from django.dispatch import dispatcher
 
 def entry_pre_save(sender, instance, signal, *args, **kwargs):
     # update pub_date instance if entry was draft
@@ -120,4 +119,4 @@ def entry_pre_save(sender, instance, signal, *args, **kwargs):
     except Entry.DoesNotExist:
         pass
 
-dispatcher.connect(entry_pre_save, signal=signals.pre_save, sender=Entry)
+signals.pre_save.connect(entry_pre_save, sender=Entry)
