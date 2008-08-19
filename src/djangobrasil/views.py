@@ -18,11 +18,11 @@
 #
 
 
+from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from djangobrasil.forms import ContactForm
-from djangobrasil.settings import MANAGERS
 
 
 def contact(request):
@@ -33,8 +33,9 @@ def contact(request):
             message = request.POST.get('message', '')
             from_email = '%s <%s>' % (request.POST.get('name', ''),
                                       request.POST.get('from_email', ''))
+            recipient_list = [mail_tuple[1] for mail_tuple in settings.MANAGERS]
             try:
-                send_mail(subject, message, from_email, MANAGERS,
+                send_mail(subject, message, from_email, recipient_list,
                           fail_silently=False)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
