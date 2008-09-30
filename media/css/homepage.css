@@ -140,7 +140,7 @@ Informações adicionais
 	margin-bottom: 5px;
 	padding-right: 8px;
 	text-decoration: none;
-	background: url(../images/download-right.png) no-repeat right;
+	background: url(../images/download-right.png) no-repeat right;*
 }
 
 #download a#latest:after { content: ""; }
