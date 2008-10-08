@@ -99,7 +99,7 @@ INSTALLED_APPS = (
     'django.contrib.comments',
     'django.contrib.flatpages',
     'django.contrib.markup',
-    'django.contrib.djangoplus',
+    'djangoplus',
     'djangobrasil.apps.blog',
     'djangobrasil.apps.aggregator',
 )
