@@ -56,6 +56,7 @@ body {
     position: relative;
     padding: 0; /* 0 1em 0*/
     overflow: hidden;
+    width: 100%;
 }
 
 #conteudo {
