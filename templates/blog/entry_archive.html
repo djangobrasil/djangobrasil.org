@@ -7,7 +7,7 @@
     {% load comments %}
     {% load humanize %}
     {% for object in latest %}
-    {% get_free_comment_count for blog.entry object.id as comment_count %}
+    {% get_comment_count for blog.entry object.id as comment_count %}
     <div class="entry" {% if forloop.last %}style="border:none;"{% endif %}>
 	<h2><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2>
 

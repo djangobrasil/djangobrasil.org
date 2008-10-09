@@ -22,18 +22,21 @@
 	<h3>Comentários</h3>
 
 	{% load comments %}
-	{% get_free_comment_list for blog.entry object.id as comment_list %}
+	{% get_comment_list for blog.entry object.id as comment_list %}
 	{% if comment_list %}
 	<ol>
 	    {% for comment in comment_list %}
 	    <li {% cycle 'class="odd"' '' %} id="c{{ comment.id }}">
-		<strong class="name">
-		    {{ comment.person_name|escape }} 
-		    <span>
-			({{ comment.submit_date|naturalday:"e\m d/m/Y" }} 
-			às {{ comment.submit_date|date:"G\hi" }})
-		    </span>
-		</strong>
+	        {% if comment.user_url %}
+		    <a href="{{comment.user_url}}" title="Página da web">
+		      <strong class="name">{{ comment.user_name|escape }}</strong></a>
+		{% else %}
+		      <strong class="name">{{ comment.user_name|escape }}</strong>
+		{% endif %}
+		<span>
+		  ({{ comment.submit_date|naturalday:"e\m d/m/Y" }} 
+		  às {{ comment.submit_date|date:"G\hi" }})
+		</span>
 
 		{{ comment.comment|escape|urlizetrunc:"40"|linebreaks }}
 	    </li>
@@ -46,7 +49,7 @@
 	
     <h3>Deixar um comentário</h3>
 	
-    {% free_comment_form for blog.entry object.id %}
+    {% render_comment_form for blog.entry object.id %}
 </div>
 {% endblock %}
     

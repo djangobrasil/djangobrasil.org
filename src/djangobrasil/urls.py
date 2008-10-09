@@ -20,8 +20,7 @@
 
 from django.conf.urls.defaults import *
 from django.contrib.auth.decorators import login_required
-from django.contrib.comments.feeds import LatestFreeCommentsFeed
-from django.contrib.comments.models import FreeComment
+from django.contrib.comments.models import Comment
 from django.contrib import databrowse
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 from django.contrib import admin
@@ -30,15 +29,21 @@ from djangobrasil.apps.blog.models import Entry
 from djangobrasil.apps.blog.feeds import AtomLatestEntriesFeed, RssLatestEntriesFeed
 from djangobrasil.apps.aggregator.models import FeedItem
 from djangobrasil.apps.aggregator.feeds import RssCommunityAggregatorFeed, AtomCommunityAggregatorFeed
+from djangobrasil.feeds import DjangoBrasilCommentFeed
 
 admin.autodiscover()
 
 databrowse.site.register(Entry)
 databrowse.site.register(FeedItem)
-databrowse.site.register(FreeComment)
+databrowse.site.register(Comment)
+
+def get_comments():
+    queryset = Comment.objects.filter(site__pk=settings.SITE_ID,
+                                      is_public=True, is_removed=False)
+    return queryset.order_by('-submit_date')
 
 comments_info_dict = {
-    'queryset': FreeComment.objects.all(),
+    'queryset': get_comments(),
     'paginate_by': 15,
 }
 
@@ -49,7 +54,7 @@ sitemaps = {
 
 rss_feeds = {
     'weblog': RssLatestEntriesFeed,
-    'comments': LatestFreeCommentsFeed,    
+    'comments': DjangoBrasilCommentFeed,
     'comunidade': RssCommunityAggregatorFeed,
 }
 
@@ -67,12 +72,8 @@ aggregator_info_dict = {
 urlpatterns = patterns(
     '',
 
-    # static files
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve',
-                              {'document_root': settings.MEDIA_ROOT}),
-
     # sitemaps
-    (r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', 
+    (r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap',
                        {'sitemaps': sitemaps}),
 
     # auth
@@ -84,7 +85,7 @@ urlpatterns = patterns(
 
     # comments
     (r'^comments/$', 'django.views.generic.list_detail.object_list', comments_info_dict),
-    (r'^comments/', include('django.contrib.comments.urls.comments')),
+    (r'^comments/', include('django.contrib.comments.urls')),
 
     # databrowse
     (r'^db/(.*)', login_required(databrowse.site.root)),
@@ -103,5 +104,19 @@ urlpatterns = patterns(
 
     # contato
     (r'^contato/$', 'djangobrasil.views.contact'),
-
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns(
+        '',
+
+        # static files
+        (r'^media/(?P<path>.*)$', 'django.views.static.serve',
+         {'document_root': settings.MEDIA_ROOT}),
+
+        (r'^404/$', 'django.views.generic.simple.direct_to_template',
+         {'template': '404.html'}),
+
+        (r'^500/$', 'django.views.generic.simple.direct_to_template',
+         {'template': '500.html'}),
+    )

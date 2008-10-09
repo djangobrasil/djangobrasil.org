@@ -15,16 +15,13 @@
 {% block wrap %}
     <div id="principal">
         <div class="limite">
-	    <h1>Comentário publicado com sucesso</h1>
+	    <h1>Comentário publicado com sucesso!</h1>
 
-	    <p>Obrigado por contribuir!</p>
+	    <p>Seu comentário foi publicado com sucesso! Dentro de alguns minutos
+	      ele será exibido. Obrigado por contribuir!</p>
 
-	    {% if object %}
-	    <p>Você pode <a href="{{ object.get_absolute_url }}">
-		    visualizar seu comentário</a> ou ir para
-		a <a href="/">página principal de nosso site</a>, se
-		preferir.</p>
-	    {% endif %}
+	    <p>Você pode ir para a <a href="/">página inicial</a>, se
+	      preferir.</p>
 	</div>
     </div>
 {% endblock %}

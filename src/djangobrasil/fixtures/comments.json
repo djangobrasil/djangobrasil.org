@@ -1,17 +1,17 @@
 [
     {
         "pk": 1, 
-        "model": "comments.freecomment", 
+        "model": "comments.comment", 
         "fields": {
             "comment": "Welcome!", 
-            "person_name": "Django Reinhardt", 
+            "user_name": "Django Reinhardt", 
             "submit_date": "2007-09-16 19:48:29", 
             "site": 1, 
-            "object_id": 1, 
+            "object_pk": 1, 
             "content_type": 16, 
             "is_public": true, 
             "ip_address": "127.0.0.1", 
-            "approved": false
+            "is_removed": false
         }
     }
 ]

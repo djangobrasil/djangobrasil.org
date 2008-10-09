@@ -271,7 +271,7 @@
 	
 	{% for entry in latest_entries %}
 	<li>
-	    {% get_free_comment_count for blog.entry entry.id as comment_count %}
+	    {% get_comment_count for blog.entry entry.id as comment_count %}
 	    <h5><a href="{{ entry.get_absolute_url }}">
 		    {{ entry.title }}</a></h5>
 	    <span>

@@ -83,7 +83,7 @@ Latest entries / post index
 #comments p { margin: 7px 0 0; }
 
 
-/* freecomment list */
+/* comment list */
 .pagination {
    text-align: center;
    padding: 5px;
@@ -105,21 +105,21 @@ Latest entries / post index
    background: url(../images/next.gif) no-repeat 100% 7px;
 }
 
-.freecomment {
+.comment {
    margin-bottom: 10px;
    padding: 10px;
    padding-bottom: 0;
    border-bottom: 1px dashed #CCC;
 }
 
-.freecomment h3 span {
+.comment h3 span {
    color: #076944;
    font-size: 0.6em;
    font-weight: normal;
    padding-left: 5px;
 }
 
-#principal .freecomment form { width: 100%; }
+#principal .comment form { width: 100%; }
 /********************
 End: latest entries / post index
 ********************/

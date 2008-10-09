@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Pré-visualização do comentário{% endblock %}
+
+{% block cssid %}clean{% endblock %}
+
+{% block accesslink %}
+    <ul class="hidden">
+	<li><a href="#principal">Pular para o conteúdo</a></li>
+    </ul>
+{% endblock %}
+
+{% block billboard %}<h2>Comentário</h2>{% endblock %}
+
+{% block wrap %}
+<div id="principal">
+  <div class="limite">
+    <h1>Pré-visualização do comentário</h1>
+
+    {% load comments %}
+    <form action="{% comment_form_target %}" method="post">
+      {% if form.errors %}
+        <p><strong>Por favor, corrija os erros abaixo.</strong></p>
+      {% else %}
+	<div>{{ comment|escape|urlizetrunc:"40"|linebreaks }}</div>
+
+        <p class="submit">
+	  <button type="submit" name="submit" class="submit-post"
+		  value="Post">Publicar comentário</button>
+	</p>
+      {% endif %}
+
+      <h2>Revisão</h2>
+      {% for field in form %}
+        {% if field.is_hidden %}
+          {{ field }}
+        {% else %}
+          <p
+             {% ifequal field.name "honeypot" %} style="display:none;"{% endifequal %}>
+            {{ field.label_tag }}{{ field }}
+	    {% if field.errors %}
+              <ul class="error list"> 
+		{% for error in field.errors %} 
+ 	          <li>{{ error }}</li> 
+ 		{% endfor %} 
+ 	      </ul> 
+            {% endif %}
+          </p>
+	{% endif %}
+      {% endfor %}
+
+      <p class="submit">
+	<button type="submit" name="submit" class="submit-post"
+		value="Post">Publicar</button>
+	<button type="submit" name="submit" class="submit-preview"
+		value="Preview">Pré-visualizar</button>
+      </p>
+    </form>
+  </div>
+</div>
+{% endblock %}

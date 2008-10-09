@@ -23,10 +23,10 @@
     </div>
 
     {% for comment in object_list %}
-    <div class="freecomment clearfix" id="c{{ comment.id }}">
+    <div class="comment clearfix" id="c{{ comment.id }}">
 	<h3>
 	    <a href="{{ comment.get_absolute_url }}">
-		{{ comment.person_name|escape }}
+		{{ comment.user_name|escape }}
 		<span>
 		    ({{ comment.submit_date|date:"F j, Y" }} às {{ comment.submit_date|date:"P" }})
 		</span>
@@ -34,8 +34,8 @@
 	</h3>
 	{{ comment.comment|escape|urlizetrunc:"40"|linebreaks }}
 
-	{% if perms.comments.delete_freecomment %}
-	<form action="/admin/comments/freecomment/{{ comment.id }}/delete/" method="post">
+	{% if perms.comments.delete_comment %}
+	<form action="/admin/comments/comment/{{ comment.id }}/delete/" method="post">
 	<fieldset>
 	    <legend>Deletar comentário</legend>
 	    <input type="hidden" name="post" value="yes" />
