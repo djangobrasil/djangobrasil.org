@@ -28,7 +28,7 @@
 #DEBUG = False
 #TEMPLATE_DEBUG = DEBUG
 
-#ADMINS = (('root', 'root@localhost',))
+#ADMINS = (('root', 'root@localhost'),)
 #MANAGERS = ADMINS
 #SERVER_EMAIL = 'root@localhost'
 #DEFAULT_FROM_EMAIL = 'noreply@localhost'
