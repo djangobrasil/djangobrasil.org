@@ -8,8 +8,9 @@
 </div>
 {% endblock %}
 
-{#% block content-related %#}
-<!--div class="limite">
+{% comment %}
+{% block content-related %}
+<div class="limite">
     <div class='toc'>
 	<h4>Conteúdo</h4>
 	
@@ -17,5 +18,6 @@
 	    <li><a href="#">Ítem</a></li>
 	</ul>
     </div>
-</div-->
-{#% endblock %#}
+</div>
+{% endblock %}
+{% endcomment %}
