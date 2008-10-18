@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Crawl-delay: 0.5
+
+Sitemap: http://www.djangobrasil.org/sitemap.xml
