@@ -1,0 +1,38 @@
+dd {margin-left: 10px;}
+
+div.boxes {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+div.box {
+    float: left;
+    width: 240px;
+    height: 170px;
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    border: 1px dashed gray;
+}
+
+div.box a {
+    font-weight: normal !important;
+    text-decoration: none !important;
+}
+
+div.box a:hover {
+    text-decoration: underline !important;
+}
+
+div.box a img {
+    border: none;
+}
+
+* html div.box {
+    width: 260px;
+}
+
+div.box img.logo {
+    float: right;
+    margin: 0 0 5px 5px;
+}
+
