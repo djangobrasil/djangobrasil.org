@@ -1,6 +1,8 @@
 {% extends "base_docs.html" %}
 {% load markup %}
 
+{% block title %}{{ flatpage.title }}{% endblock %}
+
 {% block content-main %}
 <div class="limite">
     <h1>{{ flatpage.title }}</h1>
