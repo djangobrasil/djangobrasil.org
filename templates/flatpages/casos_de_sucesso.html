@@ -1,62 +1,11 @@
-{% extends "base_2col.html" %}
+{% extends "base_casos.html" %}
 
-{% block extrahead %}{{ block.super }}
-<link rel="stylesheet" href="{{ MEDIA_URL }}css/casos_de_sucesso.css" type="text/css"/>
-{% endblock extrahead %}
-
-{% block billboard %}
-<h2>{{ flatpage.title }}</h2>
-{% endblock %}
+{% block title %}{{ flatpage.title }}{% endblock %}
 
 {% block content-main %}
 <div class="limite">
     <h1>{{ flatpage.title }}</h1>
     
     {{ flatpage.content }}
-</div>
-{% endblock %}
-
-{% block content-related %}
-<div class="limite">
-    <h4><a href="/casos_de_sucesso/">Veja outros casos de sucesso</a></h4>
-
-    <h4>Envie o seu!</h4>
-    <p>
-    Você pode também enviar seu caso de sucesso e contar a história da sua
-    empresa aqui, ao lado de grandes e inovadoras marcas. Para isso, basta
-    enviar-nos uma <a href="/contato/">mensagem de contato</a> respondendo
-    as perguntas abaixo e entraremos em contato em seguida para maiores
-    detalhes e posterior redação do texto e publicação.
-    </p>
-
-    <b>Perguntas</b>
-
-    <dt class="pontos">
-        <dd>O que é a empresa? (em números, missão, duração e áreas de atuação)</dd>
-        <dd>Alguns clientes/trabalhos que marcaram?</dd>
-        <dd>Alguns sites ou sistemas construídos com Django</dd>
-        <dd>Quantos membros na equipe usam Django?</dd>
-        <dd>Há quanto tempo usam Django?</dd>
-        <dd>Como conheceram e como foi o processo de adoção do Django?</dd>
-        <dd>Quais foram os resultados obtidos e quais são os planos futuros?</dd>
-        <dd>A empresa contribui para a comunidade ou o software livre de alguma forma ou tem planos para isso?</dd>
-    </dt>
-
-    <p>
-    A maior grandeza que uma empresa pode demonstrar é a de espírito.
-    Grande ou pequeno, sua história é importante para nós e para novos
-    profissionais e empresas que buscam se espelhar em quem tem um perfil
-    inovador.
-    </p>
-
-    <h4>Pesquise com Google</h4>
-    <!-- Google CSE Search Box Begins  -->
-    <form action="http://www.google.com/cse" id="searchbox_014981936230313479242:vuxmnuuhcam">
-	<input type="hidden" name="cx" value="014981936230313479242:vuxmnuuhcam" />
-	<input type="text" name="q" size="25" />
-	<button type="submit" name="sa">Ir</button>
-    </form>
-    <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_014981936230313479242%3Avuxmnuuhcam"></script>
-    <!-- Google CSE Search Box Ends -->
 </div>
 {% endblock %}
