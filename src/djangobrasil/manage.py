@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Copyright (c) 2007 Guilherme Mesquita Gondim
+#  Copyright (c) 2007, 2008 The Django Brasil Community Website Authors
 #
 #  This file is part of Django Brasil Project Site.
 #

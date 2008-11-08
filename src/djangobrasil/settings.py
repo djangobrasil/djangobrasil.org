@@ -4,12 +4,12 @@
 # (!)
 #
 # DON'T CHANGE THIS FILE, USE settings_local.py. YOU GET A TEMPLATE IN
-# settings_local.template (COPY HIM TO settings_local.py AND MAKE 
+# settings_local.template (COPY HIM TO settings_local.py AND MAKE
 # YOUR NECESSARY CHANGES.
 #
 # ---------------------------------------------------------------------
 #
-#  Copyright (c) 2007 Guilherme Mesquita Gondim
+#  Copyright (c) 2007, 2008 The Django Brasil Community Website Authors
 #
 #  This file is part of Django Brasil Project Site.
 #
