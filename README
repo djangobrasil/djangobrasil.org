@@ -10,4 +10,5 @@ To get more info:
     * Join the django-brasil users mailing list, or read the archives,
       at http://groups.google.com/group/django-brasil.
 
-To install/configure working copy, see INSTALL file.
+For detailed instructions to install and configure a working copy, see
+http://code.google.com/p/djangobrasil/wiki/InstalacaoConfiguracao.
