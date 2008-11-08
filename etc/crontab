@@ -1,0 +1,10 @@
+# Atualiza os feeds do agregador da comunidade (roda a cada hora).
+#
+# m h dom mon dow user	command
+0 *	* * *	root	test -x /usr/local/bin/update-feeds.sh && /usr/local/bin/update-feeds.sh
+
+# Notifica quando os dominios da Django Brasil estiverem expirando.
+#
+# m h dom mon dow user	command
+0 0	20 1 *	root	test -x /usr/local/bin/domain-exp-notify.sh && /usr/local/bin/domain-exp-notify.sh djangobrasil.org
+0 0	 5 8 *	root	test -x /usr/local/bin/domain-exp-notify.sh && /usr/local/bin/domain-exp-notify.sh djangobrasil.com.br
