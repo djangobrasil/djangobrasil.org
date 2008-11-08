@@ -38,7 +38,7 @@ ADMINS = ()
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'sqlite3'
-DATABASE_NAME = BASEDIR + '/db/devel.db'
+DATABASE_NAME = BASEDIR + '/etc/devel.db'
 
 TIME_ZONE = 'America/Sao_Paulo'
 LANGUAGE_CODE = 'pt-br'
