@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # -*- mode: python -*-
 #
-# File path: /srv/webapps/www.djangobrasil.org/etc/apache/djangobrasil.wsgi
+# File path: /srv/webapps/www.djangobrasil.org/online-branch/etc/apache/djangobrasil.wsgi
 #
 
 import os, sys
 
-sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + '../..'))
+sys.path.insert(0, '/srv/webapps/www.djangobrasil.org/online-branch/src')
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'djangobrasil.settings'
 os.environ['PYTHON_EGG_CACHE'] = '/srv/webapps/www.djangobrasil.org/.python-eggs'
