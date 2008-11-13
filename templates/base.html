@@ -33,11 +33,11 @@
 	<meta name="robots" content="ALL" />
 	<meta name="revisit-after" content="1" />
 	
-	<link rel="icon" type="image/png" href="/media/images/favicon.ico" />
+	<link rel="icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.ico" />
 	<link rel="stylesheet" type="text/css" media="screen"
-	      href="/media/css/{% block cssid %}base{% endblock %}.css" />
+	      href="{{ MEDIA_URL }}css/{% block cssid %}base{% endblock %}.css" />
 	<link rel="stylesheet" type="text/css" media="print"
-	      href="/media/css/print.css" />
+	      href="{{ MEDIA_URL }}css/print.css" />
 
 	{% block extrahead %}{% endblock %}
     </head>

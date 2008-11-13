@@ -27,7 +27,7 @@
 		às {{ item.date_modified|date:"G\hi" }}</h6>
 	    <a href="{{ item.feed.public_url }}">{{ item.feed.title }}</a> 
 	    <a href="{{ item.feed.feed_url }}">
-		<img class="feed" src="/media/images/icon-feed.gif" 
+		<img class="feed" src="{{ MEDIA_URL }}images/icon-feed.gif" 
 		     alt="feed" /></a>
 	</div>
 	<p>
