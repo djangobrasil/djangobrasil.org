@@ -22,6 +22,7 @@ from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 from djangobrasil.forms import ContactForm
 
 
@@ -44,4 +45,5 @@ def contact(request):
         form = ContactForm()
     enviado = bool(request.GET.get('enviado', ''))
     return render_to_response('flatfiles/contato.html',
-                              {'form': form, 'enviado': enviado})
+                              {'form': form, 'enviado': enviado},
+                              context_instance=RequestContext(request))
