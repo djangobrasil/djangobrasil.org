@@ -79,7 +79,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'djangobrasil.urls'
 
 TEMPLATE_DIRS = (
-    BASEDIR + '/templates',
+    BASEDIR + '/src/djangobrasil/templates',
 )
 
 FIXTURE_DIRS = (
