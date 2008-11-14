@@ -10,4 +10,4 @@ cd $L10N_DOCS_DIR
 svn up
 make html
 cd - > /dev/null
-cp -r $L10N_DOCS_DIR/* $HTTP_DOCS_DIR/.
+cp -r $L10N_DOCS_DIR/_build/* $HTTP_DOCS_DIR/.
