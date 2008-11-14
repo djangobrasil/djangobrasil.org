@@ -3,6 +3,11 @@
 # m h dom mon dow user	command
 0 *	* * *	root	test -x /usr/local/bin/update-feeds.sh && /usr/local/bin/update-feeds.sh
 
+# Atualiza a documentação a cada 6 horas
+#
+# m h dom mon dow user	command
+0 */6	* * *	root	test -x /usr/local/bin/update-docss.sh && /usr/local/bin/update-docs.sh
+
 # Notifica quando os dominios da Django Brasil estiverem expirando.
 #
 # m h dom mon dow user	command
