@@ -27,6 +27,8 @@ class RssLatestEntriesFeed(Feed):
     title = u"Django Brasil Weblog"
     link = u"/weblog/"
     description = u"Blog da comunidade brasileira do framework Django."
+    author_name = u'Comunidade Django Brasil'
+
 
     def items(self):
         return Entry.published.order_by('-pub_date')[:15]
