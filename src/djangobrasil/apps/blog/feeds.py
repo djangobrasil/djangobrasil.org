@@ -31,6 +31,9 @@ class RssLatestEntriesFeed(Feed):
     def items(self):
         return Entry.published.order_by('-pub_date')[:15]
 
+    def item_pubdate(self, item):
+        return item.pub_date
+
 class AtomLatestEntriesFeed(RssLatestEntriesFeed):
     feed_type = Atom1Feed
     subtitle = u"Blog da comunidade brasileira do framework Django"
