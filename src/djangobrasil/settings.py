@@ -40,6 +40,8 @@ MANAGERS = ADMINS
 DATABASE_ENGINE = 'sqlite3'
 DATABASE_NAME = BASEDIR + '/etc/devel.db'
 
+TWITTER_MAXLENGTH = 140
+
 TIME_ZONE = 'America/Sao_Paulo'
 LANGUAGE_CODE = 'pt-br'
 SITE_ID = 1

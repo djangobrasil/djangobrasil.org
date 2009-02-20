@@ -45,6 +45,9 @@
 #DATABASE_HOST = 'localhost'        # not used with SQLite
 #DATABASE_PORT = ''                 # Empty for default. Not used with SQLite.
 
+#TWITTER_USERNAME = 'my-twitter-username'
+#TWITTER_PASSWORD = 'my-twitter-password'
+
 #SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 #CACHE_BACKEND = 'file:///var/tmp/djangobrasil_cache'
