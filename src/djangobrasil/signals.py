@@ -41,11 +41,11 @@ def post_feed_on_twitter(sender, instance, *args, **kwargs):
     
     # tinyurl'ze the feed item link
     create_api = 'http://tinyurl.com/api-create.php'
-    fitem_data = urllib.urlencode(dict(url=instance.link))
+    fitem_data = urllib.urlencode(dict(url=instance.get_absolute_url()))
     fitem_link = urllib2.urlopen(create_api, data=fitem_data).read().strip()
 
     # create the twitter message
-    fitem_title = instance.title.decode('utf-8')
+    fitem_title = str(instance).decode('utf-8')
     twitter_msg = '%s - %s' % (fitem_title, fitem_link)
     if len(twitter_msg) > settings.TWITTER_MAXLENGTH:
         remove = len(twitter_msg + '...')-settings.TWITTER_MAXLENGTH
