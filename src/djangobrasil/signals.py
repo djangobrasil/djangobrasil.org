@@ -22,38 +22,38 @@ import twitter
 import urllib, urllib2
 from django.conf import settings
 
-def post_feed_on_twitter(sender, instance, *args, **kwargs):
+def post_to_twitter(sender, instance, *args, **kwargs):
     """
-    Post the new feed items on twitter.
+    Post new saved objects to Twitter.
     """
 
-    # avoid to post the same item twice
+    # avoid to post the same object twice
     if not kwargs.get('created'):
         return False
 
-    # there's no twitter account configured
+    # check if there's a twitter account configured
     try:
         username = settings.TWITTER_USERNAME
         password = settings.TWITTER_PASSWORD
     except AttributeError:
-        print 'Twitter account not configured.'
+        print 'WARNING: Twitter account not configured.'
         return False
     
-    # tinyurl'ze the feed item link
+    # tinyurl'ze the object's link
     create_api = 'http://tinyurl.com/api-create.php'
-    fitem_data = urllib.urlencode(dict(url=instance.get_absolute_url()))
-    fitem_link = urllib2.urlopen(create_api, data=fitem_data).read().strip()
+    data = urllib.urlencode(dict(url=instance.get_absolute_url()))
+    link = urllib2.urlopen(create_api, data=data).read().strip()
 
     # create the twitter message
-    fitem_title = str(instance).decode('utf-8')
-    twitter_msg = '%s - %s' % (fitem_title, fitem_link)
-    if len(twitter_msg) > settings.TWITTER_MAXLENGTH:
-        remove = len(twitter_msg + '...')-settings.TWITTER_MAXLENGTH
-        twitter_msg = '%s... - %s' % (fitem_title[:-remove], fitem_link)
+    text = str(instance).decode('utf-8')
+    mesg = '%s - %s' % (text, link)
+    if len(mesg) > settings.TWITTER_MAXLENGTH:
+        size = len(mesg + '...') - settings.TWITTER_MAXLENGTH
+        mesg = '%s... - %s' % (text[:-size], link)
 
     try:
         twitter_api = twitter.Api(username, password)
         twitter_api.PostUpdate(twitter_msg)
     except urllib2.HTTPError, ex:
-        print str(ex)
+        print 'ERROR:', str(ex)
         return False
