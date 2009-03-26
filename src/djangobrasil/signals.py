@@ -22,6 +22,8 @@ import twitter
 import urllib, urllib2
 from django.conf import settings
 
+TWITTER_MAXLENGTH = getattr(settings, "TWITTER_MAXLENGTH", 140)
+
 def post_to_twitter(sender, instance, *args, **kwargs):
     """
     Post new saved objects to Twitter.
@@ -38,7 +40,7 @@ def post_to_twitter(sender, instance, *args, **kwargs):
     except AttributeError:
         print 'WARNING: Twitter account not configured.'
         return False
-    
+
     # tinyurl'ze the object's link
     create_api = 'http://tinyurl.com/api-create.php'
     data = urllib.urlencode(dict(url=instance.get_absolute_url()))
@@ -47,13 +49,13 @@ def post_to_twitter(sender, instance, *args, **kwargs):
     # create the twitter message
     text = str(instance).decode('utf-8')
     mesg = '%s - %s' % (text, link)
-    if len(mesg) > settings.TWITTER_MAXLENGTH:
-        size = len(mesg + '...') - settings.TWITTER_MAXLENGTH
+    if len(mesg) > TWITTER_MAXLENGTH:
+        size = len(mesg + '...') - TWITTER_MAXLENGTH
         mesg = '%s... - %s' % (text[:-size], link)
 
     try:
         twitter_api = twitter.Api(username, password)
-        twitter_api.PostUpdate(twitter_msg)
+        twitter_api.PostUpdate(mesg)
     except urllib2.HTTPError, ex:
         print 'ERROR:', str(ex)
         return False
