@@ -18,11 +18,13 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
+import os
 import twitter
 import urllib, urllib2
 from django.conf import settings
+from django.contrib.sites.models import Site
 
-TWITTER_MAXLENGTH = getattr(settings, "TWITTER_MAXLENGTH", 140)
+TWITTER_MAXLENGTH = getattr(settings, 'TWITTER_MAXLENGTH', 140)
 
 def post_to_twitter(sender, instance, *args, **kwargs):
     """
@@ -41,9 +43,20 @@ def post_to_twitter(sender, instance, *args, **kwargs):
         print 'WARNING: Twitter account not configured.'
         return False
 
+    # if the absolute url wasn't a real absolute url and doesn't contains the
+    # protocol and domain defined, then append this relative url to the domain
+    # of the current site. emulating the browser's behaviour
+    #
+    # this feature was first discussed here:
+    # http://code.google.com/p/djangobrasil/issues/detail?id=70
+    url = instance.get_absolute_url()
+    if not url.startswith('http://') and not url.startswith('https://'):
+        domain = Site.objects.get_current().domain
+        url = u'http://%s' % os.path.join(domain, url)
+
     # tinyurl'ze the object's link
     create_api = 'http://tinyurl.com/api-create.php'
-    data = urllib.urlencode(dict(url=instance.get_absolute_url()))
+    data = urllib.urlencode(dict(url=url))
     link = urllib2.urlopen(create_api, data=data).read().strip()
 
     # create the twitter message
