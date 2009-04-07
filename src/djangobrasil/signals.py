@@ -23,6 +23,7 @@ import twitter
 import urllib, urllib2
 from django.conf import settings
 from django.contrib.sites.models import Site
+from django.utils.encoding import DjangoUnicodeDecodeError
 
 TWITTER_MAXLENGTH = getattr(settings, 'TWITTER_MAXLENGTH', 140)
 
@@ -59,8 +60,16 @@ def post_to_twitter(sender, instance, *args, **kwargs):
     data = urllib.urlencode(dict(url=url))
     link = urllib2.urlopen(create_api, data=data).read().strip()
 
+    # try to decode the content... yep, and it's ugly =/
+    try:
+        text = str(instance).decode('iso-8859-1')
+    except DjangoUnicodeDecodeError:
+        text = str(instance).decode('utf-8')
+    except:
+        print 'ERROR: Unable to decode original title.'
+        return False
+
     # create the twitter message
-    text = str(instance).decode('utf-8')
     mesg = '%s - %s' % (text, link)
     if len(mesg) > TWITTER_MAXLENGTH:
         size = len(mesg + '...') - TWITTER_MAXLENGTH
