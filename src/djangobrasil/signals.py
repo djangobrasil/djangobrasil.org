@@ -53,7 +53,7 @@ def post_to_twitter(sender, instance, *args, **kwargs):
     url = instance.get_absolute_url()
     if not url.startswith('http://') and not url.startswith('https://'):
         domain = Site.objects.get_current().domain
-        url = u'http://%s' % os.path.join(domain, url)
+        url = u'http://%s%s' % (domain, url)
 
     # tinyurl'ze the object's link
     create_api = 'http://tinyurl.com/api-create.php'
