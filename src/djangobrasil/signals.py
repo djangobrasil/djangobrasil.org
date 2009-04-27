@@ -60,17 +60,8 @@ def post_to_twitter(sender, instance, *args, **kwargs):
     data = urllib.urlencode(dict(url=url))
     link = urllib2.urlopen(create_api, data=data).read().strip()
 
-    # try to decode the content... yep, and it's ugly =/
-#    try:
-#        text = str(instance).decode('iso-8859-1')
-#    except DjangoUnicodeDecodeError:
-#        text = str(instance).decode('utf-8')
-#    except:
-#        print 'ERROR: Unable to decode original title.'
-#        return False
-    text = str(instance)
-
     # create the twitter message
+    text = unicode(instance)
     mesg = '%s - %s' % (text, link)
     if len(mesg) > TWITTER_MAXLENGTH:
         size = len(mesg + '...') - TWITTER_MAXLENGTH
