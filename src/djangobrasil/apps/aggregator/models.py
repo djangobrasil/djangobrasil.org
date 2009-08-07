@@ -18,7 +18,7 @@ class Feed(models.Model):
         db_table = 'aggregator_feeds'
 
     def __unicode__(self):
-        return self.title
+        return unicode(self.title)
 
 class FeedItem(models.Model):
     feed = models.ForeignKey(Feed)

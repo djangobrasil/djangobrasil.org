@@ -61,7 +61,7 @@ def post_to_twitter(sender, instance, *args, **kwargs):
     link = urllib2.urlopen(create_api, data=data).read().strip()
 
     # create the twitter message
-    text = unicode(instance)
+    text = unicode(instance.title)
     mesg = '%s - %s' % (text, link)
     if len(mesg) > TWITTER_MAXLENGTH:
         size = len(mesg + '...') - TWITTER_MAXLENGTH

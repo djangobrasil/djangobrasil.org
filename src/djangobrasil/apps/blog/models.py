@@ -96,11 +96,11 @@ class Entry(models.Model):
         verbose_name_plural = 'entries'
 
     def __unicode__(self):
-        return self.title
+        return unicode(self.title)
 
     def save(self):
         self.body = markuping(self.markup, self.body_source)
-        super(Entry, self).save()    
+        super(Entry, self).save()
 
     def get_absolute_url(self):
         return '/weblog/%s/%s/' % (self.pub_date.strftime('%Y/%m/%d').lower(), self.slug)
