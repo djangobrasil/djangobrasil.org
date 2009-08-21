@@ -14,6 +14,7 @@ Universal Feed Parser (http://feedparser.org)
 import os
 import sys
 import time
+import codecs
 import socket
 import optparse
 import datetime
@@ -76,6 +77,10 @@ if __name__ == '__main__':
         lockfile = os.open(LOCKFILE, os.O_CREAT | os.O_EXCL)
     except OSError:
         sys.exit(0)
+
+    # fix the UnicodeError of the script execution in shell
+    sys.stdout = codecs.getwriter('utf-8')(sys.__stdout__)
+
     try:
         sys.exit(main(sys.argv))
     finally:
