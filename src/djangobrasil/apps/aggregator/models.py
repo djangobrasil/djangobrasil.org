@@ -6,7 +6,6 @@
 #
 
 from django.db import models
-from djangobrasil.signals import post_to_twitter
 
 class Feed(models.Model):
     title = models.CharField(max_length=500)
@@ -37,5 +36,3 @@ class FeedItem(models.Model):
 
     def get_absolute_url(self):
         return self.link
-
-models.signals.post_save.connect(post_to_twitter, sender=FeedItem)

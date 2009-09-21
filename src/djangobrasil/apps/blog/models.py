@@ -20,7 +20,6 @@
 
 from datetime import datetime
 from django.db import models
-from djangobrasil.signals import post_to_twitter
 
 MARKUP_CHOICES = (
     ('markdown', 'Markdown'),
@@ -120,4 +119,3 @@ def entry_pre_save(sender, instance, signal, *args, **kwargs):
         pass
 
 signals.pre_save.connect(entry_pre_save, sender=Entry)
-signals.post_save.connect(post_to_twitter, sender=Entry)
