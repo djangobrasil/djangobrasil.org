@@ -53,6 +53,13 @@ Latest entries / post index
     padding-left: 7px;
     border-left: 1px solid #333;
 }
+.entry blockquote {
+	border-left:solid 2px #bbb;
+	padding:5px;
+	background:#e8e8e8;
+	font-family:mono;
+	font-size:0.9em;
+}
 
 /* comments */
 #comments {
