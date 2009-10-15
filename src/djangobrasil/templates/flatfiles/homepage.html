@@ -1,12 +1,12 @@
 {% extends "base_3col.html" %}
 
-{% load djangoplus_tags %} 
+{% load djangoplus_tags %}
 
 {% block cssid %}homepage{% endblock %}
 
 {% block extrahead %}
-<link rel="alternate" 
-      title="Weblog (Atom)" 
+<link rel="alternate"
+      title="Weblog (Atom)"
       href="/feeds/atom/weblog/"
       type="application/atom+xml" />
 
@@ -15,7 +15,7 @@
       href="/feeds/rss/weblog/"
       type="application/rss+xml" />
 
-<meta name="verify-v1" 
+<meta name="verify-v1"
       content="TTSHRjhdcIMLRNlZbUxzrfxgoPqHF1qHMeuWR4sa3e4=" />
 {% endblock %}
 
@@ -33,7 +33,7 @@
 
 {% block content-main %}
 <div class="limite">
-    
+
     <!-- Conheça o Django -->
     <div id="destaque">
 	<div>
@@ -41,30 +41,30 @@
 	    <h4>Django é um framework web de alto nível escrito em
 		Python que estimula o desenvolvimento rápido e
 		limpo</h4>
-	    
-	    <p>Desenvolvido e utilizado por mais de dois anos em uma 
-	    operação ágil de notícias online, Django foi projetado 
-	    para lidar com dois desafios: os prazos apertados de uma 
+
+	    <p>Desenvolvido e utilizado por mais de dois anos em uma
+	    operação ágil de notícias online, Django foi projetado
+	    para lidar com dois desafios: os prazos apertados de uma
 	    redação e os requisitos rígidos dos
 	    <a href="http://www.djangoproject.com/documentation/faq/#who-s-behind-this"
 	       hreflang="en" rel="external">experientes
 	       desenvolvedores web que o criaram</a>. Ele permite que
 	       você construa rapidamente aplicações web de alto
 	       desempenho e elegância.</p>
-	    
-	    <p>Django se concentra no máximo de automatização 
-	    possível e adere ao princípio 
+
+	    <p>Django se concentra no máximo de automatização
+	    possível e adere ao princípio
 	    <a href="http://en.wikipedia.org/wiki/DRY"
-	       hreflang="en" rel="external">DRY</a> 
+	       hreflang="en" rel="external">DRY</a>
 	    (não se repita).</p>
-	    
+
 	    <ul>
-		<li>Mergulhe na leitura da 
+		<li>Mergulhe na leitura da
 		    <a href="/documentacao/visaogeral/"> visão
 		      geral</a>.</li>
 		<li>Quando você estiver pronto para escrever código, leia o
 		    <a href="/documentacao/instalar/">guia de
-			instalação</a> e o 
+			instalação</a> e o
 		    <a href="/documentacao/tutorial01/">
 			tutorial</a>.</li>
 		<li>Não deixe de visitar também a
@@ -75,18 +75,18 @@
 	</div>
     </div>
     <!-- Fim: Conheça o Django -->
-	
+
     <!-- O framework Django -->
     <div id="framework">
 
     {% dynamic_template "col-1-top" %}
 
 	<h2>O framework Django</h2>
-	
+
 	<ul>
 	    <li>
 		<h4>Mapeador objeto-relacional</h4>
-		<p>Defina seus 
+		<p>Defina seus
 		    <a href="http://www.djangoproject.com/documentation/model_api/"
 		       hreflang="en" rel="external">modelos de dados</a>
 		    inteiramente em Python. Você recebe de graça uma
@@ -95,48 +95,48 @@
 			dinâmica para acesso a banco de dados</a> —
 		    mas também pode escrever SQL se precisar.</p>
 	    </li>
-	    
+
 	    <li>
 		<h4>Interface de administração automática</h4>
 		<p>Elimine o trabalho tedioso de criar interfaces para
-		    que pessoas adicionem e alterem conteúdo. 
+		    que pessoas adicionem e alterem conteúdo.
 		    <a href="/documentacao/tutorial02/">Django faz isso
 		    automaticamente</a>, e está pronto para uso em
 		    ambiente de produção.</p>
 	    </li>
-	    
+
 	    <li>
 		<h4>URL's elegantes</h4>
-		<p>Projete 
+		<p>Projete
 		    <a href="http://www.djangoproject.com/documentation/url_dispatch/"
 		       hreflang="en" rel="external">URLs bonitas e
 			livres de sujeira</a> sem as limitações de um
 		    framework específico. Seja tão flexível quanto
 		    desejar.</p>
 	    </li>
-	    
+
 	    <li>
 		<h4>Sistema de templates</h4>
-		<p>Use a 
+		<p>Use a
 		    <a href="http://www.djangoproject.com/documentation/templates/"
 		       hreflang="en" rel="external">linguagem de
 			templates</a> poderosa, extensível e amigável
 		    para designers que o Django oferece para
 		    separar design, conteúdo e código em Python.</p>
 	    </li>
-	    
+
 	    <li>
 		<h4>Sistema de cache</h4>
-		<p>Engate sua aplicação no memcached ou em outros frameworks de cache para um 
+		<p>Engate sua aplicação no memcached ou em outros frameworks de cache para um
 		    <a href="http://www.djangoproject.com/documentation/cache/"
 		       hreflang="en" rel="external">super
 			desempenho</a> — o cacheamento é tão granular
 		    quanto a sua necessidade.</p>
 	    </li>
-	    
+
 	    <li class="ultimo">
 		<h4>Internacionalização</h4>
-		<p>Django tem total suporte para 
+		<p>Django tem total suporte para
 		<a href="http://www.djangoproject.com/documentation/i18n/"
 		   hreflang="en" rel="external">aplicações
 		    multi-idioma</a>, deixando você especificar
@@ -155,16 +155,16 @@
 {% block content-extra %}
 <div class="limite">
     {% dynamic_template "col-2-top" %}
-    
+
     <!-- Download -->
     <div id="download">
 	<h3>Download</h3>
-	
+
 	<a id="latest" href="/download/"
 	   title="Baixar a versão mais recente do Django" hreflang="en"
-	   rel="external"><span>Versão atual: <strong>1.1</strong></span>
+	   rel="external"><span>Versão atual: <strong>1.1.1</strong></span>
 	</a>
-	
+
 	<p>Código Livre, <a href="http://code.djangoproject.com/browser/django/trunk/LICENSE"
 			    hreflang="en" rel="external">licença BSD</a></p>
     </div>
@@ -173,7 +173,7 @@
     <!-- Casos de Sucesso -->
     <div id="cases">
 	<h3>Casos de Sucesso</h3>
-	
+
         <p>Diversas empresas adotam o Django a cada dia
           mais. Veja <a href="/casos-de-sucesso/">algumas
           histórias</a> de grande satisfação que a opção pelo Django
@@ -184,7 +184,7 @@
     <!-- Documentação -->
     <div id="doc">
 	<h3>Documentação</h3>
-	
+
 	<ul>
 	    <li><a href="/documentacao/instalar/">Guia de instalação</a></li>
 	    <li><a href="/documentacao/tutorial01/">Tutorial</a></li>
@@ -194,18 +194,18 @@
 	</ul>
     </div>
     <!-- Fim: Documentação -->
-    
+
     <!-- Participe -->
     <div id="participe">
 	<h3>Envolva-se</h3>
-	
+
 	<p>O <strong>Django Brasil</strong> é um grupo de usuários e
 	    pesquisadores brasileiros de <strong>Django</strong>, uma
 	    framework para desenvolvimento ágil para
 	    a <strong>Web</strong>, baseada na
 	    linguagem <strong>Python</strong> e em padrões da
 	    programação orientada a objetos.</p>
-	
+
 	<ul>
 	    <li>
 		Participe das discussões em nossa
@@ -237,15 +237,15 @@
 	    página <a href="/comunidade/">Comunidade</a>.</p>
     </div>
     <!-- Fim: Participe -->
-    
+
     <!-- Django pelo Brasil -->
     <div id="brasil">
 	<h3>Django pelo Brasil</h3>
-	
+
 	<dl>
 	    <dt><a href="http://www.vericia.com/">Vericia</a></dt>
 	    <dd>O mais fascinante e inteligente site de busca de imóveis.</dd>
-	    
+
 	    <dt><a href="http://vivixvideo.com/">VivixVideo</a></dt>
 	    <dd>Agregador social de vídeos.</dd>
 
@@ -253,12 +253,12 @@
 		    MisterApe</a></dt>
 	    <dd>Jogos e entretenimento.</dd>
 	</dl>
-	
+
 	<a class="mais"
 	href="http://www.djangosites.org/tag/djangobrasil/" rel="external">Veja mais sites</a>
     </div>
     <!-- Fim: Django pelo Brasil -->
-    
+
     {% dynamic_template "col-2-bottom" %}
 </div>
 {% endblock %}
@@ -268,13 +268,13 @@
     {% dynamic_template "col-3-top" %}
 
     <h3>Weblog</h3>
-    
+
     <ul id="weblog">
 	{% load blog_tags %}
 	{% load comments %}
 	{% load humanize %}
 	{% get_blog_entries 1 to 5 as latest_entries %}
-	
+
 	{% for entry in latest_entries %}
 	<li>
 	    {% get_comment_count for blog.entry entry.id as comment_count %}
@@ -283,9 +283,9 @@
 	    <span>
 		Publicado {{ entry.pub_date|naturalday:"e\m d/m/Y" }}
 	    </span>
-	    
+
 	    <p>{{ entry.body|striptags|truncatewords:25 }}</p>
-	    
+
 	    <ul>
 		<li><a href="{{ entry.get_absolute_url }}#comments">{{ comment_count }} comentário{{ comment_count|pluralize }}</a></li>
 		<li class="ultimo"><a href="{{ entry.get_absolute_url }}">Leia mais</a></li>
