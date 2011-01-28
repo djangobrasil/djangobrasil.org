@@ -1,6 +1,6 @@
 SHELL=/bin/bash
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-MAILTO="semente+djangobrasil@taurinus.org,marinho@gmail.com,arthur.furlan@gmail.com"
+MAILTO="marinho@gmail.com,arthur.furlan@gmail.com"
 
 # Atualiza os feeds do agregador da comunidade (roda a cada hora).
 #
