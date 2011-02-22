@@ -14,7 +14,7 @@ class FeedListNode(template.Node):
         self.varname = varname
 
     def render(self, context):
-        context[self.varname] = Feed.objects.filter(is_defunct=False)
+        context[self.varname] = Feed.objects.filter(is_defunct=False).order_by('title')
         return ''
 
 def do_get_feed_list(parser, token):
