@@ -4,7 +4,6 @@
 <div class="limite">
     <h1>Últimas entradas</h1>
 
-    {% load comments %}
     {% load humanize %}
     {% for object in latest %}
     {% get_comment_count for blog.entry object.id as comment_count %}
