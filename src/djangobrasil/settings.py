@@ -96,7 +96,6 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.sitemaps',
     'django.contrib.humanize',
-    'django.contrib.comments',
     'django.contrib.flatpages',
     'django.contrib.markup',
     'djangoplus',

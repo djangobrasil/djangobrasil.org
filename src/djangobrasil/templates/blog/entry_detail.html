@@ -7,49 +7,35 @@
     <div class="entry">
 	{% load humanize %}
 	<h1><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h1>
-	
+
 	<div class="meta">
 	    <h6>Publicado {{ object.pub_date|naturalday:"e\m d/m/Y" }}
 		às {{ object.pub_date|date:"G\hi" }}</h6>
 	</div>
-	
+
 	{{ object.body|safe }}
     </div>
 
     <hr />
-	
+
     <div id="comments">
 	<h3>Comentários</h3>
 
-	{% load comments %}
-	{% get_comment_list for blog.entry object.id as comment_list %}
-	{% if comment_list %}
-	<ol>
-	    {% for comment in comment_list %}
-	    <li {% cycle 'class="odd"' '' %} id="c{{ comment.id }}">
-	        {% if comment.user_url %}
-		    <a href="{{comment.user_url}}" title="Página da web">
-		      <strong class="name">{{ comment.user_name|escape }}</strong></a>
-		{% else %}
-		      <strong class="name">{{ comment.user_name|escape }}</strong>
-		{% endif %}
-		<span>
-		  ({{ comment.submit_date|naturalday:"e\m d/m/Y" }} 
-		  às {{ comment.submit_date|date:"G\hi" }})
-		</span>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'djangobrasil';
 
-		{{ comment.comment|escape|urlizetrunc:"40"|linebreaks }}
-	    </li>
-	    {% endfor %}
-	</ol>
-	{% else %}
-	<p>Nenhum comentário.</p>
-	{% endif %}
+        var disqus_identifier = 'post_{{ object.pk }}';
+        var disqus_url = 'http://djangobrasil.org{{ object.get_absolute_url }}';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
     </div>
-	
-    <h3>Deixar um comentário</h3>
-	
-    {% render_comment_form for blog.entry object.id %}
+
 </div>
 {% endblock %}
-    
+
