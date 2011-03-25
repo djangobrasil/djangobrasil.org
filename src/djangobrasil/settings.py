@@ -102,7 +102,6 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'django.contrib.flatpages',
     'django.contrib.markup',
-    'djangoplus',
     'djangobrasil.apps.blog',
     'djangobrasil.apps.aggregator',
 )
