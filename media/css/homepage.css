@@ -63,10 +63,6 @@ Chamada
 	margin-top: 14px;
 	line-height: normal;
 }
-/********************
-Fim: Chamada
-********************/
-
 
 /********************
 Conteudo principal
@@ -111,10 +107,6 @@ Conteudo principal
 #framework li:hover { background-color: #FAFAFA; }
 
 #framework p { margin: 0; }
-/********************
-Fim: Conteudo principal
-********************/
-
 
 /********************
 Informações adicionais
@@ -135,23 +127,22 @@ Informações adicionais
 #info .mais { float: right; }
 
 /* Download */
+
 #download a#latest {
 	display: block;
 	margin-bottom: 5px;
-	padding-right: 8px;
+	padding: 8px;
 	text-decoration: none;
-	background: url(../images/download-right.png) no-repeat right;*
+    background-color: #076944;
+    color: #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
 }
 
-#download a#latest:after { content: ""; }
-
-#download a#latest span {
-	color: #FFF;
-	font-weight: normal;
-	display: block;
-	line-height: 38px;
-	padding-left: 40px;
-	background: url(../images/download-left.png) no-repeat left;
+#download a#latest:after { 
+    content: ""; 
 }
 
 #download a#latest strong {
@@ -166,7 +157,6 @@ Informações adicionais
 }
 
 #download p a { font-size: 1em; }
-/* Fim: Download */
 
 /* Documentação */
 #doc li {
@@ -189,11 +179,6 @@ Informações adicionais
 	color: #076944;
 	background-color: #E7E7E7;
 }
-/* Fim: Documentação */
-/********************
-Fim: Informações adicionais
-********************/
-
 
 /********************
 Weblog
@@ -247,6 +232,3 @@ ul#weblog, #weblog li, #weblog ul {
 #weblog ul a:link { font-weight: normal; }
 
 #weblog ul a:hover { text-decoration: underline; }
-/********************
-Fim: Weblog
-********************/

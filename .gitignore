@@ -1,4 +1,5 @@
 *.pyc
 *.swp
+*.swo
 settings_local.py
 *.db
