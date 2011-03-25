@@ -24,7 +24,7 @@ from django.contrib.comments.models import Comment
 from django.contrib import databrowse
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 from django.contrib import admin
-from djangobrasil import settings
+from django.conf import settings
 from djangobrasil.apps.blog.models import Entry
 from djangobrasil.apps.blog.feeds import AtomLatestEntriesFeed, RssLatestEntriesFeed
 from djangobrasil.apps.aggregator.models import FeedItem
@@ -32,20 +32,6 @@ from djangobrasil.apps.aggregator.feeds import RssCommunityAggregatorFeed, AtomC
 from djangobrasil.feeds import DjangoBrasilCommentFeed
 
 admin.autodiscover()
-
-databrowse.site.register(Entry)
-databrowse.site.register(FeedItem)
-databrowse.site.register(Comment)
-
-def get_comments():
-    queryset = Comment.objects.filter(site__pk=settings.SITE_ID,
-                                      is_public=True, is_removed=False)
-    return queryset.order_by('-submit_date')
-
-comments_info_dict = {
-    'queryset': get_comments(),
-    'paginate_by': 15,
-}
 
 sitemaps = {
     'flatpages': FlatPageSitemap,
@@ -83,15 +69,11 @@ urlpatterns = patterns(
     (r'^feeds/rss/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': rss_feeds}),
     (r'^feeds/atom/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': atom_feeds}),
 
-    # comments
-    (r'^comments/$', 'django.views.generic.list_detail.object_list', comments_info_dict),
-    (r'^comments/', include('django.contrib.comments.urls')),
-
     # databrowse
     (r'^db/(.*)', login_required(databrowse.site.root)),
 
     # admin
-    (r'^admin/(.*)', admin.site.root),
+    (r'^admin/(.*)', include(admin.site.urls)),
 
     # home page
     (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'flatfiles/homepage.html'}),
