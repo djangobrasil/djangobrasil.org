@@ -285,7 +285,7 @@
 	    <p>{{ entry.body|striptags|truncatewords:25 }}</p>
 
 	    <ul>
-		<li><a href="{{ entry.get_absolute_url }}#comments">{{ comment_count }} comentário{{ comment_count|pluralize }}</a></li>
+		<li><a href="{{ entry.get_absolute_url }}#disqus_thread" data-disqus-identifier="post_{{ entry.pk }}"></a></li>
 		<li class="ultimo"><a href="{{ entry.get_absolute_url }}">Leia mais</a></li>
 	    </ul>
 	</li>

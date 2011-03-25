@@ -15,9 +15,7 @@
 	<div class="meta">
 	    <h6>Publicado {{ object.pub_date|naturalday:"e\m d/m/Y" }}
 		às {{ object.pub_date|date:"G\hi" }}</h6>
-	    <a href="{{ object.get_absolute_url }}#comments">
-		{{ comment_count }} comentário{{ comment_count|pluralize }}
-	    </a>
+        <a href="{{ object.get_absolute_url }}#disqus_thread" data-disqus-identifier="post_{{ object.pk }}"></a>
 	</div>
 	
 	{{ object.body|safe }}
