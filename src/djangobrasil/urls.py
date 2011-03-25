@@ -73,7 +73,7 @@ urlpatterns = patterns(
     (r'^db/(.*)', login_required(databrowse.site.root)),
 
     # admin
-    (r'^admin/(.*)', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
 
     # home page
     (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'flatfiles/homepage.html'}),
