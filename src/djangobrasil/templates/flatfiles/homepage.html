@@ -1,7 +1,5 @@
 {% extends "base_3col.html" %}
 
-{% load djangoplus_tags %}
-
 {% block cssid %}homepage{% endblock %}
 
 {% block extrahead %}
@@ -79,8 +77,6 @@
     <!-- O framework Django -->
     <div id="framework">
 
-    {% dynamic_template "col-1-top" %}
-
 	<h2>O framework Django</h2>
 
 	<ul>
@@ -147,14 +143,12 @@
     </div>
     <!-- Fim: O framework Django -->
 
-    {% dynamic_template "col-1-bottom" %}
 </div>
 {% endblock %}
 
 
 {% block content-extra %}
 <div class="limite">
-    {% dynamic_template "col-2-top" %}
 
     <!-- Download -->
     <div id="download">
@@ -259,13 +253,11 @@
     </div>
     <!-- Fim: Django pelo Brasil -->
 
-    {% dynamic_template "col-2-bottom" %}
 </div>
 {% endblock %}
 
 {% block content-related %}
 <div class="limite">
-    {% dynamic_template "col-3-top" %}
 
     <h3>Weblog</h3>
 
@@ -292,6 +284,5 @@
 	{% endfor %}
     </ul>
 
-    {% dynamic_template "col-3-bottom" %}
 </div>
 {% endblock %}
