@@ -95,7 +95,6 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.databrowse',
     'django.contrib.redirects',
     'django.contrib.admin',
     'django.contrib.sitemaps',

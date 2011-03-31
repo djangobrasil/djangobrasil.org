@@ -20,8 +20,6 @@
 
 from django.conf.urls.defaults import *
 from django.contrib.auth.decorators import login_required
-from django.contrib.comments.models import Comment
-from django.contrib import databrowse
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 from django.contrib import admin
 from django.conf import settings
@@ -29,7 +27,6 @@ from djangobrasil.apps.blog.models import Entry
 from djangobrasil.apps.blog.feeds import AtomLatestEntriesFeed, RssLatestEntriesFeed
 from djangobrasil.apps.aggregator.models import FeedItem
 from djangobrasil.apps.aggregator.feeds import RssCommunityAggregatorFeed, AtomCommunityAggregatorFeed
-from djangobrasil.feeds import DjangoBrasilCommentFeed
 
 admin.autodiscover()
 
@@ -40,7 +37,6 @@ sitemaps = {
 
 rss_feeds = {
     'weblog': RssLatestEntriesFeed,
-    'comments': DjangoBrasilCommentFeed,
     'comunidade': RssCommunityAggregatorFeed,
 }
 
@@ -68,9 +64,6 @@ urlpatterns = patterns(
     # feeds
     (r'^feeds/rss/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': rss_feeds}),
     (r'^feeds/atom/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': atom_feeds}),
-
-    # databrowse
-    (r'^db/(.*)', login_required(databrowse.site.root)),
 
     # admin
     (r'^admin/', include(admin.site.urls)),
