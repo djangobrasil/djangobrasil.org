@@ -79,6 +79,9 @@ urlpatterns = patterns(
 
     # contato
     (r'^contato/$', 'djangobrasil.views.contact'),
+    
+    # casos de sucesso
+    (r'^casos-de-sucesso/', include('djangobrasil.apps.success_cases.urls')),
 )
 
 if settings.DEBUG:
