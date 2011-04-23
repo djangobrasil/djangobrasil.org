@@ -1,9 +1,33 @@
 {% extends "base_casos.html" %}
 
+{% block extrahead %}
+  <!-- tinyMCE -->
+  <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}javascripts/tiny_mce/tiny_mce.js"></script>
+  <script language="javascript" type="text/javascript">
+      // Notice: The simple theme does not use all options some of
+      // them are limited to the advanced theme
+      tinyMCE.init({
+          mode : "textareas",
+          theme : "advanced",
+          editor_deselector : "mceNoEditor",
+          theme_advanced_buttons1 : "bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,bullist,numlist,undo,redo,link,unlink",
+          theme_advanced_buttons2 : "",
+          theme_advanced_buttons3 : "",
+          theme_advanced_toolbar_location : "top",
+          theme_advanced_toolbar_align : "left",
+          extended_valid_elements : "a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]"
+      });
+  </script>
+  <!-- /tinyMCE -->
+{% endblock %}
+
 {% block content-main %}
 <div class="limite">
   <form id="contato" method="post" action="">
-    {{ form.as_ul }}
+    {% for field in form %}
+      <div>{{ field.label_tag }}:{{ field.errors }}</div>
+      <div>{{ field }}</div>
+    {% endfor %}
     <input type="submit" value="Confirmar inscrição"/>
   </form>
 </div>

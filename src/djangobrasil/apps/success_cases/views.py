@@ -13,9 +13,9 @@ def all_cases(request):
 def new_case(request):
     form = NewCaseForm()
     if request.method == 'POST':
-        success_case = NewCaseForm(request.POST)
-        if success_case.is_valid():
-            success_case.save()
+        form = NewCaseForm(request.POST)
+        if form.is_valid():
+            success_case = form.save()
             return render_to_response(
                 'success_cases/case_submited.html',
                 context_instance = RequestContext(request)
