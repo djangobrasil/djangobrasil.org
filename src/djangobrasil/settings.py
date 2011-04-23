@@ -104,6 +104,7 @@ INSTALLED_APPS = (
     'djangobrasil.apps.blog',
     'djangobrasil.apps.aggregator',
     'djangobrasil.apps.success_cases',
+    'captcha',
 )
 
 

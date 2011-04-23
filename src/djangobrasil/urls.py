@@ -82,6 +82,8 @@ urlpatterns = patterns(
     
     # casos de sucesso
     (r'^casos-de-sucesso/', include('djangobrasil.apps.success_cases.urls')),
+    
+    url(r'^captcha/', include('captcha.urls')),
 )
 
 if settings.DEBUG:
