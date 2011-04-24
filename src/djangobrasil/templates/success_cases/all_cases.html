@@ -10,9 +10,10 @@
 
 {% block content-main %}
 <div class="limite">
-    <h1>{{ flatpage.title }}</h1>
-    
-    {{ flatpage.content }}
+    {% for success_case in all_success_cases %}
+        {{ success_case.title }}
+        {{ success_case.description }}
+    {% endfor %}
 </div>
 {% endblock %}
 

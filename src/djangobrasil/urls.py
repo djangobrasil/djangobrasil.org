@@ -30,6 +30,9 @@ from djangobrasil.apps.aggregator.feeds import RssCommunityAggregatorFeed, AtomC
 
 admin.autodiscover()
 
+from moderation.helpers import auto_discover
+auto_discover()
+
 sitemaps = {
     'flatpages': FlatPageSitemap,
     'weblog': GenericSitemap({'queryset': Entry.published.all(), 'date_field': 'pub_date'}, changefreq="never")

@@ -1,11 +1,14 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from forms import NewCaseForm
+from models import SuccessCase
 
 
 def all_cases(request):
+    all_success_cases = SuccessCase.objects.all()
     return render_to_response(
         'success_cases/all_cases.html',
+        {'all_success_cases': all_success_cases},
         context_instance=RequestContext(request),
     )
 

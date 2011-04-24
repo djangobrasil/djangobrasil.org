@@ -105,6 +105,7 @@ INSTALLED_APPS = (
     'djangobrasil.apps.aggregator',
     'djangobrasil.apps.success_cases',
     'captcha',
+    'moderation',
 )
 
 
