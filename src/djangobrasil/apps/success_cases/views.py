@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.shortcuts import get_object_or_404
 from forms import NewCaseForm
 from models import SuccessCase
 
@@ -28,4 +29,12 @@ def new_case(request):
         'success_cases/new_case.html',
         {'form': form},
         context_instance=RequestContext(request),
+    )
+    
+def specific_case(request, slug):
+    success_case = get_object_or_404(SuccessCase, slug=slug)
+    return render_to_response(
+        'success_cases/specific_case.html',
+        {'success_case': success_case},
+        context_instance = RequestContext(request),
     )

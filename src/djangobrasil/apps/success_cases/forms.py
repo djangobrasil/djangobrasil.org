@@ -9,3 +9,4 @@ class NewCaseForm(forms.ModelForm):
 
     class Meta:
         model = SuccessCase
+        exclude = ('slug',)
