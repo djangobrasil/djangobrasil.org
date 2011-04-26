@@ -7,6 +7,8 @@
       // Notice: The simple theme does not use all options some of
       // them are limited to the advanced theme
       tinyMCE.init({
+          width : "543",
+          height : "250",
           mode : "textareas",
           theme : "advanced",
           editor_deselector : "mceNoEditor",
@@ -25,10 +27,13 @@
 <div class="limite">
   <form id="contato" method="post" action="">
     {% for field in form %}
-      <div>{{ field.label_tag }}:{{ field.errors }}</div>
+      <div>{{ field.label_tag }}</div>
       <div>{{ field }}</div>
+      {% if field.errors %}
+        <div>{{ field.errors }}</div>
+      {% endif %}
     {% endfor %}
-    <input type="submit" value="Confirmar inscrição"/>
+    <input id="submit" type="submit" value="Confirmar inscrição"/>
   </form>
 </div>
 {% endblock %}
