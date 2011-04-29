@@ -1,9 +1,11 @@
 {% extends "base_casos.html" %}
 
 {% block content-main %}
-    {{ success_case.title }}
-    {{ success_case.description|safe }}
-    {{ success_case.author }}
-    {{ success_case.email }}
-    {{ success_case.url }}
+  <div class="limite">  
+    <h1>{{ success_case.title }}</h1>
+    <h3>{{ success_case.long_description|safe }}</h3>
+    <p><span>Autor:</span> {{ success_case.author }}</p>
+    <p><span>Email:</span> {{ success_case.email }}</p>
+    <p><span>URL:</span> {{ success_case.url }}</p>
+  </div>
 {% endblock %}

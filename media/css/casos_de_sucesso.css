@@ -84,3 +84,9 @@ input {
 .defaultSkin table td {
     vertical-align: top !important;
 }
+
+/* Template: success_case/specific_case.html */
+
+p span {
+    font-weight: bold;
+}
