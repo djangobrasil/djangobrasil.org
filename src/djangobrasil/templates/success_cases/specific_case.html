@@ -6,6 +6,6 @@
     <h3>{{ success_case.long_description|safe }}</h3>
     <p><span>Autor:</span> {{ success_case.author }}</p>
     <p><span>Email:</span> {{ success_case.email }}</p>
-    <p><span>URL:</span> {{ success_case.url }}</p>
+    <p><span>URL:</span> <a href="{{ success_case.url }}">{{ success_case.url }}</a></p>
   </div>
 {% endblock %}
