@@ -1,13 +1,5 @@
 {% extends "base_casos.html" %}
 
-{% block cssid %}casos_de_sucesso{% endblock %}
-
-{% block sectionid %}comunidade{% endblock %}
-
-{% block title %}Casos de Sucesso{% endblock %}
-
-{% block billboard %}<h2>Casos de sucesso no Brasil</h2>{% endblock %}
-
 {% block content-main %}
 <div class="limite">
     <h1>Casos de sucesso</h1>
@@ -15,26 +7,13 @@
     <p>Veja abaixo alguns cases que preparamos para você conhecer e ver um pouquinho do que outros estão conquistando ao escolher o Django.</p>
     <div class="boxes">
     {% for success_case in all_success_cases %}
-      <a href="{{ success_case.slug }}">
-        <div class="box">
+      <div class="box">
+        <a href="{{ success_case.slug }}">
           <h3>{{ success_case.title }}</h3>
           {{ success_case.short_description }}
-        </div>
-      </a>
+        </a>
+      </div>
     {% endfor %}
     </div>
-</div>
-{% endblock %}
-
-{% block content-related %}
-<div class="limite">
-    <h4>Envie o seu caso!</h4>
-    <p>
-    Você pode também enviar seu caso de sucesso e contar a história da sua
-    empresa aqui, ao lado de grandes e inovadoras marcas. Para isso, basta
-    enviar-nos uma <a href="/casos-de-sucesso/novo">mensagem de contato</a> respondendo
-    as perguntas abaixo e entraremos em contato em seguida para maiores
-    detalhes e posterior redação do texto e publicação.
-    </p>
 </div>
 {% endblock %}
