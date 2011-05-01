@@ -103,6 +103,9 @@ INSTALLED_APPS = (
     'django.contrib.markup',
     'djangobrasil.apps.blog',
     'djangobrasil.apps.aggregator',
+    'djangobrasil.apps.success_cases',
+    'captcha',
+    'moderation',
 )
 
 

@@ -63,3 +63,30 @@ img.ilustracao {
     margin: 5px;
 }
 
+/* Template: success_case/new_case.html */
+
+.captcha {
+    display: block;
+}
+
+#submit {
+    width: 400px;    
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+.errorlist li {
+    color: red;
+}
+
+.defaultSkin table td {
+    vertical-align: top !important;
+}
+
+/* Template: success_case/specific_case.html */
+
+p span {
+    font-weight: bold;
+}
