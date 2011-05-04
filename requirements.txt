@@ -3,4 +3,4 @@ django-plus==1.1.69-stable
 python-twitter==0.8.1
 markdown==2.0.3
 django-simple-captcha==0.3.0
-django-moderation==0.2
+-e git://github.com/dominno/django-moderation.git#egg=django-moderation
