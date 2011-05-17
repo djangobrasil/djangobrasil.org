@@ -14,7 +14,7 @@ class SuccessCase(models.Model):
     author = models.CharField(max_length=200, verbose_name="Autor")
     email = models.EmailField(max_length=100, verbose_name="Email")
     url = models.URLField(max_length=10000)
-    slug = models.SlugField(max_length=100, blank=True, unique=True)
+    slug = models.SlugField(max_length=100, blank=True)
     
     def __unicode__(self):
         return self.title

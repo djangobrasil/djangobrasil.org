@@ -3,6 +3,7 @@ from django.template import RequestContext
 from django.shortcuts import get_object_or_404
 from forms import NewCaseForm
 from models import SuccessCase
+from recaptcha_works.decorators import fix_recaptcha_remote_ip
 
 
 def all_cases(request):
@@ -13,7 +14,7 @@ def all_cases(request):
         context_instance=RequestContext(request),
     )
 
-    
+@fix_recaptcha_remote_ip    
 def new_case(request):
     form = NewCaseForm()
     if request.method == 'POST':
