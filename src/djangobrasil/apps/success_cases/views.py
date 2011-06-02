@@ -14,7 +14,7 @@ def all_cases(request):
         context_instance=RequestContext(request),
     )
 
-@fix_recaptcha_remote_ip    
+@fix_recaptcha_remote_ip
 def new_case(request):
     form = NewCaseForm()
     if request.method == 'POST':
@@ -25,13 +25,13 @@ def new_case(request):
                 'success_cases/case_submited.html',
                 context_instance = RequestContext(request)
             )
-            
+
     return render_to_response(
         'success_cases/new_case.html',
         {'form': form},
         context_instance=RequestContext(request),
     )
-    
+
 def specific_case(request, slug):
     success_case = get_object_or_404(SuccessCase, slug=slug)
     return render_to_response(
