@@ -1,0 +1,19 @@
+{% extends "base_casos.html" %}
+
+{% block content-main %}
+<div class="limite">
+    <h1>Casos de sucesso</h1>
+    <p>Muitas empresas têm repensado a forma de desenvolver para a web e escolhido o Django de forma inovadora pelo Brasil. Temos hoje uma das mais vastas e variadas comunidades, cada vez mais fortemente apoiadas por instituições e empresas que possuem um compromisso por melhores resultados.</p>
+    <p>Veja abaixo alguns cases que preparamos para você conhecer e ver um pouquinho do que outros estão conquistando ao escolher o Django.</p>
+    <div class="boxes">
+    {% for success_case in all_success_cases %}
+      <div class="box">
+        <a href="{{ success_case.slug }}">
+          <h3>{{ success_case.title }}</h3>
+          {{ success_case.short_description }}
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

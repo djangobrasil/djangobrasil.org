@@ -103,8 +103,19 @@ INSTALLED_APPS = (
     'django.contrib.markup',
     'djangobrasil.apps.blog',
     'djangobrasil.apps.aggregator',
+    'djangobrasil.apps.success_cases',
+    'recaptcha_works',
+    'moderation',
 )
 
+RECAPTCHA_PUBLIC_KEY  = '6LfYNcQSAAAAAD1zXvNHZyJ-VlJPLv1j56n54rZE'
+RECAPTCHA_PRIVATE_KEY = 'chave privada do recaptcha'
+RECAPTCHA_USE_SSL = True
+RECAPTCHA_OPTIONS = {
+    'theme': 'red',
+    'lang': 'pt',
+    'tabindex': 0,
+}
 
 try:
     from settings_local import *
@@ -116,4 +127,3 @@ except ImportError:
         warn(msg, category=ImportWarning)
     except NameError:
         warn(msg)
-
