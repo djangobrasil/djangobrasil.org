@@ -73,6 +73,9 @@ urlpatterns = patterns(
 
     # home page
     (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'flatfiles/homepage.html'}),
+    
+    # home page beta
+    (r'^beta/$', 'django.views.generic.simple.direct_to_template', {'template': 'flatfiles/beta.html'}),
 
     # weblog
     (r'^weblog/', include('djangobrasil.apps.blog.urls')),

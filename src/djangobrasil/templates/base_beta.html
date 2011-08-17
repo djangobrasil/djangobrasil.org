@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br">
+    <head>
+	<title>Django Brasil | {% block title  %} Website da
+	    comunidade brasileira{% endblock %}</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="DC.title" content="Django Brasil" />
+	<meta name="author" content="Jader Rubini" />
+	<meta name="copyright" 
+	      content="Copyright (c) 2007, 2008 The Django Brasil
+		       Community Website Authors -- This site's design
+		       and html code is licensed under the terms of
+		       the GPLv3 or (at your option) any later
+		       version." />
+	<meta name="description" content="Django é um framework web 
+					  de alto nível escrito em
+					  Python que estimula o
+					  desenvolvimento rápido e
+					  limpo. Django Brasil é a
+					  comunidade brasileira de
+					  usuários do framework
+					  Django." />
+	<meta name="keywords" content="django, framework, web, python,
+				       programação web, programação,
+				       python pra web" />
+	<meta name="language" content="pt-br" />
+	<meta name="resource-type" content="document" />
+	<meta name="rating" content="General" />
+	<meta name="robots" content="ALL" />
+	<meta name="revisit-after" content="1" />
+	
+	<link rel="icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.ico" />
+	<link rel="stylesheet" type="text/css" media="screen"
+	      href="{{ MEDIA_URL }}css/{% block cssid %}base{% endblock %}.css" />
+	<link rel="stylesheet" type="text/css" media="print"
+	      href="{{ MEDIA_URL }}css/print.css" />
+
+	{% block extrahead %}{% endblock %}
+    </head>
+    <body id="{% block sectionid %}generic{% endblock %}">
+
+	{% block accesslink %}
+	<ul class="hidden">
+	    <li><a href="#conteudo">Pular para o conteúdo</a></li>
+	</ul>
+	{% endblock %}
+	
+	<!-- Cabeçalho -->
+	<div id="cabecalho">
+	    <h1 class="site name"><a href="/" title="Página principal">Django Brasil</a></h1>
+	    
+	    <ul id="menu">
+		<li id="nav-homepage"><a href="/" title="Página principal"><span>Home</span></a></li>
+		<li id="nav-download"><a href="/download/" title="Faça o download do Django"><span>Download</span></a></li>
+		<li id="nav-docs"><a href="/documentacao/" title="Documentação em português"><span>Documentação</span></a></li>
+		<li id="nav-weblog"><a href="/weblog/" title="As novidades em torno do Django e da comunidade"><span>Weblog</span></a></li>
+		<li id="nav-comunidade"><a href="/comunidade/" title="A comunidade brasileira de desenvolvedores Django"><span>Comunidade</span></a></li>
+		<li id="nav-contato"><a href="/contato/" title="Entre em contato"><span>Contato</span></a></li>
+	    </ul>
+	</div>
+	<!-- Fim: Cabeçalho -->
+	
+	<hr />
+	
+	<!-- Chamada -->
+	<div id="chamada">
+	{% block billboard %}
+	    <h2>O framework web para perfeccionistas com prazos</h2>
+	    <p>Django facilita o desenvolvimento de aplicações web com
+		mais qualidade e menos código</p>
+	{% endblock %}
+	</div>
+	<!-- Fim: chamada -->
+	
+	<hr />
+
+	<!-- Wrapper para o conteudo do site -->
+	<div id="wrap" class="clearfix">{% block wrap %}
+        <div class="wrap2">
+  <div id="lateral">
+    {% block content-related %}{% endblock %}
+  </div>
+
+  <div id="conteudo" class="clearfix">
+    {% block content %}
+    <div id="info">
+	{% block content-extra %}{% endblock %}
+    </div>
+
+    <div id="principal">
+	{% block content-main %}{% endblock %}
+    </div>
+    
+    <!--<hr />-->    
+    {% endblock %}
+  </div>
+
+  <!--<hr />-->
+</div>
+
+
+        
+        
+        {% endblock %}</div>
+	<!-- Fim da #wrap-->
+
+	<hr />
+	
+	<!-- Rodape -->
+	<div id="rodape">
+	    <p>Hospedado
+	    por <a href="http://associacao.python.org.br">APyB</a>. Django
+	    Brasil é a comunidade brasileira de usuários
+	    do <a href="http://www.djangoproject.com/" rel="external"
+	    hreflang="en" title="Site oficial do Django">framework web
+	    Django</a>. Django é uma marca registrada
+	    de <a href="http://ljworld.com" rel="external"
+	    hreflang="en">Lawrence Journal-World</a>.</p>
+
+		<ul class="clearfix">
+			<li><a href="#cabecalho">Topo da página</a></li>
+			<li class="hidden"><a href="#menu">Ir para o menu principal</a></li>
+		</ul>
+	</div>
+	<!-- Fim do rodape -->
+
+	<!-- Google Analytics -->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	  _uacct = "UA-2526852-2";
+	  urchinTracker();
+	</script>
+	<!-- Fim do Google Analytics -->
+    <script type="text/javascript">
+        var disqus_shortname = 'djangobrasil'; // required: replace example with your forum shortname
+
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    </body>
+</html>
