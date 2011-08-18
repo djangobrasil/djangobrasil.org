@@ -1,292 +1,58 @@
-{% extends "base_beta.html" %}
-
-{% block cssid %}homepage{% endblock %}
-
-{% block extrahead %}
-<link rel="alternate"
-      title="Weblog (Atom)"
-      href="/feeds/atom/weblog/"
-      type="application/atom+xml" />
-
-<link rel="alternate"
-      title="Weblog (RSS)"
-      href="/feeds/rss/weblog/"
-      type="application/rss+xml" />
-
-<meta name="verify-v1"
-      content="TTSHRjhdcIMLRNlZbUxzrfxgoPqHF1qHMeuWR4sa3e4=" />
-{% endblock %}
-
-{% block sectionid %}homepage{% endblock %}
-
-{% block accesslink %}
-<ul class="hidden">
-    <li><a href="#conteudo">Pular para o conteúdo</a></li>
-    <li><a href="#info">Pular para o download e links da
-	    documentação</a></li>
-    <li><a href="#weblog">Pular para a lista de entradas do
-	    weblog</a></li>
-</ul>
-{% endblock %}
-
-{% block content-main %}
-<div class="limite">
-
-    <!-- Conheça o Django -->
-    <div id="destaque">
-	<div>
-	    <h2>Conheça o Django</h2>
-	    <h4>Django é um framework web de alto nível escrito em
-		Python que estimula o desenvolvimento rápido e
-		limpo</h4>
-
-	    <p>Desenvolvido e utilizado por mais de dois anos em uma
-	    operação ágil de notícias online, Django foi projetado
-	    para lidar com dois desafios: os prazos apertados de uma
-	    redação e os requisitos rígidos dos
-	    <a href="http://www.djangoproject.com/documentation/faq/#who-s-behind-this"
-	       hreflang="en" rel="external">experientes
-	       desenvolvedores web que o criaram</a>. Ele permite que
-	       você construa rapidamente aplicações web de alto
-	       desempenho e elegância.</p>
-
-	    <p>Django se concentra no máximo de automatização
-	    possível e adere ao princípio
-	    <a href="http://en.wikipedia.org/wiki/DRY"
-	       hreflang="en" rel="external">DRY</a>
-	    (não se repita).</p>
-
-	    <ul>
-		<li>Mergulhe na leitura da
-		    <a href="/documentacao/visaogeral/"> visão
-		      geral</a>.</li>
-		<li>Quando você estiver pronto para escrever código, leia o
-		    <a href="/documentacao/instalar/">guia de
-			instalação</a> e o
-		    <a href="/documentacao/tutorial01/">
-			tutorial</a>.</li>
-		<li>Não deixe de visitar também a
-		    <a href="http://www.djangoproject.com"
-		       hreflang="en" rel="external">página oficial do
-			projeto</a>.</li>
+<!doctype html>
+<html lang="pt-br">
+<head>
+	<title>Django Brasil | Website da comunidade brasileira</title>
+</head>
+<body>
+	<div id="cabecalho">
+	    <h1 class="site name"><a href="/" title="Página principal">Django Brasil</a></h1>
+	    
+	    <ul id="menu">
+		<li id="nav-homepage"><a href="/" title="Página principal"><span>Home</span></a></li>
+		<li id="nav-download"><a href="/download/" title="Faça o download do Django"><span>Download</span></a></li>
+		<li id="nav-docs"><a href="/documentacao/" title="Documentação em português"><span>Documentação</span></a></li>
+		<li id="nav-weblog"><a href="/weblog/" title="As novidades em torno do Django e da comunidade"><span>Weblog</span></a></li>
+		<li id="nav-comunidade"><a href="/comunidade/" title="A comunidade brasileira de desenvolvedores Django"><span>Comunidade</span></a></li>
+		<li id="nav-contato"><a href="/contato/" title="Entre em contato"><span>Contato</span></a></li>
 	    </ul>
 	</div>
-    </div>
-    <!-- Fim: Conheça o Django -->
+	
+	<div id="chamada">
+	    <h2>O framework web para perfeccionistas com prazos</h2>
+	    <p>Django facilita o desenvolvimento de aplicações web com mais qualidade e menos código</p>
+	</div>
+	
+	<!-- Rodape -->
+	<div id="rodape">
+	    <p>Hospedado
+	    por <a href="http://associacao.python.org.br">APyB</a>. Django
+	    Brasil é a comunidade brasileira de usuários
+	    do <a href="http://www.djangoproject.com/" rel="external"
+	    hreflang="en" title="Site oficial do Django">framework web
+	    Django</a>. Django é uma marca registrada
+	    de <a href="http://ljworld.com" rel="external"
+	    hreflang="en">Lawrence Journal-World</a>.</p>
+	</div>
+	<!-- Fim do rodape -->
 
-    <!-- O framework Django -->
-    <div id="framework">
+	<!-- Google Analytics -->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	  _uacct = "UA-2526852-2";
+	  urchinTracker();
+	</script>
+	<!-- Fim do Google Analytics -->
 
-	<h2>O framework Django</h2>
+    <script type="text/javascript">
+        var disqus_shortname = 'djangobrasil'; // required: replace example with your forum shortname
 
-	<ul>
-	    <li>
-		<h4>Mapeador objeto-relacional</h4>
-		<p>Defina seus
-		    <a href="http://www.djangoproject.com/documentation/model_api/"
-		       hreflang="en" rel="external">modelos de dados</a>
-		    inteiramente em Python. Você recebe de graça uma
-		    <a href="http://www.djangoproject.com/documentation/db_api/"
-		       hreflang="en" rel="external">API rica e
-			dinâmica para acesso a banco de dados</a> —
-		    mas também pode escrever SQL se precisar.</p>
-	    </li>
-
-	    <li>
-		<h4>Interface de administração automática</h4>
-		<p>Elimine o trabalho tedioso de criar interfaces para
-		    que pessoas adicionem e alterem conteúdo.
-		    <a href="/documentacao/tutorial02/">Django faz isso
-		    automaticamente</a>, e está pronto para uso em
-		    ambiente de produção.</p>
-	    </li>
-
-	    <li>
-		<h4>URL's elegantes</h4>
-		<p>Projete
-		    <a href="http://www.djangoproject.com/documentation/url_dispatch/"
-		       hreflang="en" rel="external">URLs bonitas e
-			livres de sujeira</a> sem as limitações de um
-		    framework específico. Seja tão flexível quanto
-		    desejar.</p>
-	    </li>
-
-	    <li>
-		<h4>Sistema de templates</h4>
-		<p>Use a
-		    <a href="http://www.djangoproject.com/documentation/templates/"
-		       hreflang="en" rel="external">linguagem de
-			templates</a> poderosa, extensível e amigável
-		    para designers que o Django oferece para
-		    separar design, conteúdo e código em Python.</p>
-	    </li>
-
-	    <li>
-		<h4>Sistema de cache</h4>
-		<p>Engate sua aplicação no memcached ou em outros frameworks de cache para um
-		    <a href="http://www.djangoproject.com/documentation/cache/"
-		       hreflang="en" rel="external">super
-			desempenho</a> — o cacheamento é tão granular
-		    quanto a sua necessidade.</p>
-	    </li>
-
-	    <li class="ultimo">
-		<h4>Internacionalização</h4>
-		<p>Django tem total suporte para
-		<a href="http://www.djangoproject.com/documentation/i18n/"
-		   hreflang="en" rel="external">aplicações
-		    multi-idioma</a>, deixando você especificar
-		   strings de tradução e fornecendo ganchos para
-		   funcionalidades específicas do idioma.</p>
-	    </li>
-	</ul>
-    </div>
-    <!-- Fim: O framework Django -->
-
-</div>
-{% endblock %}
-
-
-{% block content-extra %}
-<div class="limite">
-
-    <!-- Download -->
-    <div id="download">
-	<h3>Download</h3>
-
-	<a id="latest" href="/download/"
-	   title="Baixar a versão mais recente do Django" hreflang="en"
-	   rel="external">Versão atual: <strong>1.3</strong>
-	</a>
-
-	<p>Código Livre, <a href="http://code.djangoproject.com/browser/django/trunk/LICENSE"
-			    hreflang="en" rel="external">licença BSD</a></p>
-    </div>
-    <!-- Fim: Download -->
-
-    <!-- Casos de Sucesso -->
-    <div id="cases">
-	<h3>Casos de Sucesso</h3>
-
-        <p>Diversas empresas adotam o Django a cada dia
-          mais. Veja <a href="/casos-de-sucesso/">algumas
-          histórias</a> de grande satisfação que a opção pelo Django
-          gerou.</p>
-    </div>
-    <!-- Fim: Casos de Sucesso -->
-
-    <!-- Documentação -->
-    <div id="doc">
-	<h3>Documentação</h3>
-
-	<ul>
-	    <li><a href="/documentacao/instalar/">Guia de instalação</a></li>
-	    <li><a href="/documentacao/tutorial01/">Tutorial</a></li>
-	    <li><a href="http://code.djangoproject.com/wiki/CookBookPortugues">Cook
-		Book</a></li>
-	    <li><a href="/documentacao/">Mais...</a></li>
-	</ul>
-    </div>
-    <!-- Fim: Documentação -->
-
-    <!-- Participe -->
-    <div id="participe">
-	<h3>Envolva-se</h3>
-
-	<p>O <strong>Django Brasil</strong> é um grupo de usuários e
-	    pesquisadores brasileiros de <strong>Django</strong>, uma
-	    framework para desenvolvimento ágil para
-	    a <strong>Web</strong>, baseada na
-	    linguagem <strong>Python</strong> e em padrões da
-	    programação orientada a objetos.</p>
-
-	<ul>
-	    <li>
-		Participe das discussões em nossa
-		<a href="http://lista.djangobrasil.org/"
-		   title="Participar da lista de discussão"
-		   rel="external">lista de discussão</a> e no canal
-		IRC <a href="irc://irc.freenode.net/django-br">#django-br</a>
-		na rede <a href="irc://irc.freenode.net">FreeNode</a>;
-	    </li>
-	    <li>
-		entre na
-		<a href="http://l10n.djangobrasil.org/"
-		   title="Participar do grupo de localização"
-		   rel="external">equipe de localização</a> para o
-		português;
-	    </li>
-	    <li>
-		e/ou contribua com o
-		<a href="http://codigo.djangobrasil.org/"
-		   title="Participar do desenvolvimento"
-		   rel="external">código de nosso site</a> e com o
-		<a href="http://www.djangoproject.com/documentation/contributing/"
-		   title="Participar do desenvolvimento do Django"
-		   rel="external" hreflang="en">Projeto Django</a>.
-	    </li>
-	</ul>
-
-	<p>Para mais informações, acesse a
-	    página <a href="/comunidade/">Comunidade</a>.</p>
-    </div>
-    <!-- Fim: Participe -->
-
-    <!-- Django pelo Brasil -->
-    <div id="brasil">
-	<h3>Django pelo Brasil</h3>
-
-	<dl>
-	    <dt><a href="http://www.vericia.com/">Vericia</a></dt>
-	    <dd>O mais fascinante e inteligente site de busca de imóveis.</dd>
-
-	    <dt><a href="http://vivixvideo.com/">VivixVideo</a></dt>
-	    <dd>Agregador social de vídeos.</dd>
-
-	    <dt><a href="http://misterape.pop.com.br/">
-		    MisterApe</a></dt>
-	    <dd>Jogos e entretenimento.</dd>
-	</dl>
-
-	<a class="mais"
-	href="http://www.djangosites.org/tag/djangobrasil/" rel="external">Veja mais sites</a>
-    </div>
-    <!-- Fim: Django pelo Brasil -->
-
-</div>
-{% endblock %}
-
-{% block content-related %}
-<div class="limite">
-    <div>
-        <a href="http://www.pythonbrasil.org.br/" title="PythonBrasil[7]"> 
-            <img src="http://www.python.org.br/banners-pythonbrasil/pythonbrasil7-halfbanner.gif" alt="PythonBrasil[7]" />
-        </a>
-    </div>
-    <h3>Weblog</h3>
-
-    <ul id="weblog">
-	{% load blog_tags %}
-	{% load humanize %}
-	{% get_blog_entries 1 to 5 as latest_entries %}
-
-	{% for entry in latest_entries %}
-	<li>
-	    <h5><a href="{{ entry.get_absolute_url }}">
-		    {{ entry.title }}</a></h5>
-	    <span>
-		Publicado {{ entry.pub_date|naturalday:"e\m d/m/Y" }}
-	    </span>
-
-	    <p>{{ entry.body|striptags|truncatewords:25 }}</p>
-
-	    <ul>
-		<li><a href="{{ entry.get_absolute_url }}#disqus_thread" data-disqus-identifier="post_{{ entry.pk }}"></a></li>
-		<li class="ultimo"><a href="{{ entry.get_absolute_url }}">Leia mais</a></li>
-	    </ul>
-	</li>
-	{% endfor %}
-    </ul>
-
-</div>
-{% endblock %}
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    </body>
+</html>
