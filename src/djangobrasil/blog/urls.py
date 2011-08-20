@@ -19,7 +19,7 @@
 
 
 from django.conf.urls.defaults import *
-from djangobrasil.apps.blog.models import Entry
+from djangobrasil.blog.models import Entry
 
 
 info_dict = {

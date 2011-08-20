@@ -7,7 +7,7 @@
 
 from django.contrib.admin.options import ModelAdmin
 from django.contrib import admin
-from djangobrasil.apps.aggregator.models import Feed
+from djangobrasil.aggregator.models import Feed
 
 class FeedAdmin(ModelAdmin):
     list_display = ("title", "public_url", "is_defunct")

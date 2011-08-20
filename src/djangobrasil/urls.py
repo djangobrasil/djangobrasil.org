@@ -23,10 +23,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 from django.contrib import admin
 from django.conf import settings
-from djangobrasil.apps.blog.models import Entry
-from djangobrasil.apps.blog.feeds import AtomLatestEntriesFeed, RssLatestEntriesFeed
-from djangobrasil.apps.aggregator.models import FeedItem
-from djangobrasil.apps.aggregator.feeds import RssCommunityAggregatorFeed, AtomCommunityAggregatorFeed
+from djangobrasil.blog.models import Entry
+from djangobrasil.blog.feeds import AtomLatestEntriesFeed, RssLatestEntriesFeed
+from djangobrasil.aggregator.models import FeedItem
+from djangobrasil.aggregator.feeds import RssCommunityAggregatorFeed, AtomCommunityAggregatorFeed
 
 admin.autodiscover()
 
@@ -78,7 +78,7 @@ urlpatterns = patterns(
     (r'^beta/$', 'django.views.generic.simple.direct_to_template', {'template': 'flatfiles/beta.html'}),
 
     # weblog
-    (r'^weblog/', include('djangobrasil.apps.blog.urls')),
+    (r'^weblog/', include('djangobrasil.blog.urls')),
 
     # comunidade
     (r'^comunidade/$', 'django.views.generic.list_detail.object_list', aggregator_info_dict),
@@ -87,7 +87,7 @@ urlpatterns = patterns(
     (r'^contato/$', 'djangobrasil.views.contact'),
     
     # casos de sucesso
-    (r'^casos-de-sucesso/', include('djangobrasil.apps.success_cases.urls')),
+    (r'^casos-de-sucesso/', include('djangobrasil.success_cases.urls')),
 )
 
 if settings.DEBUG:

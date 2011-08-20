@@ -19,7 +19,7 @@
 
 
 from django import template
-from djangobrasil.apps.blog.models import Entry
+from djangobrasil.blog.models import Entry
 
 
 class BlogEntriesNode(template.Node):
