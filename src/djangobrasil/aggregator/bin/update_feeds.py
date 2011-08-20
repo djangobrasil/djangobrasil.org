@@ -21,7 +21,7 @@ import feedparser
 
 LOCKFILE = "/tmp/update_feeds.lock"
 def update_feeds(verbose=False):
-    from djangobrasil.apps.aggregator.models import Feed, FeedItem
+    from djangobrasil.aggregator.models import Feed, FeedItem
     for feed in Feed.objects.filter(is_defunct=False):
         if verbose:
             print feed

@@ -1,6 +1,6 @@
 from unittest import TestCase
 from django.template import Template, Context
-from djangobrasil.apps.aggregator.models import Feed
+from djangobrasil.aggregator.models import Feed
 
 class FeedListTagTest(TestCase):
 
