@@ -106,6 +106,7 @@ INSTALLED_APPS = (
     'djangobrasil.success_cases',
     'recaptcha_works',
     'moderation',
+    'contact',
 )
 
 RECAPTCHA_PUBLIC_KEY  = '6LfYNcQSAAAAAD1zXvNHZyJ-VlJPLv1j56n54rZE'
