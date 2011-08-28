@@ -101,9 +101,9 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'django.contrib.flatpages',
     'django.contrib.markup',
-    'djangobrasil.apps.blog',
-    'djangobrasil.apps.aggregator',
-    'djangobrasil.apps.success_cases',
+    'djangobrasil.blog',
+    'djangobrasil.aggregator',
+    'djangobrasil.success_cases',
     'recaptcha_works',
     'moderation',
 )

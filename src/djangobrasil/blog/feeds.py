@@ -21,7 +21,7 @@
 
 from django.contrib.syndication.feeds import Feed
 from django.utils.feedgenerator import Atom1Feed
-from djangobrasil.apps.blog.models import Entry
+from djangobrasil.blog.models import Entry
 
 class RssLatestEntriesFeed(Feed):
     title = u"Django Brasil Weblog"
