@@ -6,9 +6,9 @@
     
     <title>Django Brasil</title>
     
-    <link rel="stylesheet" href="/media/css/reset.css" />
-    <link rel="stylesheet" href="/media/css/960.css" />
-    <link rel="stylesheet" href="/media/css/main.css" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/960.css" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/main.css" />
 
     <script type="text/javascript" src="script/jquery-1.6.min.js"></script>
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -21,7 +21,7 @@
         <header id="top">
         
             <div class="grid_4">
-                <img src="/media/images/logo.png" id="django" alt="Django Brasil" />
+                <img src="{{ MEDIA_URL }}images/logo.png" id="django" alt="Django Brasil" />
             </div>
 
             <div class="grid_8">
@@ -205,7 +205,7 @@
                 <h4>Quem usa Django</h4>
 
                 <section id="cases">
-                    <div class="logo-case" style="background: #fff url(/media/images/globo.png) center no-repeat;"></div>
+                    <div class="logo-case" style="background: #fff url({{ MEDIA_URL }}images/globo.png) center no-repeat;"></div>
                     <span>Portal de entretenimento, notícias e esportes da Rede Globo.</span>
                 </section>
             
