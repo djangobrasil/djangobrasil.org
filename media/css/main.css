@@ -1,0 +1,327 @@
+/* 
+    Document   : estilo-beta.css
+    Created on : 18/08/2011, 14:31:50
+    Author     : Leandro Eros
+*/
+
+body {
+    background: url('../images/bg_pattern.jpg');
+}
+
+h1 {
+    font-family: "Ubuntu";
+    font-weight: lighter;
+    font-size: 30px;
+    line-height: 1.2em;
+}
+
+h2 {
+    font-family: "Helvetica World","Helvetica Neue",Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 1.2em;
+}
+
+h3 {
+    color: #eab952;
+    font-family: "Ubuntu";
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.2em;
+}
+
+h4 {
+    color: #fff;
+    font-family: "Ubuntu";
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.2em;
+}
+
+h5 {
+    font-family: "Ubuntu";
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.2em;
+}
+
+p, span {
+    color: #fff;
+    font-family: "Helvetica World","Helvetica Neue",Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+a {
+    color: #fbf3b4;
+    font-family: "Helvetica World","Helvetica Neue",Arial,Helvetica,sans-serif;
+}
+
+ul li {
+    color: #fff;
+    font-family: "Helvetica World","Helvetica Neue",Arial,Helvetica,sans-serif;
+    font-size: 14px;
+}
+
+header ul li {
+    display: inline;
+}
+
+header#top, section#main {
+    border-bottom: 1px solid #076944;
+}
+
+footer {
+    border-top: 1px solid #076944;
+    margin: 10px 0;
+}
+
+.logo-case {
+    height: 80px;
+    margin: 10px 0;
+    width: 130px;
+    -moz-border-radius: 5px;
+}
+
+span.django {
+    color: #fff !important;
+    font-family: "Ubuntu";
+    font-size: inherit;
+    font-weight: bold;
+}
+
+/* Header */
+
+header#top {
+    height: 90px;
+}
+
+img#django {
+    margin-top: 15px;
+}
+
+nav#top-menu {
+    background: #000 url('../images/bg_top_menu.png') bottom repeat-x;
+    border: 1px solid #000;
+    border-bottom: none;
+    border-top: none;
+    float: right;
+    padding: 0 14px 2px;
+    position: relative;
+    text-shadow: 0 -1px 0 #133226;
+    -moz-border-radius: 0 0 10px 10px;
+}
+
+nav#top-menu ul {
+    text-align: right;
+}
+
+nav#top-menu ul li {
+    padding: 0 8px;
+}
+
+nav#top-menu ul li a {
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav#main-menu {
+    margin: 50px 0 0;
+}
+
+nav#main-menu ul {
+    float: right;
+}
+
+nav#main-menu ul li {
+    display: inline;
+    padding: 8px;
+}
+
+nav#main-menu ul li a {
+    color: #f9c255;
+    font-family: "Helvetica World","Helvetica Neue",Arial,Helvetica,sans-serif;
+    font-weight: bolder;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+nav#main-menu ul li a.select {
+    color: #c68635;
+}
+
+/* Section Main */
+
+section#main {
+    background: url('../images/bg_main.png') center no-repeat;
+    height: 300px;
+    text-align: center;
+}
+
+section#main h1 {
+    color: #b07d35;
+    padding-top: 100px;
+    text-shadow: 0 -1px 0 #133226;
+}
+
+section#main h2 {
+    font-weight: normal;
+    color: #8d8d8d;
+    text-shadow: 0 -1px 0 #133226;
+}
+
+/* Section Content */
+
+section#content {
+    margin-top: 40px;
+}
+
+section#content h2 {
+    color: #eab952;
+    font-family: "Ubuntu";
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.2em;
+    padding-bottom: 25px;
+}
+
+section#content h3 {
+    padding: 25px 0 15px 0;
+}
+
+section#content h4 {
+    padding: 25px 0 10px;
+}
+
+section#content ul {
+    margin: 10px 0 10px 50px;
+}
+
+section#content p, section#content li {
+    color: #ffedca;
+}
+
+/* Aside */
+
+aside #button-download {
+    background: url('../images/bt_download.png') no-repeat;
+    display: block;
+    height: 50px;
+    text-decoration: none !important;
+    width: 215px;
+}
+
+aside #button-download span {
+    color: #f9c255;
+    font: bold 14px "Ubuntu";
+    display: block;
+    padding: 13px 0 0 65px;
+}
+
+aside #button-download b {
+    color: #fff;
+    font-size: 16px;
+}
+
+aside span#license {
+    color: #529480;
+    font-size: 11px;
+    margin-left: 80px;
+}
+
+aside h4 {
+    margin: 20px 0 10px;
+}
+
+aside h4:nth-child(1) {
+    margin: 0 0 10px;
+}
+
+aside article {
+    border-left: 1px solid #076944;
+    padding-left: 8px;
+    margin-top: 15px;
+}
+
+aside article h5 {
+    color: #529480;
+}
+
+aside article span, aside article a {
+    color: #f9c255;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+aside ul#documents {
+    padding-left: 25px;
+}
+
+aside ul#documents li {
+    list-style-image: url('../images/page.png');
+    padding: 3px 0;
+}
+
+aside ul#documents li a {
+    color: #fff;
+}
+
+aside section#cases .logo-case {
+    display: inline-table;
+    float: left;
+    margin-right: 10px;
+}
+
+aside section#cases .logo-case:hover {
+    display: inline-table;
+    float: left;
+    margin-right: 10px;
+    -moz-box-shadow: 0 0 15px #585858 inset;
+}
+
+aside section#cases span {
+    display: block;
+    font-size: 12px;
+    padding-top: 20px;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+footer h5 {
+    color: #fff;
+    font-family: "Helvetica World","Helvetica Neue",Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    margin: 15px 0 15px;
+    text-transform: uppercase;
+}
+
+footer #quick-menu ul li {
+    display: inline-table;
+    font-size: 12px;
+    width: 100px;
+    padding: 3px 0;
+}
+
+footer #copyright {
+    display: block;
+    border-left: 1px solid #076944;
+    padding: 5px;
+    padding-left: 8px;
+    margin-top: 20px;
+}
+
+footer #copyright span {
+    color: #eab952;
+}
+
+footer #copyright .meta {
+    color: #529480;
+    font-size: 11px;
+}
