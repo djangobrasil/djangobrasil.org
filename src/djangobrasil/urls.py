@@ -19,7 +19,6 @@
 
 
 from django.conf.urls.defaults import *
-from django.contrib.auth.decorators import login_required
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 from django.contrib import admin
 from django.conf import settings
