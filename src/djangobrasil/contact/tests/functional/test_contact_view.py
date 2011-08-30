@@ -15,10 +15,10 @@ class ContactViewTestCase(TestCase):
         self.assertTrue(response.template_name)
 
     def test_view_must_have_success_url(self):
-        pass
+        self.assertEqual('contact/', ContactView.success_url)
 
     def test_view_must_have_a_form_class(self):
-        self.assertEquals(ContactForm, ContactView.form_class)
+        self.assertEqual(ContactForm, ContactView.form_class)
 
     def test_should_request_the_contacts_view_via_get_directly_and_be_success(self):
         response = ContactView.as_view()(self.request)
