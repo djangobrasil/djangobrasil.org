@@ -20,6 +20,13 @@
 #SECRET_KEY = 'i-dont-care'
 
 
+# configuration for use custom test runner
+# to turn off, just leave this lines commented
+
+#TEST_RUNNER = 'test_runner.DjangoBrasilTestRunner'
+#SKIP_TESTS = []
+
+
 
 ####################################
 ## TEMPLATE FOR USE IN PRODUCTION ##
