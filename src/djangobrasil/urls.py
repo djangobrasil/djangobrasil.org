@@ -83,7 +83,8 @@ urlpatterns = patterns(
     (r'^comunidade/$', 'django.views.generic.list_detail.object_list', aggregator_info_dict),
 
     # contato
-    (r'^contato/$', 'djangobrasil.views.contact'),
+    #(r'^contato/$', 'djangobrasil.views.contact'),
+    (r'^contato/$', include('contact.urls')),
 
     # casos de sucesso
     (r'^casos-de-sucesso/', include('djangobrasil.success_cases.urls')),
