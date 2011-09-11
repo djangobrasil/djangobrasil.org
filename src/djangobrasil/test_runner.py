@@ -15,7 +15,7 @@ class DjangoBrasilTestRunner(DjangoTestSuiteRunner):
         settings.DEBUG = False
 
     def run_tests(self, test_labels, extra_tests=None, **kwargs):
-        args = ['nosetests', '--verbosity=2']
+        args = ['nosetests', '--verbosity=2'] # --pdb to debug errors
 
         app_names = [app for app in settings.INSTALLED_APPS
                      if app.split('.')[0] != 'django' and app != 'lettuce.django' and app not in settings.SKIP_TESTS]
