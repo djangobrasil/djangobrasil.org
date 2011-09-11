@@ -24,7 +24,7 @@
 # to turn off, just leave this lines commented
 
 #TEST_RUNNER = 'test_runner.DjangoBrasilTestRunner'
-#SKIP_TESTS = []
+#SKIP_TESTS = ['moderation']
 
 
 
