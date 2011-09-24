@@ -4,6 +4,6 @@ from contact.forms import ContactForm
 
 
 class ContactView(FormView):
-    template_name = 'flatfiles/contato.html'
+    template_name = 'contact/contact.html'
     form_class = ContactForm
     success_url = 'contato/'
