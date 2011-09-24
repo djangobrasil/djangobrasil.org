@@ -23,7 +23,7 @@ class ContactViewTestCase(TestCase):
         self.assertTrue(response.template_name)
 
     def test_view_must_have_success_url(self):
-        self.assertEqual('contato/', ContactView.success_url)
+        self.assertEqual('/contato/', ContactView.success_url)
 
     def test_view_must_have_a_form_class(self):
         self.assertEqual(ContactView.form_class, ContactForm)
@@ -40,11 +40,21 @@ class ContactViewTestCase(TestCase):
     def test_should_post_to_the_view_and_get_a_redirect_to_contato_url(self):
         request = RequestFactory().post('contact_view', self.post_data)
         response = ContactView.as_view()(request)
-        self.assertEqual('contato/', response['Location'])
+        self.assertEqual('/contato/', response['Location'])
 
     def test_should_get_the_view_with_an_real_request_object_and_be_success(self):
         response = self.client.get(reverse('contact'))
         self.assertSuccess(response.status_code)
+
+    def test_should_not_redirect_when_theres_no_message(self):
+        del self.post_data['message']
+        response = self.client.get(reverse('contact'))
+        self.assertNotEqual(302, response.status_code)
+
+    def test_should_not_redirect_when_email_is_in_an_invalid_format(self):
+        self.post_data['from_email'] = 'foo'
+        response = self.client.get(reverse('contact'))
+        self.assertNotEqual(302, response.status_code)
 
     def assertSuccess(self, status_code):
         self.assertEqual(200, status_code, "Status code should be 200, got %s" % status_code)
