@@ -24,8 +24,10 @@
 	    corretamente.</strong></h3>
     {% endif %}
 
-    {% if enviado %}
-    <h3 class="enviado"><strong>Mensagem enviada com sucesso.</strong></h3>
+    {% if messages %}
+        {% for message in messages %}
+            <h3 class="enviado"><strong>{{ message }}</strong></h3>
+        {% endfor %}
     {% endif %}
 
     <form method="post" action="">
@@ -40,7 +42,7 @@
 		<input type="text" name="name" id="name" accesskey="n"
 		       value="{%firstof form.name.data %}" />
 	    </li>
-	
+
 	    <li>
 		<label for="from_email">
 		    <kbd title="Shift+Alt+E">E</kbd>-mail: <span>(obrigatório)</span>
@@ -48,7 +50,7 @@
 		<input type="text" name="from_email" id="from_email"
 		       accesskey="e" value="{% firstof form.from_email.data %}" />
 	    </li>
-	
+
 	    <li>
 		<label for="subject">
 		    <kbd title="Shift+Alt+A">A</kbd>ssunto: <span>(obrigatório)</span>
@@ -56,7 +58,7 @@
 		<input type="text" name="subject" id="subject"
 		       accesskey="a" value="{% firstof form.subject.data %}" />
 	    </li>
-	
+
 	    <li class="wide">
 		<label for="message">
 		    <kbd title="Shift+Alt+M">M</kbd>ensagem: <span>(obrigatório)</span>
@@ -77,7 +79,7 @@
     <ul>
 	<li><strong><a href="/documentacao/faq/">Verifique nosso FAQ</a> primeiro</strong>.
 	    Se você tem uma questão básica que não foi respondida pelo
-	    FAQ, tire sua dúvida em nossa 
+	    FAQ, tire sua dúvida em nossa
 	    <a href="http://lista.djangobrasil.org/">lista de
 	    discussão</a>.</li>
 	<li><strong>Converse com outros usuários brasileiros do
@@ -88,7 +90,7 @@
     </ul>
 
     <h4>Lista de discussão</h4>
-    
+
     <ul>
 	<li>
 	    <p><strong><a href="http://lista.djangobrasil.org/">Usuários do
