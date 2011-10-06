@@ -1,0 +1,109 @@
+{% extends "base_2col.html" %}
+
+{% block cssid %}contato{% endblock %}
+
+{% block sectionid %}add-feeds{% endblock %}
+
+{% block title %}Solicitar Adição de Feeds{% endblock %}
+
+{% block accesslink %}
+<ul class="hidden">
+    <li><a href="#conteudo">Pular para o conteúdo</a></li>
+    <li><a href="#lateral">Pular para informações adicionais de contato</a></li>
+</ul>
+{% endblock %}
+
+{% block billboard %}<h2>Participação dos Feeds</h2>{% endblock %}
+
+{% block content-main %}
+<div class="limite">
+    <h2>Dados</h2>
+
+    {% if form.errors %}
+    <h3 class="error"><strong>Por favor, preencha todos os campos
+	    corretamente.</strong></h3>
+    {% endif %}
+
+    {% if enviado %}
+    <h3 class="enviado"><strong>Solicitação enviada com sucesso.</strong></h3>
+    {% endif %}
+
+    <form method="post" action="">
+    <fieldset>
+	<legend>Preencha os campos abaixo para efetuar a solicitação</legend>
+
+	<ul class="clearfix">
+	    <li>
+		<label for="title">
+		    <kbd title="Shift+Alt+N">N</kbd>ome: <span>(obrigatório)</span>
+		</label>
+		<input type="text" name="title" id="title" accesskey="n"
+		       value="{%firstof form.title.data %}" />
+	    </li>
+	
+	    <li>
+		<label for="email">
+		    <kbd title="Shift+Alt+E">E</kbd>-mail: <span>(obrigatório)</span>
+		</label>
+		<input type="text" name="email" id="email"
+		       accesskey="e" value="{% firstof form.email.data %}" />
+	    </li>
+	
+	    <li>
+		<label for="feed_url">
+		    <kbd title="Shift+Alt+E">U</kbd>RL Feed: <span>(obrigatório)</span>
+		</label>
+		<input type="text" name="feed_url" id="feed_url"
+		       accesskey="e" value="{% firstof form.feed_url.data %}" />
+	    </li>
+
+        <li>
+		<label for="public_url">
+		    <kbd title="Shift+Alt+E">U</kbd>RL Pública: <span>(obrigatório)</span>
+		</label>
+		<input type="text" name="public_url" id="public_url"
+		       accesskey="e" value="{% firstof form.public_url.data %}" />
+	    </li>
+	</ul>
+
+	<button type="submit" title="Enviar mensagem">Enviar</button>
+    </fieldset>
+    </form>
+</div>
+{% endblock %}
+
+{% block content-related %}
+<div class="limite">
+    <h4>Procurando por ajuda?</h4>
+    <ul>
+	<li><strong><a href="/documentacao/faq/">Verifique nosso FAQ</a> primeiro</strong>.
+	    Se você tem uma questão básica que não foi respondida pelo
+	    FAQ, tire sua dúvida em nossa 
+	    <a href="http://lista.djangobrasil.org/">lista de
+	    discussão</a>.</li>
+	<li><strong>Converse com outros usuários brasileiros do
+		Django</strong> em nossa sala de bate-papo no canal
+	    <a href="http://pt.wikipedia.org/wiki/IRC">IRC</a>
+	    <a href="irc://irc.freenode.net/django">#django-br</a> da
+	    rede FreeNode (irc.freenode.net).</li>
+    </ul>
+
+    <h4>Lista de discussão</h4>
+    
+    <ul>
+	<li>
+	    <p><strong><a href="http://lista.djangobrasil.org/">Usuários do
+			Django no Brasil</a></strong>: Lista de
+		discussão de ajuda ao Django em português.</p>
+
+	    <form action="http://groups.google.com/group/django-brasil/boxsubscribe">
+	    <fieldset>
+		<legend>Inscreva-se na lista Django-Brasil</legend>
+		<input type="text" name="email" size="15" />
+		<button type="submit">Inscrever</button>
+	    </fieldset>
+	    </form>
+	</li>
+    </ul>
+</div>
+{% endblock %}
