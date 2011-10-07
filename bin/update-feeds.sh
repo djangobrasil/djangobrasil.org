@@ -8,4 +8,4 @@ SOURCE_DIR=/srv/webapps/www.djangobrasil.org/online-branch/src
 export PYTHONPATH=$SOURCE_DIR:$PYTHONPATH
 export DJANGO_SETTINGS_MODULE=djangobrasil.settings
 
-python $SOURCE_DIR/djangobrasil/apps/aggregator/bin/update_feeds.py
+python $SOURCE_DIR/djangobrasil/aggregator/bin/update_feeds.py
