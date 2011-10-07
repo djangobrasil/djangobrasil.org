@@ -9,9 +9,12 @@ from django.db import models
 
 class Feed(models.Model):
     title = models.CharField(max_length=500)
+    email = models.EmailField()
     feed_url = models.URLField(unique=True, max_length=500)
     public_url = models.URLField(max_length=500)
     is_defunct = models.BooleanField()
+    accepted = models.BooleanField(default=False)
+    email_sent = models.BooleanField(default=False)
 
     class Meta:
         db_table = 'aggregator_feeds'

@@ -48,7 +48,7 @@ atom_feeds = {
 }
 
 aggregator_info_dict = {
-    'queryset': FeedItem.objects.select_related(),
+    'queryset': FeedItem.objects.select_related().filter(feed__accepted=True),
     'paginate_by': 15,
 }
 
@@ -81,6 +81,9 @@ urlpatterns = patterns(
 
     # comunidade
     (r'^comunidade/$', 'django.views.generic.list_detail.object_list', aggregator_info_dict),
+
+    #solicitacao-de-feeds
+    (r'^participe-dos-feeds/', 'djangobrasil.aggregator.views.participe_dos_feeds'),
 
     # contato
     (r'^contato/$', include('contact.urls')),
