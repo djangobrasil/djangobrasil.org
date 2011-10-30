@@ -75,7 +75,7 @@ if __name__ == '__main__':
     try:
         lockfile = os.open(LOCKFILE, os.O_CREAT | os.O_EXCL)
     except OSError:
-        sys.exit(0)
+        sys.exit(1)
 
     try:
         sys.exit(main(sys.argv))
