@@ -10,7 +10,7 @@ from django.db import models
 class Feed(models.Model):
     title = models.CharField(max_length=500)
     email = models.EmailField()
-    feed_url = models.URLField(max_length=500)
+    feed_url = models.URLField(max_length=500)#unique
     public_url = models.URLField(max_length=500)
     is_defunct = models.BooleanField()
     accepted = models.BooleanField(default=False)
@@ -28,7 +28,7 @@ class FeedItem(models.Model):
     link = models.URLField(max_length=500)
     summary = models.TextField(blank=True)
     date_modified = models.DateTimeField()
-    guid = models.CharField(max_length=500, unique=True, db_index=True)
+    guid = models.CharField(max_length=500)#, unique=True, db_index=True)
 
     class Meta:
         db_table = 'aggregator_feeditems'
