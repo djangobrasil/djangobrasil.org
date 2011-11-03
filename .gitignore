@@ -4,3 +4,4 @@
 settings_local.py
 *.db
 .DS_Store
+.coverage
