@@ -24,9 +24,11 @@
 # to turn off, just leave this lines commented
 
 #TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-#SKIP_TESTS = ['moderation']
-
-
+#NOSE_ARGS = ['--quiet', "-sd", '--nologcapture', '--with-coverage', '--cover-erase']
+#NOSE_ARGS.extend(['--cover-package=aggregator',
+#                  '--cover-package=blog',
+#                  '--cover-package=contact',
+#                  '--cover-package=success_cases'])
 
 ####################################
 ## TEMPLATE FOR USE IN PRODUCTION ##
