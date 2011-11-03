@@ -23,7 +23,7 @@
 # configuration for use custom test runner
 # to turn off, just leave this lines commented
 
-#TEST_RUNNER = 'test_runner.DjangoBrasilTestRunner'
+#TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 #SKIP_TESTS = ['moderation']
 
 

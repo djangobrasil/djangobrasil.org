@@ -109,6 +109,7 @@ INSTALLED_APPS = (
     'recaptcha_works',
     'moderation',
     'contact',
+    'django_nose',
 )
 
 RECAPTCHA_PUBLIC_KEY  = '6LfYNcQSAAAAAD1zXvNHZyJ-VlJPLv1j56n54rZE'
