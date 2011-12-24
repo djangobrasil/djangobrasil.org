@@ -119,36 +119,33 @@
 
                 <h4>Download</h4>
 
-                <a href="#" id="button-download">
-                    <span>Versão Atual: <b>1.3</b></span>
+                <a href="/download/" id="button-download">
+                    <span>Versão Atual: <b>1.3.1</b></span>
                 </a>
 
                 <h4>Documentação</h4>
 
                 <ul id="documents">
-                    <li><a href="">Guia de Instalação</a></li>
-                    <li><a href="">Tutoriais</a></li>
-                    <li><a href="">Cook Book</a></li>
-                    <li><a href="">Mais →</a></li>
+                    <li><a href="/documentacao/instalar/">Guia de Instalação</a></li>
+                    <li><a href="/documentacao/tutorial01/">Tutoriais</a></li>
+                    <li><a href="http://code.djangoproject.com/wiki/CookBookPortugues">Cook Book</a></li>
+                    <li><a href="/documentacao/">Mais →</a></li>
                 </ul>
 
                 <h4>Blog</h4>
 
-                <article>
-                    <h5>Django 1.3 lançado</h5>
-                    <span>Publicado em 24/03/2011</span>
-                    <p>Ele chegou! Após meses de trabalho, anunciamos orgulhosamente o lançamento do Django 1.3.
-                        Este release está repleto de novidades bacanas, todas elas bem detalhadas nas ...</p>
-                    <a href="" class="more">Leia Mais →</a>
-                </article>
+                {% load blog_tags %}
+                {% load humanize %}
+                {% get_blog_entries 1 to 2 as latest_entries %}
 
+                {% for entry in latest_entries %}
                 <article>
-                    <h5>Django 1.2.3 lançado</h5>
-                    <span>Publicado em 13/09/2010</span>
-                    <p>Hoje a equipe do Django anunciou o lançamento do Django 1.2.3, que resolve alguns proiblemas
-                        com o lançamento recente da versão 1.2.2. Esse pacote corrige ...</p>
-                    <a href="" class="more">Leia Mais →</a>
+                    <h5>{{ entry.title}}</h5>
+                    <span>{{ entry.pub_date|naturalday:"e\m d/m/Y" }}</span>
+                    <p>{{ entry.body|striptags|truncatewords:25 }}</p>
+                    <a href="{{ entry.get_absolute_url }}" class="more">Leia Mais →</a>
                 </article>
+                {% endfor %}
 
                 <h4>Quem usa Django</h4>
 
