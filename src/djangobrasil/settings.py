@@ -1,33 +1,6 @@
-#  PROJECT SETTINGS        -*- Mode: Python; -*-
-# ---------------------------------------------------------------------
-#
-# (!)
-#
-# DON'T CHANGE THIS FILE, USE settings_local.py. YOU GET A TEMPLATE IN
-# settings_local.template (COPY HIM TO settings_local.py AND MAKE
-# YOUR NECESSARY CHANGES.
-#
-# ---------------------------------------------------------------------
-#
-#  Copyright (c) 2007, 2008 The Django Brasil Community Website Authors
-#
-#  This file is part of Django Brasil Project Site.
-#
-#  Django Brasil Project is free software; you can redistribute it
-#  and/or modify it under the terms of the GNU General Public License
-#  as published by the Free Software Foundation; either version 3 of
-#  the License, or (at your option) any later version.
-#
-#  Django Brasil Project is distributed in the hope that it will be
-#  useful, but WITHOUT ANY WARRANTY; without even the implied warranty
-#  of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-#  GNU General Public License for more details.
-#
-#  You should have received a copy of the GNU General Public License
-#  along with this program. If not, see <http://www.gnu.org/licenses/>.
-#
-
 import os
+
+
 BASEDIR = os.path.abspath(os.path.dirname(__file__) + '../../..')
 
 DEBUG = True
@@ -59,15 +32,11 @@ CACHE_MIDDLEWARE_SECONDS = 60 * 5       # 5 minutes
 CACHE_MIDDLEWARE_KEY_PREFIX = 'djangobrasil'
 CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True
 
-# Used to provide a seed in secret-key hashing algorithms. Set this to
-# a random string in your settings_local.py - the longer, the better.
 SECRET_KEY = 'set-this-in-your-settings_local.py!'
 
-# List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.load_template_source',
     'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -103,6 +72,7 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'django.contrib.flatpages',
     'django.contrib.markup',
+
     'blog',
     'aggregator',
     'success_cases',
