@@ -26,7 +26,7 @@ from djangobrasil.blog.models import Entry
 from djangobrasil.blog.feeds import AtomLatestEntriesFeed, RssLatestEntriesFeed
 from djangobrasil.aggregator.models import FeedItem
 from djangobrasil.aggregator.feeds import RssCommunityAggregatorFeed, AtomCommunityAggregatorFeed
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+#from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 admin.autodiscover()
 
@@ -107,4 +107,4 @@ if settings.DEBUG:
         (r'^500/$', 'django.views.generic.simple.direct_to_template',
          {'template': '500.html'}),
     )
-    urlpatterns += staticfiles_urlpatterns()
+    #urlpatterns += staticfiles_urlpatterns()
