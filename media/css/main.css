@@ -3,13 +3,11 @@
     Created on : 18/08/2011, 14:31:50
     Author     : Leandro Eros
 */
-
-body {
-    background: url('../images/bg_pattern.jpg');
+* {
+    font-family: "Helvetica World","Helvetica Neue",Arial,Helvetica,sans-serif;
 }
 
 h1 {
-    font-family: "Ubuntu";
     font-weight: lighter;
     font-size: 30px;
     line-height: 1.2em;
@@ -23,52 +21,45 @@ h2 {
 }
 
 h3 {
-    color: #eab952;
-    font-family: "Ubuntu";
+    color: #333;
     font-weight: bold;
     font-size: 18px;
     line-height: 1.2em;
 }
 
 h4 {
-    color: #fff;
-    font-family: "Ubuntu";
+    color: #111;
     font-weight: bold;
     font-size: 18px;
     line-height: 1.2em;
 }
 
 h5 {
-    font-family: "Ubuntu";
     font-weight: bold;
     font-size: 16px;
     line-height: 1.2em;
 }
 
 p, span {
-    color: #fff;
+    color: #111;
     font-family: "Helvetica World","Helvetica Neue",Arial,Helvetica,sans-serif;
     font-size: 14px;
     line-height: 18px;
 }
 
 a {
-    color: #fbf3b4;
+    color: #076944;
     font-family: "Helvetica World","Helvetica Neue",Arial,Helvetica,sans-serif;
 }
 
 ul li {
-    color: #fff;
+    color: #111;
     font-family: "Helvetica World","Helvetica Neue",Arial,Helvetica,sans-serif;
     font-size: 14px;
 }
 
 header ul li {
     display: inline;
-}
-
-header#top, section#main {
-    border-bottom: 1px solid #076944;
 }
 
 footer {
@@ -84,8 +75,7 @@ footer {
 }
 
 span.django {
-    color: #fff !important;
-    font-family: "Ubuntu";
+    color: #111 !important;
     font-size: inherit;
     font-weight: bold;
 }
@@ -98,6 +88,7 @@ header#top {
 
 img#django {
     margin-top: 15px;
+    width: 170px;
 }
 
 nav#top-menu {
@@ -128,7 +119,7 @@ nav#top-menu ul li a {
 }
 
 nav#main-menu {
-    margin: 50px 0 0;
+    padding: 40px 0 0;
 }
 
 nav#main-menu ul {
@@ -141,7 +132,7 @@ nav#main-menu ul li {
 }
 
 nav#main-menu ul li a {
-    color: #f9c255;
+    color: #076944;
     font-family: "Helvetica World","Helvetica Neue",Arial,Helvetica,sans-serif;
     font-weight: bolder;
     font-size: 14px;
@@ -149,27 +140,7 @@ nav#main-menu ul li a {
 }
 
 nav#main-menu ul li a.select {
-    color: #c68635;
-}
-
-/* Section Main */
-
-section#main {
-    background: url('../images/bg_main.png') center no-repeat;
-    height: 300px;
-    text-align: center;
-}
-
-section#main h1 {
-    color: #b07d35;
-    padding-top: 100px;
-    text-shadow: 0 -1px 0 #133226;
-}
-
-section#main h2 {
-    font-weight: normal;
-    color: #8d8d8d;
-    text-shadow: 0 -1px 0 #133226;
+    color: #333;
 }
 
 /* Section Content */
@@ -179,8 +150,7 @@ section#content {
 }
 
 section#content h2 {
-    color: #eab952;
-    font-family: "Ubuntu";
+    color: #333;
     font-weight: bold;
     font-size: 18px;
     line-height: 1.2em;
@@ -200,24 +170,24 @@ section#content ul {
 }
 
 section#content p, section#content li {
-    color: #ffedca;
+    color: #529480;
 }
 
 /* Aside */
 
 aside #button-download {
-    background: url('../images/bt_download.png') no-repeat;
+    background-color: #333;
     display: block;
     height: 50px;
     text-decoration: none !important;
     width: 215px;
+    border-radius: 3px;
 }
 
 aside #button-download span {
-    color: #f9c255;
-    font: bold 14px "Ubuntu";
+    color: #fff;
     display: block;
-    padding: 13px 0 0 65px;
+    padding: 13px 0 0 13px;
 }
 
 aside #button-download b {
@@ -228,7 +198,6 @@ aside #button-download b {
 aside span#license {
     color: #529480;
     font-size: 11px;
-    margin-left: 80px;
 }
 
 aside h4 {
@@ -250,7 +219,7 @@ aside article h5 {
 }
 
 aside article span, aside article a {
-    color: #f9c255;
+    color: #076944;
     font-size: 12px;
     font-weight: bold;
 }
@@ -265,7 +234,7 @@ aside ul#documents li {
 }
 
 aside ul#documents li a {
-    color: #fff;
+    color: #111;
 }
 
 aside section#cases .logo-case {
@@ -318,10 +287,28 @@ footer #copyright {
 }
 
 footer #copyright span {
-    color: #eab952;
+    color: #333;
 }
 
 footer #copyright .meta {
     color: #529480;
     font-size: 11px;
+}
+
+#main a {
+    display: block;
+    background-color: #076944;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+    margin: 30px 0;
+}
+
+#top span {
+font-size: 51px;
+font-weight: bold;
+margin-top: 12px;
+vertical-align: middle;
+color: #555;
+padding-left: 6px
 }
