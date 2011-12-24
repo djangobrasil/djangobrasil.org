@@ -1,31 +1,29 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="pt-br">
 <head>
-    
     <meta charset="UTF-8">
-    
     <title>Django Brasil</title>
-    
+
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/960.css" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/main.css" />
 
     <script type="text/javascript" src="script/jquery-1.6.min.js"></script>
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    
 </head>
 <body>
-    
+
     <div class="container_12">
-        
+
         <header id="top">
-        
-            <div class="grid_4">
-                <img src="{{ MEDIA_URL }}images/logo.png" id="django" alt="Django Brasil" />
+
+            <div class="grid_5">
+
+                <img src="{{ MEDIA_URL }}images/django-logo-positive.png" id="django" alt="Django Brasil" /><span>brasil</span>
             </div>
 
-            <div class="grid_8">
-                
+            <div class="grid_7">
+                {% comment %}
                 <nav id="top-menu">
                     <ul>
                         <li><a href="">Django</a></li>
@@ -33,7 +31,8 @@
                         <li><a href="">Code</a></li>
                     </ul>
                 </nav>
-                
+                {% endcomment %}
+
                 <nav id="main-menu">
                     <ul>
                         <li><a href="" class="select">Home</a></li>
@@ -44,30 +43,33 @@
                         <li><a href="">Contato</a></li>
                     </ul>
                 </nav>
-                
+
             </div>
-            
+
             <div class="clear"></div>
-            
+
         </header>
-        
+
         <section id="main">
-            
-            <div class="grid_12">
-            
-                <h1>O framework web para perfeccionistas com prazos</h1>
-                <h2><span class="django">django</span> facilita o desenvolvimento de aplicações web com mais <br /> qualidade e menos código.</h2>
-                
+
+            <div class="grid_4">
+                <a href="">inicie</a>
             </div>
-            
+            <div class="grid_4">
+                <a href="">aprenda</a>
+            </div>
+            <div class="grid_4">
+                <a href="">participe</a>
+            </div>
+
         </section>
-        
+
         <section id="content">
-                   
+
             <div class="grid_8">
-            
+
             <h2>Django é um framework web de alto nível escrito em Python que estimula o desenvolvimento rápido e limpo.</h2>
-            
+
             <p>Desenvolvido e utilizado por mais de dois anos em uma
 	    operação ágil de notícias online, Django foi projetado
 	    para lidar com dois desafios: os prazos apertados de uma
@@ -95,77 +97,31 @@
 		    <a href="http://www.djangoproject.com"
 		       hreflang="en" rel="external">página oficial do projeto</a>.</li>
 	    </ul>
-            
-            <h4>O framework Django</h4>
-            
+
+            <h4>planet djangobrasil</h4>
+
             <h3>Mapeador objeto-relacional</h3>
-            
-            <p>Defina seus
-		    <a href="http://www.djangoproject.com/documentation/model_api/"
-		       hreflang="en" rel="external">modelos de dados</a>
-		    inteiramente em Python. Você recebe de graça uma
-		    <a href="http://www.djangoproject.com/documentation/db_api/"
-		       hreflang="en" rel="external">API rica e
-			dinâmica para acesso a banco de dados</a> —
-		    mas também pode escrever SQL se precisar.</p>
-            
-            <h3>Interface de administração automática</h3>
-            
-            <p>Elimine o trabalho tedioso de criar interfaces para
-		    que pessoas adicionem e alterem conteúdo.
-		    <a href="/documentacao/tutorial02/">Django faz isso
-		    automaticamente</a>, e está pronto para uso em
-		    ambiente de produção.</p>
-            
-            <h3>URL´s elegantes</h3>
-            
-            <p>Projete
-		    <a href="http://www.djangoproject.com/documentation/url_dispatch/"
-		       hreflang="en" rel="external">URLs bonitas e
-			livres de sujeira</a> sem as limitações de um
-		    framework específico. Seja tão flexível quanto
-		    desejar.</p>
-            
-            <h3>Sistema de templates</h3>
-            
-            <p>Use a
-		    <a href="http://www.djangoproject.com/documentation/templates/"
-		       hreflang="en" rel="external">linguagem de
-			templates</a> poderosa, extensível e amigável
-		    para designers que o Django oferece para
-		    separar design, conteúdo e código em Python.</p>
-            
-            <h3>Sistema de cache</h3>
-            
-            <p>Engate sua aplicação no memcached ou em outros frameworks de cache para um
-		    <a href="http://www.djangoproject.com/documentation/cache/"
-		       hreflang="en" rel="external">super
-			desempenho</a> — o cacheamento é tão granular
-		    quanto a sua necessidade.</p>
-            
-            <h3>Internacionalização</h3>
-            
+
             <p>Django tem total suporte para
 		<a href="http://www.djangoproject.com/documentation/i18n/"
 		   hreflang="en" rel="external">aplicações
 		    multi-idioma</a>, deixando você especificar
 		   strings de tradução e fornecendo ganchos para
 		   funcionalidades específicas do idioma.</p>
-            
+
             </div>
 
         </section>
-        
+
         <aside>
-         
+
             <div class="grid_4">
-            
+
                 <h4>Download</h4>
 
                 <a href="#" id="button-download">
                     <span>Versão Atual: <b>1.3</b></span>
                 </a>
-                <span id="license">Codigo Livre - BSD license</span>
 
                 <h4>Documentação</h4>
 
@@ -175,52 +131,44 @@
                     <li><a href="">Cook Book</a></li>
                     <li><a href="">Mais →</a></li>
                 </ul>
-            
+
                 <h4>Blog</h4>
 
                 <article>
                     <h5>Django 1.3 lançado</h5>
                     <span>Publicado em 24/03/2011</span>
-                    <p>Ele chegou! Após meses de trabalho, anunciamos orgulhosamente o lançamento do Django 1.3. 
+                    <p>Ele chegou! Após meses de trabalho, anunciamos orgulhosamente o lançamento do Django 1.3.
                         Este release está repleto de novidades bacanas, todas elas bem detalhadas nas ...</p>
-                    <a href="" class="more">Leia Mais →</a>
-                </article>
-
-                <article>
-                    <h5>Conheça o Django Packages</h5>
-                    <span>Publicado em 30/09/2010</span>
-                    <p>O Daniel Greenfeld publicou em seu blog o lançamento do Django Packages 
-                        (Announcing Django Packages). O objetivo do site é listar todos os pacotes, CMS, ...</p>
                     <a href="" class="more">Leia Mais →</a>
                 </article>
 
                 <article>
                     <h5>Django 1.2.3 lançado</h5>
                     <span>Publicado em 13/09/2010</span>
-                    <p>Hoje a equipe do Django anunciou o lançamento do Django 1.2.3, que resolve alguns proiblemas 
+                    <p>Hoje a equipe do Django anunciou o lançamento do Django 1.2.3, que resolve alguns proiblemas
                         com o lançamento recente da versão 1.2.2. Esse pacote corrige ...</p>
                     <a href="" class="more">Leia Mais →</a>
                 </article>
-            
+
                 <h4>Quem usa Django</h4>
 
                 <section id="cases">
                     <div class="logo-case" style="background: #fff url({{ MEDIA_URL }}images/globo.png) center no-repeat;"></div>
                     <span>Portal de entretenimento, notícias e esportes da Rede Globo.</span>
                 </section>
-            
+
             </div>
-            
+
         </aside>
-        
+
         <div class="clear"></div>
-        
+
         <footer>
-            
-            <div class="grid_5">
+
+            <div class="grid_8">
 
                 <h5>Links Rápidos</h5>
-                
+
                 <nav id="quick-menu">
                     <ul>
                         <li><a href="">Django Project</a></li>
@@ -229,26 +177,25 @@
                         <li><a href="">Python Brasil</a></li>
                     </ul>
                 </nav>
-                
-                
+
+
             </div>
 
-            <div class="grid_3">&nbsp;</div>
-            
+
             <div class="grid_4">
-                
+
                 <div id="copyright">
                     <span>Django Brasil é a comunidade brasileira de usuários do framework web <span class="django">Django</span>.</span><br />
                     <span class="meta">© 2006-2011 - DjangoBrasil</span>
                 </div>
-                
+
             </div>
-            
+
             <div class="clear"></div>
-            
+
         </footer>
-        
+
     </div>
-    
+
 </body>
 </html>
