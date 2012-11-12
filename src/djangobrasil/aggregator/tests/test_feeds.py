@@ -1,6 +1,8 @@
 from unittest import TestCase
+
 from django.template import Template, Context
 from djangobrasil.aggregator.models import Feed
+
 
 class FeedListTagTest(TestCase):
 
@@ -32,4 +34,3 @@ class FeedListTagTest(TestCase):
         result = Template(html).render(Context({}))
 
         self.assertEquals(u"Andrews,Enrico,Igor,", result)
-

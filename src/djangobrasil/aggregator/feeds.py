@@ -3,8 +3,7 @@
 #  Copyright (c) 2005, the Lawrence Journal-World
 #  All rights reserved.
 #
-#  See LICENSE file in src/djangobrasil/apps/aggregator/ directory.
-#
+#  See LICENSE file
 
 from django.contrib.syndication.feeds import Feed
 from django.utils.feedgenerator import Atom1Feed
@@ -18,6 +17,7 @@ class RssCommunityAggregatorFeed(Feed):
 
     def items(self):
         return FeedItem.objects.all()[:15]
+
 
 class AtomCommunityAggregatorFeed(RssCommunityAggregatorFeed):
     feed_type = Atom1Feed

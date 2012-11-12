@@ -15,12 +15,12 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
-#
 
 from django.contrib.admin.options import ModelAdmin
 from django.contrib import admin
 
 from models import Entry, ENTRY_DEFAULT_FIELDSET, ENTRY_OTHER_FIELDSET
+
 
 class EntryAdmin(ModelAdmin):
     list_display = ('title', 'pub_date', 'is_draft')
@@ -35,5 +35,5 @@ class EntryAdmin(ModelAdmin):
         'slug': ('title',),
     }
 
-admin.site.register(Entry, EntryAdmin)
 
+admin.site.register(Entry, EntryAdmin)

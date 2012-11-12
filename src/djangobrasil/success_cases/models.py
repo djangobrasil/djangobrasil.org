@@ -15,10 +15,10 @@ class SuccessCase(models.Model):
     email = models.EmailField(max_length=100, verbose_name="Email")
     url = models.URLField(max_length=10000)
     slug = models.SlugField(max_length=100, blank=True)
-    
+
     def __unicode__(self):
         return self.title
-    
+
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(SuccessCase, self).save(*args, **kwargs)

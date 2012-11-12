@@ -15,11 +15,10 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
-#
-
 
 from datetime import datetime
 from django.db import models
+
 
 MARKUP_CHOICES = (
     ('markdown', 'Markdown'),
@@ -31,6 +30,7 @@ MARKUP_CHOICES = (
 ENTRY_DEFAULT_FIELDSET = {
     'fields': ('title', 'slug', 'body_source', 'is_draft',),
 }
+
 ENTRY_OTHER_FIELDSET = {
     'fields': ('markup', 'pub_date',),
     'classes': 'collapse',
@@ -39,7 +39,7 @@ ENTRY_OTHER_FIELDSET = {
 
 def markuping(markup, value):
     """
-    Transform plain text markup syntaxes to HTML with filters in 
+    Transform plain text markup syntaxes to HTML with filters in
     django.contrib.markup.templatetags.
     """
     from django.contrib.markup.templatetags.markup \
@@ -59,6 +59,7 @@ class PublishedEntriesManager(models.Manager):
         queryset = super(PublishedEntriesManager, self).get_query_set()
         return queryset.filter(is_draft=False, pub_date__lte=datetime.now())
 
+
 class Entry(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(
@@ -67,15 +68,15 @@ class Entry(models.Model):
     )
     body_source = models.TextField('Body')
     body = models.TextField(
-        'Body as HTML', 
-        blank=True, 
+        'Body as HTML',
+        blank=True,
         null=True,
         editable=False,
     )
     markup = models.CharField(
         'Markup language',
         default='markdown',
-        max_length=8, 
+        max_length=8,
         choices=MARKUP_CHOICES,
     )
     is_draft = models.BooleanField(
@@ -102,12 +103,13 @@ class Entry(models.Model):
         super(Entry, self).save()
 
     def get_absolute_url(self):
-        return '/weblog/%s/%s/' % (self.pub_date.strftime('%Y/%m/%d').lower(), self.slug)
+        return '/weblog/%s/%s/' % (
+            self.pub_date.strftime('%Y/%m/%d').lower(), self.slug)
 
 
 # signals
-
 from django.db.models import signals
+
 
 def entry_pre_save(sender, instance, signal, *args, **kwargs):
     # update pub_date instance if entry was draft
@@ -117,5 +119,6 @@ def entry_pre_save(sender, instance, signal, *args, **kwargs):
             instance.pub_date = datetime.now()
     except Entry.DoesNotExist:
         pass
+
 
 signals.pre_save.connect(entry_pre_save, sender=Entry)

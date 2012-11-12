@@ -16,12 +16,11 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
-#
-
 
 from django.contrib.syndication.feeds import Feed
 from django.utils.feedgenerator import Atom1Feed
 from djangobrasil.blog.models import Entry
+
 
 class RssLatestEntriesFeed(Feed):
     title = u"Django Brasil Weblog"
@@ -35,6 +34,7 @@ class RssLatestEntriesFeed(Feed):
 
     def item_pubdate(self, item):
         return item.pub_date
+
 
 class AtomLatestEntriesFeed(RssLatestEntriesFeed):
     feed_type = Atom1Feed

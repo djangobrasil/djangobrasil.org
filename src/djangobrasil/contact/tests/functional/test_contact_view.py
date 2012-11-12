@@ -1,7 +1,7 @@
 from django.core import mail
 from django.core.urlresolvers import reverse
 from django.conf import settings
-from django.test import RequestFactory, Client
+from django.test import Client
 from django.utils.unittest import TestCase
 
 from contact.views import ContactView
@@ -15,6 +15,7 @@ class SendMailMock(object):
         self.message = message
         self.from_email = from_email
         self.recipient_list = recipient_list
+
 
 class SendMailTestCase(TestCase):
 

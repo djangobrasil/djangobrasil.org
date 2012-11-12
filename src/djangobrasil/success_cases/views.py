@@ -14,16 +14,17 @@ def all_cases(request):
         context_instance=RequestContext(request),
     )
 
+
 @fix_recaptcha_remote_ip
 def new_case(request):
     form = NewCaseForm()
     if request.method == 'POST':
         form = NewCaseForm(request.POST)
         if form.is_valid():
-            success_case = form.save()
+            form.save()
             return render_to_response(
                 'success_cases/case_submited.html',
-                context_instance = RequestContext(request)
+                context_instance=RequestContext(request)
             )
 
     return render_to_response(
@@ -32,10 +33,11 @@ def new_case(request):
         context_instance=RequestContext(request),
     )
 
+
 def specific_case(request, slug):
     success_case = get_object_or_404(SuccessCase, slug=slug)
     return render_to_response(
         'success_cases/specific_case.html',
         {'success_case': success_case},
-        context_instance = RequestContext(request),
+        context_instance=RequestContext(request),
     )
