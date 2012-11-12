@@ -91,6 +91,8 @@ RECAPTCHA_OPTIONS = {
     'tabindex': 0,
 }
 
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
 try:
     from settings_local import *
 except ImportError:
