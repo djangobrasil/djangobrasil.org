@@ -1,0 +1,6 @@
+language: python
+install:
+  - pip install -qr requirements.txt
+  - pip install -qr test_requirements.txt
+script:
+  - cd src/djangobrasil && python manage.py test
