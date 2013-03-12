@@ -3,7 +3,7 @@ import os
 from fabric.api import cd, env, run
 
 
-env.project_root = "/home/djangobrasil/djangobrasil.org/"
+env.project_root = "/home/djangobrasil/djangobrasil.org"
 env.app_root = env.project_root + "/src/djangobrasil"
 env.virtualenv = "/home/djangobrasil/.virtualenvs/djangobrasil"
 
@@ -36,7 +36,6 @@ def clean():
 
 
 def deploy():
-    update_app()
+    update()
     deps()
     clean()
-    reload()
