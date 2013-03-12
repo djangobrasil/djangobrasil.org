@@ -47,10 +47,6 @@ class ContactViewTestCase(ContactViewSendMailMock):
             'message': 'bar'
         }
 
-    def test_view_must_have_a_template_name(self):
-        response = self.client.get(reverse('contact'))
-        self.assertTrue(response.template_name)
-
     def test_view_must_have_success_url(self):
         self.assertEqual('/contato/', ContactView.success_url)
 

@@ -5,7 +5,7 @@
 #
 #  See LICENSE file
 
-from django.contrib.syndication.feeds import Feed
+from django.contrib.syndication.views import Feed
 from django.utils.feedgenerator import Atom1Feed
 from djangobrasil.aggregator.models import FeedItem
 

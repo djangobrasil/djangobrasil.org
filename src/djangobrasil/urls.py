@@ -22,11 +22,14 @@ from django.conf.urls.defaults import *
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 from django.contrib import admin
 from django.conf import settings
+from django.views.generic import ListView
+from django.views.generic.base import TemplateView
+#from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 from djangobrasil.blog.models import Entry
 from djangobrasil.blog.feeds import AtomLatestEntriesFeed, RssLatestEntriesFeed
 from djangobrasil.aggregator.models import FeedItem
 from djangobrasil.aggregator.feeds import RssCommunityAggregatorFeed, AtomCommunityAggregatorFeed
-#from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 admin.autodiscover()
 
@@ -48,15 +51,15 @@ atom_feeds = {
     'comunidade': AtomCommunityAggregatorFeed,
 }
 
+
+
 aggregator_info_dict = {
     'queryset': FeedItem.objects.select_related().filter(feed__accepted=True),
     'paginate_by': 15,
 }
 
 
-urlpatterns = patterns(
-    '',
-
+urlpatterns = patterns('',
     # sitemaps
     (r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap',
                        {'sitemaps': sitemaps}),
@@ -65,23 +68,25 @@ urlpatterns = patterns(
     (r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'admin/login.html'}),
 
     # feeds
-    (r'^feeds/rss/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': rss_feeds}),
-    (r'^feeds/atom/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': atom_feeds}),
+    (r'^feeds/rss/comunidade/$', RssCommunityAggregatorFeed()),
+    (r'^feeds/atom/comunidade/$', AtomCommunityAggregatorFeed()),
+    (r'^feeds/rss/weblog/$', RssLatestEntriesFeed()),
+    (r'^feeds/atom/weblog/$', AtomLatestEntriesFeed()),
 
     # admin
     (r'^admin/', include(admin.site.urls)),
 
     # home page
-    (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'flatfiles/homepage.html'}),
+    (r'^$', TemplateView.as_view(template_name='flatfiles/homepage.html')),
 
     # home page beta
-    (r'^beta/$', 'django.views.generic.simple.direct_to_template', {'template': 'flatfiles/beta.html'}),
+    (r'^beta/$', TemplateView.as_view(template_name='flatfiles/beta.html')),
 
     # weblog
     (r'^weblog/', include('djangobrasil.blog.urls')),
 
     # comunidade
-    (r'^comunidade/$', 'django.views.generic.list_detail.object_list', aggregator_info_dict),
+    (r'^comunidade/$', ListView.as_view(queryset=FeedItem.objects.select_related().filter(feed__accepted=True), paginate_by=15)),
 
     #solicitacao-de-feeds
     (r'^participe-dos-feeds/', 'djangobrasil.aggregator.views.participe_dos_feeds'),
@@ -94,17 +99,13 @@ urlpatterns = patterns(
 )
 
 if settings.DEBUG:
-    urlpatterns += patterns(
-        '',
-
+    urlpatterns += patterns('',
         # static files
         (r'^media/(?P<path>.*)$', 'django.views.static.serve',
          {'document_root': settings.MEDIA_ROOT}),
 
-        (r'^404/$', 'django.views.generic.simple.direct_to_template',
-         {'template': '404.html'}),
+        (r'^404$', TemplateView.as_view(template_name='404.html')),
 
-        (r'^500/$', 'django.views.generic.simple.direct_to_template',
-         {'template': '500.html'}),
+        (r'^500$', TemplateView.as_view(template_name='500.html')),
     )
     #urlpatterns += staticfiles_urlpatterns()

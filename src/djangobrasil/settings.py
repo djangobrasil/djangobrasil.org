@@ -35,8 +35,8 @@ CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True
 SECRET_KEY = 'set-this-in-your-settings_local.py!'
 
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
