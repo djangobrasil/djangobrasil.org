@@ -1,0 +1,37 @@
+{% extends "base_download.html" %}
+
+{% block content-main %}
+<div class="limite">
+  <h1>Como baixar o Django</h1>
+  <p>Django é um <a href="http://pt.wikipedia.org/wiki/Software Livre" rel="external">software livre</a> e está disponível sob a <a href="http://code.djangoproject.com/file/django/trunk/LICENSE" rel="external">licença BSD</a>. Ele necessita do Python em sua versão 2.6.5 ou superior, porém não há dependências de outras bibliotecas. Você pode baixá-lo de duas maneiras, veja:</p>
+
+  <h3>Opção 1. Baixe a última versão oficial</h3>
+
+  <p>A última versão oficial do Django é a 1.5.1. Para obtê-la, faça isso:</p>
+
+  <a name="tarball"></a>
+  <p>Primeiro baixe o arquivo <a href="https://www.djangoproject.com/download/1.5.1/tarball/">Django-1.5.tar.gz</a>. Então:</p>
+
+  <pre>tar xzvf Django-1.5.1.tar.gz
+cd Django-1.5.1
+sudo python setup.py install</pre>
+
+  <p>Você também pode utilizar o <a href="http://www.pip-installer.org/en/latest/">pip</a>:</p>
+
+  <pre><code>pip install Django==1.5.1</code></pre>
+
+  <h3>Opção 2. Baixe a última versão de desenvolvimento</h3>
+
+  <p>A última e maior versão do Django está em um repositório Git (controle de versão). Baixe ela usando a linha de comando (você precisará ter o <a href="http://git-scm.com/">Git</a> instalado):</p>
+
+  <pre>git clone https://github.com/django/django.git</pre>
+
+  <p>Ou, se preferir, você poderá baixar <a href="https://github.com/django/django/zipball/master">um arquivo zipado</a> da última versão de desenvolvimento.</p>
+
+  <h3>Depois de baixá-lo</h3>
+
+  <p>Consulte o <a href="http://www.djangobrasil.org/documentacao/instalar/">guia de instalação</a> para mais instruções.</p>
+
+  <p>E não se esqueça de se inscrever em nossa <a href="http://lista.djangobrasil.org/">lista de discussão</a>, onde outros usuários e desenvolvedores de Django se ajudam mutuamente.</p>
+</div>
+{% endblock %}

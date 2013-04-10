@@ -82,6 +82,9 @@ urlpatterns = patterns('',
     # home page beta
     (r'^beta/$', TemplateView.as_view(template_name='flatfiles/beta.html')),
 
+    # download
+    (r'^download/$', TemplateView.as_view(template_name='flatfiles/download.html')),
+
     # weblog
     (r'^weblog/', include('djangobrasil.blog.urls')),
 
