@@ -1,3 +1,4 @@
+-r requirements.txt
 nose==1.1.2
 mock
 django_nose
