@@ -13,7 +13,8 @@ class FeedListNode(template.Node):
         self.varname = varname
 
     def render(self, context):
-        context[self.varname] = Feed.objects.filter(is_defunct=False).order_by('title')
+        context[self.varname] = Feed.objects.filter(is_defunct=False)\
+            .order_by('title')
         return ''
 
 
@@ -23,9 +24,11 @@ def do_get_feed_list(parser, token):
     """
     bits = token.contents.split()
     if len(bits) != 3:
-        raise template.TemplateSyntaxError, "'%s' tag takes two arguments" % bits[0]
+        msg = "'%s' tag takes two arguments" % bits[0]
+        raise template.TemplateSyntaxError, msg
     if bits[1] != "as":
-        raise template.TemplateSyntaxError, "First argument to '%s' tag must be 'as'" % bits[0]
+        msg = "First argument to '%s' tag must be 'as'" % bits[0]
+        raise template.TemplateSyntaxError, msg
     return FeedListNode(bits[2])
 
 

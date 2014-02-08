@@ -27,7 +27,7 @@ class FeedListTagTest(TestCase):
         )
 
     def test_feed_list_should_be_in_alphabetical_order(self):
-        html  = u"{% load aggregator %}"
+        html = u"{% load aggregator %}"
         html += u"{% get_feed_list as feed_list %}"
         html += u"{% for feed in feed_list %}{{ feed }},{% endfor %}"
 

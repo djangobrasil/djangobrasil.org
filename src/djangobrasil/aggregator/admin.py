@@ -13,9 +13,11 @@ from django.core.mail import send_mail
 from djangobrasil import settings
 from django.http import BadHeaderError, HttpResponseRedirect
 
+
 class FeedAdmin(ModelAdmin):
-    list_display = ("title", "public_url", "is_defunct","accepted","email_sent")
-    list_filter = ("is_defunct","accepted","email_sent")
+    list_display = ("title", "public_url", "is_defunct",
+                    "accepted", "email_sent")
+    list_filter = ("is_defunct", "accepted", "email_sent")
     ordering = ("title",)
     search_fields = ("title", "public_url")
     list_per_page = 500
@@ -24,14 +26,16 @@ class FeedAdmin(ModelAdmin):
     def save_model(self, request, obj, form, change):
         if obj.accepted and not obj.email_sent:
             subject = "[django-br] Sua participação foi aceita!"
-            message = "Prezado, sua solicitacao (%s) foi aceita, seus feeds serao adicionados em breve." % obj.public_url
+            message = "Prezado, sua solicitacao (%s) foi aceita, seus feeds \
+                       serao adicionados em breve." % obj.public_url
             from_email = '%s <%s>' % (obj.title,
                                       obj.email)
-            recipient_list = [mail_tuple[1] for mail_tuple in settings.MANAGERS]
+            recipient_list = [mail[1] for mail in settings.MANAGERS]
             recipient_list.append(obj.email)
             try:
-                send_mail(subject, message, from_email, recipient_list, fail_silently=False)
-                obj.email_sent=True
+                send_mail(subject, message, from_email, recipient_list,
+                          fail_silently=False)
+                obj.email_sent = True
                 obj.save()
             except BadHeaderError:
                 msg = 'Ocorreu um erro ao enviar o e-mail.'
@@ -39,5 +43,6 @@ class FeedAdmin(ModelAdmin):
                 post_url = '../'
                 return HttpResponseRedirect(post_url)
         obj.save()
+
 
 admin.site.register(Feed, FeedAdmin)

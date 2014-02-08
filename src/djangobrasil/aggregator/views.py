@@ -13,12 +13,13 @@ def participe_dos_feeds(request):
         form = FeedForm(request.POST)
         if form.is_valid():
             subject = '[django-br] Nova participação nos Feeds'
-            message = '%s <%s> solicitou sua adicao aos feeds da comunidade. Blog: %s' % (
+            message = '%s <%s> solicitou sua adicao aos feeds da comunidade. \
+                       Blog: %s' % (
                 request.POST.get('title', ''), request.POST.get('email', ''),
                 request.POST.get('public_url', ''))
             from_email = '%s <%s>' % (request.POST.get('title', ''),
                                       request.POST.get('email', ''))
-            recipient_list = [mail_tuple[1] for mail_tuple in settings.MANAGERS]
+            recipient_list = [mail[1] for mail in settings.MANAGERS]
             try:
                 send_mail(subject, message, from_email, recipient_list,
                           fail_silently=False)

@@ -2,6 +2,7 @@
 from django import forms
 from djangobrasil.aggregator.models import Feed
 
+
 class FeedForm(forms.ModelForm):
     title = forms.CharField(label="Título", max_length=50)
     email = forms.EmailField(label="E-mail")

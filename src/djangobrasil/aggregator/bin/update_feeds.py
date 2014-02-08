@@ -5,7 +5,6 @@
 #  See LICENSE file in src/djangobrasil/apps/aggregator/ directory.
 #
 
-
 """
 Update feeds for Django community page.  Requires Mark Pilgrim's excellent
 Universal Feed Parser (http://feedparser.org)
@@ -19,7 +18,10 @@ import optparse
 import datetime
 import feedparser
 
+
 LOCKFILE = "/tmp/update_feeds.lock"
+
+
 def update_feeds(verbose=False):
     from djangobrasil.aggregator.models import Feed, FeedItem
     for feed in Feed.objects.filter(is_defunct=False):
@@ -27,8 +29,10 @@ def update_feeds(verbose=False):
             print feed
         parsed_feed = feedparser.parse(feed.feed_url)
         for entry in parsed_feed.entries:
-            title = entry.title.encode(parsed_feed.encoding, "xmlcharrefreplace")
-            guid = entry.get("id", entry.link).encode(parsed_feed.encoding, "xmlcharrefreplace")
+            title = entry.title.encode(parsed_feed.encoding,
+                                       "xmlcharrefreplace")
+            guid = entry.get("id", entry.link).encode(parsed_feed.encoding,
+                                                      "xmlcharrefreplace")
             link = entry.link.encode(parsed_feed.encoding, "xmlcharrefreplace")
 
             if not guid:
@@ -45,12 +49,15 @@ def update_feeds(verbose=False):
             content = content.encode(parsed_feed.encoding, "xmlcharrefreplace")
 
             try:
-                if entry.has_key('modified_parsed'):
-                    date_modified = datetime.datetime.fromtimestamp(time.mktime(entry.modified_parsed))
-                elif parsed_feed.feed.has_key('modified_parsed'):
-                    date_modified = datetime.datetime.fromtimestamp(time.mktime(parsed_feed.feed.modified_parsed))
-                elif parsed_feed.has_key('modified'):
-                    date_modified = datetime.datetime.fromtimestamp(time.mktime(parsed_feed.modified))
+                if 'modified_parsed' in entry:
+                    date_modified = datetime.datetime.fromtimestamp(
+                        time.mktime(entry.modified_parsed))
+                elif 'modified_parsed' in parsed_feed.feed:
+                    date_modified = datetime.datetime.fromtimestamp(
+                        time.mktime(parsed_feed.feed.modified_parsed))
+                elif 'modified' in parsed_feed:
+                    date_modified = datetime.datetime.fromtimestamp(
+                        time.mktime(parsed_feed.modified))
                 else:
                     date_modified = datetime.datetime.now()
             except TypeError:
@@ -59,7 +66,10 @@ def update_feeds(verbose=False):
             try:
                 feed.feeditem_set.get(guid=guid)
             except FeedItem.DoesNotExist:
-                feed.feeditem_set.create(title=title, link=link, summary=content, guid=guid, date_modified=date_modified)
+                feed.feeditem_set.create(title=title, link=link,
+                                         summary=content, guid=guid,
+                                         date_modified=date_modified)
+
 
 def main(argv):
     socket.setdefaulttimeout(15)
