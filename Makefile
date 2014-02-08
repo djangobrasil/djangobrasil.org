@@ -12,3 +12,6 @@ test: clean deps
 
 	@echo "flake8 check"
 	@flake8 .
+
+syncdb:
+	@./src/djangobrasil/manage.py syncdb
