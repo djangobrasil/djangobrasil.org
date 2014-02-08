@@ -71,7 +71,6 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.humanize',
     'django.contrib.flatpages',
-    'django.contrib.markup',
 
     'blog',
     'aggregator',
@@ -80,6 +79,7 @@ INSTALLED_APPS = (
     'moderation',
     'contact',
     'django_nose',
+    'django_markup',
 )
 
 RECAPTCHA_PUBLIC_KEY  = '6LfYNcQSAAAAAD1zXvNHZyJ-VlJPLv1j56n54rZE'
