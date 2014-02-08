@@ -18,13 +18,12 @@
 #
 
 
-from django.conf.urls.defaults import *
+from django.conf.urls import patterns, include, url
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 from django.contrib import admin
 from django.conf import settings
 from django.views.generic import ListView
 from django.views.generic.base import TemplateView
-#from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from djangobrasil.blog.models import Entry
 from djangobrasil.blog.feeds import AtomLatestEntriesFeed, RssLatestEntriesFeed
