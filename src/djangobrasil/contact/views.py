@@ -16,10 +16,16 @@ class ContactView(FormView):
         recipients = [manager[1] for manager in settings.MANAGERS]
 
         try:
-            mail.send_mail(form.data['subject'], form.data['message'], from_email, recipients)
+            mail.send_mail(
+                form.data['subject'],
+                form.data['message'],
+                from_email,
+                recipients
+            )
             messages.success(self.request, 'Mensagem enviado com sucesso')
         except mail.BadHeaderError:
             messages.error(self.request, 'Invalid header found')
-            return self.render_to_response(context=self.get_context_data(form=form))
+            return self.render_to_response(
+                context=self.get_context_data(form=form))
 
         return super(self.__class__, self).form_valid(form)

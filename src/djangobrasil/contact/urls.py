@@ -1,8 +1,9 @@
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls import patterns, url
 
 from contact.views import ContactView
 
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url('^$', ContactView.as_view(), name='contact')
 )
