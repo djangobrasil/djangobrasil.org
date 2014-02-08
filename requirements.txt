@@ -4,3 +4,4 @@ markdown==2.0.3
 git+git://github.com/dominno/django-moderation.git
 django-recaptcha-works==0.3.4
 PIL==1.1.7
+gunicorn==18.0
