@@ -1,5 +1,5 @@
 language: python
 install:
-  - pip install -qr test_requirements.txt
+  - make deps
 script:
-  - cd src/djangobrasil && python manage.py test
+  - make test
