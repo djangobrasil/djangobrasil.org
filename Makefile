@@ -15,3 +15,6 @@ test: clean deps
 
 syncdb:
 	@./src/djangobrasil/manage.py syncdb
+
+run:
+	@PYTHONPATH=src:PYTHONPATH ./src/djangobrasil/manage.py runserver
