@@ -82,7 +82,7 @@ INSTALLED_APPS = (
     'django_markup',
 )
 
-RECAPTCHA_PUBLIC_KEY  = '6LfYNcQSAAAAAD1zXvNHZyJ-VlJPLv1j56n54rZE'
+RECAPTCHA_PUBLIC_KEY = 'chave publica do recaptcha'
 RECAPTCHA_PRIVATE_KEY = 'chave privada do recaptcha'
 RECAPTCHA_USE_SSL = True
 RECAPTCHA_OPTIONS = {
