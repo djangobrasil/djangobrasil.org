@@ -17,16 +17,22 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
+from django.conf.urls import patterns
 
-from django.conf.urls.defaults import *
-
-from .models import Entry
 import views
 
 
-urlpatterns = patterns('django.views.generic.date_based',
-    (r'^(?P<year>\d{4})/(?P<month>[0-9]{2})/(?P<day>\d{1,2})/(?P<slug>[-\w]+)/$', views.DateDetail.as_view()),
-    (r'^(?P<year>\d{4})/(?P<month>[0-9]{2})/(?P<day>\d{1,2})/$', views.DayArchive.as_view()),
+urlpatterns = patterns(
+    'django.views.generic.date_based',
+    (
+        r'^(?P<year>\d{4})/(?P<month>[0-9]{2})/(?P<day>\d{1,2})/\
+            (?P<slug>[-\w]+)/$',
+        views.DateDetail.as_view()
+    ),
+    (
+        r'^(?P<year>\d{4})/(?P<month>[0-9]{2})/(?P<day>\d{1,2})/$',
+        views.DayArchive.as_view()
+    ),
     (r'^(?P<year>\d{4})/(?P<month>[0-9]{2})/$', views.MonthArchive.as_view()),
     (r'^(?P<year>\d{4})/$', views.YearArchive.as_view()),
     (r'^$', views.Index.as_view()),

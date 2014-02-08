@@ -17,7 +17,6 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-
 from django import template
 from djangobrasil.blog.models import Entry
 
@@ -27,8 +26,10 @@ class BlogEntriesNode(template.Node):
         self.start, self.stop, self.varname = int(start), int(stop), varname
 
     def render(self, context):
-        context[self.varname] = list(Entry.published.all()[self.start-1:self.stop])
+        entries = Entry.published.all()[self.start-1:self.stop]
+        context[self.varname] = list(entries)
         return ''
+
 
 def do_get_blog_entries(parser, token):
     """
@@ -37,11 +38,14 @@ def do_get_blog_entries(parser, token):
     """
     bits = token.contents.split()
     if len(bits) != 6:
-        raise template.TemplateSyntaxError, "'%s' tag takes six arguments" % bits[0]
+        msg = "'%s' tag takes six arguments" % bits[0]
+        raise template.TemplateSyntaxError, msg
     if bits[2] != 'to':
-        raise template.TemplateSyntaxError, "Second argument to '%s' tag must be 'to'" % bits[0]
+        msg = "Second argument to '%s' tag must be 'to'" % bits[0]
+        raise template.TemplateSyntaxError, msg
     if bits[4] != 'as':
-        raise template.TemplateSyntaxError, "Fourth argument to '%s' tag must be 'as'" % bits[0]
+        msg = "Fourth argument to '%s' tag must be 'as'" % bits[0]
+        raise template.TemplateSyntaxError, msg
     return BlogEntriesNode(bits[1], bits[3], bits[5])
 
 
@@ -50,8 +54,10 @@ class MonthListNode(template.Node):
         self.varname = varname
 
     def render(self, context):
-        context[self.varname] = list(Entry.published.dates("pub_date", "month", order="DESC"))
+        entries = Entry.published.dates("pub_date", "month", order="DESC")
+        context[self.varname] = list(entries)
         return ''
+
 
 def do_get_blog_month_list(parser, token):
     """
@@ -60,9 +66,11 @@ def do_get_blog_month_list(parser, token):
     """
     bits = token.contents.split()
     if len(bits) != 3:
-        raise template.TemplateSyntaxError, "'%s' tag takes three arguments" % bits[0]
+        msg = "'%s' tag takes three arguments" % bits[0]
+        raise template.TemplateSyntaxError, msg
     if bits[1] != 'as':
-        raise template.TemplateSyntaxError, "First argument to '%s' tag must be 'as'" % bits[0]
+        msg = "First argument to '%s' tag must be 'as'" % bits[0]
+        raise template.TemplateSyntaxError, msg
     return MonthListNode(bits[2])
 
 
