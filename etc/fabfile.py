@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import os
 from fabric.api import cd, env, run
 
 
@@ -14,12 +13,14 @@ def update():
 
 
 def deps():
-    run("%(virtualenv)s/bin/pip install -r %(project_root)s/requirements.txt" % env)
+    run("{}/bin/pip install -r {}/requirements.txt".format(
+        env.virtualenv, env.project_root))
 
 
 def start():
     with cd(env.app_root):
-        run('%(virtualenv)s/bin/gunicorn_django -p gunicorn.pid --bind=127.0.0.1:7777--daemon --workers=3' % env)
+        run('%(virtualenv)s/bin/gunicorn_django -p gunicorn.pid \
+             --bind=127.0.0.1:7777--daemon --workers=3' % env)
 
 
 def stop():
