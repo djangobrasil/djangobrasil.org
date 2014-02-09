@@ -10,6 +10,7 @@ test: clean deps
 	@echo "running tests"
 	@./src/djangobrasil/manage.py test
 
+flake: clean deps
 	@echo "flake8 check"
 	@flake8 .
 
