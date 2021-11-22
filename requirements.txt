@@ -5,4 +5,4 @@ git+git://github.com/dominno/django-moderation.git
 django-recaptcha-works==0.3.4
 gunicorn==18.0
 django-markup==0.4
-Pillow==8.2.0
+Pillow==8.3.2
